@@ -1,0 +1,73 @@
+#+TITLE: HOWTO do Linux kernel development
+
+* 介绍
+* 法律问题
+* 文档
+**  README
+    This file gives a short background on the Linux kernel and describes
+    what is necessary to do to configure and build the kernel.  People
+    who are new to the kernel should start here.
+**  Documentation/Changes
+    This file gives a list of the minimum levels of various software
+    packages that are necessary to build and run the kernel
+    successfully.
+**  Documentation/CodingStyle
+    This describes the Linux kernel coding style, and some of the
+    rationale behind it. All new code is expected to follow the
+    guidelines in this document. Most maintainers will only accept
+    patches if these rules are followed, and many people will only
+    review code if it is in the proper style.
+**  Documentation/SubmittingPatches
+**  Documentation/SubmittingDrivers
+    These files describe in explicit detail how to successfully create
+    and send a patch, including (but not limited to):
+       - Email contents
+       - Email format
+       - Who to send it to
+    Following these rules will not guarantee success (as all patches are
+    subject to scrutiny for content and style), but not following them
+    will almost always prevent it.
+
+    Other excellent descriptions of how to create patches properly are:
+    "The Perfect Patch"
+        http://userweb.kernel.org/~akpm/stuff/tpp.txt
+    "Linux kernel patch submission format"
+        http://linux.yyz.us/patch-format.html
+**  Documentation/stable_api_nonsense.txt
+    This file describes the rationale behind the conscious decision to
+    not have a stable API within the kernel, including things like:
+      - Subsystem shim-layers (for compatibility?)
+      - Driver portability between Operating Systems.
+      - Mitigating rapid change within the kernel source tree (or
+    preventing rapid change)
+    This document is crucial for understanding the Linux development
+    philosophy and is very important for people moving to Linux from
+    development on other Operating Systems.
+**  Documentation/SecurityBugs
+    If you feel you have found a security problem in the Linux kernel,
+    please follow the steps in this document to help notify the kernel
+    developers, and help solve the issue.
+**  Documentation/ManagementStyle
+    This document describes how Linux kernel maintainers operate and the
+    shared ethos behind their methodologies.  This is important reading
+    for anyone new to kernel development (or anyone simply curious about
+    it), as it resolves a lot of common misconceptions and confusion
+    about the unique behavior of kernel maintainers.
+**  Documentation/stable_kernel_rules.txt
+    This file describes the rules on how the stable kernel releases
+    happen, and what to do if you want to get a change into one of these
+    releases.
+**  Documentation/kernel-docs.txt
+    A list of external documentation that pertains to kernel
+    development.  Please consult this list if you do not find what you
+    are looking for within the in-kernel documentation.
+**  Documentation/applying-patches.txt
+    A good introduction describing exactly what a patch is and how to
+    apply it to the different development branches of the kernel.
+* 成为一个内核开发者
+1. 
+* 开发流程
+* bug 上报
+* 最后
+All of these things are sometimes very hard to do. It can take years to perfect these practices (if at all). It's a continuous process of improvement that requires a lot of patience and determination. But don't give up, it's possible. Many have done it before, and each had to start exactly where you are now.
+

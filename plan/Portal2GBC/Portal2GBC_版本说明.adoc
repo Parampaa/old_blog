@@ -1,0 +1,4 @@
+= Portal2GBC 版本说明
+
+
+= _Version1.0_

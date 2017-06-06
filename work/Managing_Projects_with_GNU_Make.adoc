@@ -1,0 +1,25 @@
+= Managing Projects with GNU make, 3rd Edition
+As there is no attention before, so I come back to learn makefile again.
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+:hardbreaks:
+
+== Questions
+* How makefile judges the statement is shell?
+Commands are essentially one-line shell scripts.
+In effect, make grabs each line and passes it to a subshell for execution.
+It checks this by scanning each command line for shell special characters, such as wildcard characters and i/o redirection.
+If none are found, make directly executes the command without passing it to a subshell.
+Following a make target, lines whose first character is a tab are assumed to be commands
+
+* Why makefile using `eval` function?
+
+* What is the meaning of `$$` `(a double dollar)` sign in bash/Makefile?
+http://stackoverflow.com/questions/26564825/what-is-the-meaning-of-a-double-dollar-sign-in-bash-makefile
++
+** makefile variable => use a single dollar sign
+** shell variable => use two dollar signs

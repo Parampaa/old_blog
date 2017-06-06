@@ -1,0 +1,495 @@
+#+TITLE: 记录笔记
+
+* git
+** 找出修改的c文件和头文件
+git status |grep modified |grep -E '.c$|.h$'|awk '{print $3}' |xargs
+** git机器间克隆
+git clone root@10.50.123.52:/home/hello
+** diff
+svn status|grep "\.c$"|awk '{print $2}'|xargs svn diff
+
+** 根据commit，拉出分支
+git checkout -b 2.5.xx-3062 fde1925ac4297ca3c6ac70bdabc6f55ccb470728
+
+** 版本回退
+git reset --hard [commit_id]
+git push --force
+** commit回退
+git revert [commit_id]
+git push
+* grub
+** grub 恢复
+    grub> root (hd0,0)
+    grub> find /boot/grub/stage1
+    grub> setup (hd0)
+    grub> setup (hd0,0)
+* iptables
+** nat
+iptables -t nat -A POSTROUTING -p tcp -s 192.2.1.0/24 -j SNAT --to-source 10.60.0.235:1024-65535
+iptables -t nat -A PREROUTING -p tcp -s 10.60.0.182/255.255.255.255 --dport 443 -j REDIRECT --to-ports 5000
+
+* diff
+diff -ENwbur build/ wlc1/
+** 更新
+diff -Naur old_file new_file > patch.1.0
+patch -p0 < patch.1.0
+#old_file will update
+
+* find
+find . -type f -exec touch {} \;
+* portal
+** portal新方法
+1.目的地服务器放行， iptables -t nat -I PREROUTING -d 10.50.123.222 -j ACCEPT
+2.用户地址段重定向至9000，iptables -t nat -A PREROUTING -p tcp -s 172.168.0.0/255.255.0.0 --dport 80 -j REDIRECT --to-ports 9000
+3.认证完用户ip放行（利用ip set提高效率），规则插入在 2 之前
+
+** 公司对接过的portal服务器厂家
+泰联、蓝海、宁盾、热点科技、安朗、华为、亚信
+* eloop
+eloop_run有段小技巧：利用select完成timeout
+
+* vi
+** 查找
+you might first place the cursor on the word "foo" then press * to search for that word.
+** 替换
+:%s/vivian/sky/g vi替换所有
+:%s/AD_DBG_LVL_\u\+, //g 去掉AD_DBG_LVL_DEBUG,AD_DBG_LVL_INFO之类
+:%s/AUDIT_DATA_LOG/LOG_AL/g
+:s/\t//g 去掉tab
+:%s/foo/bar/gc //Change each 'foo' to 'bar', but ask for confirmation first.
+:%s/\<foo\>/bar/gc //Change only whole words exactly matching 'foo' to 'bar'; ask for confirmation.
+:%s/foo/bar/gci Change each 'foo' (case insensitive due to the i flag) to 'bar'; ask for confirmation.
+:%s/foo/bar/gcI Change each 'foo' (case sensitive due to the I flag) to 'bar'; ask for confirmation.
+:'<,'>s/foo/bar/g
+When compiled with +visual, change each 'foo' to 'bar' for all lines within a visual selection. Vim automatically appends the visual selection range ('<,'>) for any ex command when you select an area and enter :. Also, see Note below.
+:.,+2s/foo/bar/g 	Change each 'foo' to 'bar' for the current line (.) and the two next lines (+2).
+:g/^baz/s/foo/bar/g
+    Change each 'foo' to 'bar' in each line starting with 'baz'.
+\{#\} is used for repetition. /foo.\{2\} will match foo and the two following characters. The \ is not required on the closing } so /foo.\{2} will do the same thing.
+:s/Copyright \zs2007\ze All Rights Reserved/2008/  2007->2008 \zs \ze
+    start and end
+:%s//bar/g
+    you need press "*" to search first
+:%s/\<foo\>.*//
+    On each line, delete the whole word "foo" and all following text (to end of line).
+:s/^\(\w\)/\u\1/
+    If the first character at the beginning of the current line only is lowercase, switch it to uppercase using \u
+
+** 显示换行
+如果你使用以下命令进入<list mode>，那么就可以清楚的看到以“$”表示的换行符和以“^I”表示的制表符。
+:set list
+
+** 重复操作
+" Recording (BEST TIP of ALL)
+qq  # record to q
+your complex series of commands
+q   # end recording
+@q to execute
+@@ to Repeat
+5@@ to Repeat 5 times
+qQ@qq                             : Make an existing recording q recursive *N*
+" editing a register/recording
+"qp                               :display contents of register q (normal mode)
+<ctrl-R>q                         :display contents of register q (insert mode)
+" you can now see recording contents, edit as required
+"qdd                              :put changed contacts back into q
+@q                                :execute recording/register q
+** 匹配删除整行
+删除非不含GET和POST的行
+:g!/\(GET\|POST)/d
+** 改变文件编码
+set fileencoding=utf8
+* hrd
+cd /usr/local/ac/config/; sed -i  '/notify_mac/d'  hr.conf ; sed -i '2i\notify_mac = 0' hr.conf
+* dhcp
+** dhcp不能编译,原因是文件里面携带了 \r
+find . -type f |xargs file |grep CR|awk -F : '{print $1}'|xargs sed -i 's!\r!!'
+
+** dhcp
+sed -i 's/range \([^#]*\);/pool {\n    range \1;\n}/g' dhcpd.conf
+sed -i ':a;N;$!ba;s/\(subnet.*\)\n}/\1 \ncase 1:fsf\n}/g' dhcpd.conf
+http://stackoverflow.com/questions/1251999/how-can-i-replace-a-newline-n-using-sed/7697604#7697604
+
+sed -i ':a;N;$!ba;s/ \(option routers 10.60.123.222;\n\)\s*\(break;\)/ #\1    #\2/g' dhcpd.conf
+* vpn
+fail:
+pptpsetup --create vpn --server 10.1.1.85 --username fangzheng --password www8gbcom9COM~CN! --encrypt --start
+OK:
+(pppd call vpn logfd 2 nodetach debug dump refuse-eap &)
+route add default gw 192.168.168.106
+** pptp vpn 分流
+Mac OS X
+
+在终端中执行python chnroutes.py -p mac，这将生成ip-up和ip-down两个文件；
+将这两个文件移入/etc/ppp/；
+重新连接VPN，观察测试。
+** shadowsocks
+服务器配置：
+cat /etc/shadowsocks.json
+{
+    "server":"0.0.0.0",
+    "server_port":6666,
+    "local_address": "127.0.0.1",
+    "local_port":1000,
+    "password":"12345678",
+    "timeout":300,
+    "method":"aes-256-cfb",
+    "fast_open": false
+}
+
+sudo ssserver -c /etc/shadowsocks.json -d start
+sudo ssserver -c /etc/shadowsocks.json -d stop
+
+客户端：
+ssclient: 如何设置代理配置文件
+http://xmodulo.com/how-to-set-up-proxy-auto-config-on-ubuntu-desktop.html
+
+* yum
+yum groupinstall -y   "Desktop"   "Desktop Platform"   "Desktop Platform Development"　 "Fonts" 　"General Purpose Desktop"　 "Graphical Administration Tools"　 "Graphics Creation Tools" 　"Input Methods" 　"X Window System" 　"Chinese Support [zh]"　"Internet Browser"
+
+* color
+  \e[0;32m $PWD \e[0m
+* awk
+tail -n 1 /samba/sh000001.org|awk '{ i=1;while(i<NF) {if((i%4)==1) {print $i,$(i+1),$(i+2),$(i+3)} i=i+4}}'
+tail -n 3 /samba/sh000001.org|head -n 1|awk '{ i=1;while(i<NF) {if((i%4)==1) {print $i,$(i+1),$(i+2),$(i+3)} i=i+4}}'
+
+* tail
+tail -n 3 /samba/sh000001.org |head -n 1| awk '{ i=1;while(i<NF) {if((i%4)==1) {print $i,$(i+1),$(i+2),$(i+3)} i=i+4}}'  打印倒数第二行
+* emacs
+**  修改字体大小，M-x,customize,Faces,Basic Faces,Default,Height->修改pt值
+** 获取变量：
+The elisp function you're running is describe-variable:
+(describe-variable VARIABLE)
+
+** align org table
+emacs stock.org --batch -l ~/.emacs.d/init.el --eval '(progn(org-table-align))' -f save-buffer --kill
+
+** remove package
+The command package-menu-mark-delete (key 'd') followed by package-menu-execute (key 'x') worked for me.
+** 二进制编辑
+M-x hexl-mode
+退出二进制 C-c C-c
+** *.gz文件需要使用zgrep
+** goto local definition
+http://stackoverflow.com/questions/12289903/how-do-i-go-to-a-local-variables-definition-with-emacs-and-gnu-global
+** find tab
+C-s C-q <TAB>
+C-s <TAB>
+* ssh
+** ssh访问内网
+内网ssh设置
+ssh -NfR 7777:localhost:22 root@180.168.191.198
+公网ssh设置：
+ssh -NfL 0.0.0.0:5555:localhost:7777 localhost
+家里访问：
+ssh root@180.168.191.198 -p 5555
+更简单的方法(服务器sshd_config配置开启gatewayports)：
+ssh -NfR 0.0.0.0:9990:localhost:22 root@180.168.191.198 -o GatewayPorts=yes -o ConnectTimeout=10  -o ConnectionAttempts=5 -o ServerAliveInterval=2
+
+你家里的电脑只要这么访问：
+ssh root@180.168.191.198 -p 9990
+
+** ssh快速登陆
+
+A -> B
+追加复制 A 的公钥至 B 的authorized_keys
+配置A的.ssh/config
+Host 10.60.123.222
+user fabius8
+
+** ssh升级
+新的ssh包 7.0 版本之后登录问题汇总：
+
+1. root用户密码不能登录。
+解决方法：sshd_config 增加 PermitRootLogin yes
+
+2. sshd 7.0之后版本默认不开启 ssh-dss 证书加密
+解决方法：证书使用其他加密方式
+
+官方链接：
+http://www.openssh.com/txt/release-7.0
+
+* qstartdic
+* align
+:AlignCtrl l 左对齐
+:AlignCtrl r 右对齐
+:AlignCtrl lrlr 第一部分左对齐，第二部分右对其 ...
+:AlignCtrl lp0P0 左对其, 左空一，右空一
+对当前位置到第6行注释对其
+#+begin_src vim
+.,+6Align /\*
+#+end_src
+
+* c complie
+question: #define to_find "^.*\.(dat)?"
+The warning is coming from the C compiler. It is telling you that \. is not a known escape sequence in C. Since this string is going to a regex engine, you need to double-escape the slash, like this:
+#define to_find "^.*\\.(dat)?"
+* compile different version
+fabius8@centos6:~/wlansvn/ac-xa01-2.5.X.X $ svn status|grep Makefile                                                                                                       1 ↵
+M       syslog/Makefile
+M       pa/Makefile
+M       Makefile
+* ruby
+Ruby Version Manager (RVM)
+http://www.rvm.io/
+* asciidoctor
+asciidoctor sample.adoc
+asciidoctor -r asciidoctor-diagram sample.adoc
+asciidoctor-pdf -r asciidoctor-diagram -r asciidoctor-pdf-cjk-kai_gen_gothic -a pdf-style=KaiGenGothicCN sample.adoc
+asciidoctor -r asciidoctor-diagram -a data-uri sample.adoc
+
+* xargs
+=find . |xargs file|grep broken |awk -F : '{print $1}' |xargs rm=
+* vimgrep
+=vimgrep /pattern/ %=           在当前打开文件中查找
+=vimgrep /pattern/ *=             在当前目录下查找所有
+=vimgrep /pattern/ **=            在当前目录及子目录下查找所有
+=vimgrep /pattern/ *.c=          查找当前目录下所有.c文件
+=vimgrep /pattern/ **/*=         只查找子目录
+* dhcp
+vi /etc/sysconfig/network-scripts/ifcfg-eth0
+BOOTPROTO=dhcp
+service network restart
+
+* grub
+MOD1:
+1. mkfs.vfat /dev/sdb -I
+2. /usr/local/sbin/grub-install --boot-directory=/mnt/upan/boot /dev/sdb --force   
+MOD2:
+1. mkfs.vfat /dev/sdb -I
+2. losetup /dev/loop0 /dev/sdb
+3. mount /dev/loop0 /mnt/upan
+4. /usr/local/sbin/grub-install --boot-directory=/mnt/upan/bugbios --force --allow-floppy /dev/loop0   
+5.  /usr/local/sbin/grub2-mkconfig -o /mnt/upan/boot/grub/grub.cfg 
+
+iso 文件挂载
+mount -t iso9660 -o loop xxx.iso /some/path
+* svn
+撤销修改
+svn revert -R .
+* synergy
+http://synergy-project.org/download/free/
+* regular
+取反 [^内容]
+* locale
+改变语言
+vi =/etc/default/locale=
+
+ubuntu:
+dpkg-reconfigure locales
+设置静态地址
+http://www.sudo-juice.com/how-to-set-a-static-ip-in-ubuntu-the-proper-way/
+
+sudo update-alternatives --config editor 
+* endofline
+set binary
+set noendofline
+* list.h
+使用方法: http://isis.poly.edu/kulesh/stuff/src/klist/
+* hostname
+http://www.electrictoolbox.com/changing-hostname-centos/
+* greenvpn
+我的推广账户
+http://gjsq.me/11435742
+长期有效
+http://greenvpn.site 
+
+* date
+date -d "2015-01-01" +%A
+查看星期几
+* tftp
+AP:tftp 
+AC:tftpd 
+查看会看到udp:69端口
+
+http://www.davidsudjiman.info/2006/03/27/installing-and-setting-tftpd-in-ubuntu/
+* make
+  静态编译
+-Wl,-dn -Wl,-dy  
+
+查看动态库
+ldconfig -p 
+* ifconfig
+获取mac地址
+目录可能不一样：
+#+BEGIN_SRC bash
+cat /sys/devices/virtual/net/lo/subsystem/eth0/address
+#+END_SRC
+目录可能不一样：
+#+BEGIN_SRC bash
+cd /sys/;find . |grep address|grep eth0/address| xargs cat
+#+END_SRC
+* sed
+打印输出前6个字符
+#+begin_src bash
+echo aa_bb_cc_ff-13123123123213 |sed "s/\(^.\{6\}\)\(.*\)/\1/"
+#+end_src
+* grep
+打印输出前6个字符
+#+begin_src bash
+echo aa_bb_cc_ff-13123123123213 |grep -E "^.{6}" -o
+#+end_src
+* shell
+  shell传命令参数
+http://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash/14203146#14203146
+
+* ipcalc
+# ipcalc -4 -b 202.97.232.0/25
+BROADCAST=202.97.232.127
+# 广播地址
+
+# ipcalc -4 -p 202.97.232.0/25
+PREFIX=25
+
+# ipcalc -4 -n 202.97.232.7/25
+NETWORK=202.97.232.0
+
+# ipcalc -4 -m 202.97.232.7/25
+NETMASK=255.255.255.128
+
+## shell下string to number
+teddy@toshiba~$ a="76"
+teddy@toshiba~$ echo $((a+3))
+79
+teddy@toshiba~$ echo $((a-12))
+64
+* tcpdump
+1. 注意第二片分片报文使用没有udp和tcp
+
+* nc
+nc 传单个文件，只要有一方能ping通就能传文件
+=================================
+server接收端:
+$ nc -l -p 8880 > a.html
+
+client发送端：
+$ nc 10.10.10.10 8880 < a.html
+
+server发送端：
+$ cat a.html | nc -l 8880
+
+client接受端：
+$ nc 10.10.10.10 88880 > a.html
+
+* gateway
+  make P=app/common; make P=app/cgi clean; make P=app/cgi
+** X86
+  killall snmpManager.cgi;/appfs/bin/spawn-fcgi -a 127.0.0.1 -p 9000 -f /appfs/web/snmpManager.cgi
+
+** 1200
+  
+* synergy
+MAC版本:
+http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-MacOSX1011-x86_64.dmg
+
+Windows版本：
+http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Windows-x86.msi
+http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Windows-x64.msi
+
+Centos版本：
+http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-i686.rpm
+http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-x86_64.rpm
+
+Ubuntu版本：
+http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-i686.deb
+http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-x86_64.deb
+* openwrt
+wireless router
+** coredump enable
+on your target you should extra do the following:
+touch /.init_enable_core
+sysctl -w "kernel.core_pattern=/tmp/%e.%p.%s.%t.core"
+
+the first will enable core dumps on all applications started with busybox init (so the feature you enabled)
+
+the second will tell the kernel where to store the core dumps (e.g. in /tmp/)
+* aws
+fabius8@126.com
+fang3688
+雅洁建行
+* zsh
+修改登录shell 
+sudo chsh fabius8
+git tab很慢:
+http://stackoverflow.com/questions/9810327/git-tab-autocompletion-is-useless-can-i-turn-it-off-or-optimize-it
+
+* localtime
+
+[root@www ~]# date
+Thu Jul 28 15:08:39 CST 2011  <==重點是 CST 這個時區喔！
+
+[root@www ~]# vim /etc/sysconfig/clock
+ZONE="America/New_York"       <==改的是這裡啦！
+
+[root@www ~]# cp /usr/share/zoneinfo/America/New_York /etc/localtime
+[root@www ~]# date
+Thu Jul 28 03:09:21 EDT 2011  <==時區與時間都改變了！
+
+* perl
+  CC      kernel/itimer.o
+  TIMEC   kernel/timeconst.h
+Can't use 'defined(@array)' (Maybe you should just omit the defined()?) at kernel/timeconst.pl line 373.
+make[6]: *** [kernel/timeconst.h] Error 255
+make[5]: *** [kernel] Error 2
+make[5]: Leaving directory `/home/fabius8/github/CGW/1.8.xx/build_dir/linux-ar71xx_generic/linux-3.3.8'
+make[4]: *** [/home/fabius8/github/CGW/1.8.xx/build_dir/linux-ar71xx_generic/linux-3.3.8/.image] Error 2
+make[4]: Leaving directory `/home/fabius8/github/CGW/1.8.xx/target/linux/ar71xx'
+make[3]: *** [install] Error 2
+
+perlbrew安装工具
+* hlist
+http://stackoverflow.com/questions/5489025/hash-table-in-linux-kernel/5503509#5503509
+
+* macos clear dns
+Use the following Terminal command to reset the DNS cache in OS X v10.10.4 or later:
+sudo killall -HUP mDNSResponder
+
+test
+* AC
+我的波特率 38400
+* mail
+密码
+fang123!@#
+* scanf
+http://stackoverflow.com/questions/5750501/escaping-square-bracket-in-sscanf 
+* ubuntu
+如何安装deb
+http://superuser.com/questions/196864/how-to-install-local-deb-packages-with-apt-get  
+
+** install ag
+Installing 'The Silver Searcher' on Ubuntu
+
+sudo apt-get install the-silver-searcher
+* linux
+* stock
+https://github.com/waditu/tushare
+http://askubuntu.com/questions/615700/install-miniconda-python-2-7
+conda install pandas
+
+** 股票历史数据
+http://www.bizeway.net/read.php?317
+那么中国股市的数据有没有呢？答案是肯定的，不过要按照下面的参数做些调整，下面提供全球证券交易所的资料。
+上证股票是股票代码后面加上.ss，深证股票是股票代码后面加上.sz
+例如：000001 = 000001.sz
+深市数据链接：http://table.finance.yahoo.com/table.csv?s=000001.sz
+上市数据链接：http://table.finance.yahoo.com/table.csv?s=600000.ss
+上证综指代码：000001.ss，深证成指代码：399001.SZ，沪深300代码：000300.ss
+
+下载
+code=0/1 上证 深证
+http://quotes.money.163.com/service/chddata.html?code=1600770&start=20150104&end=20160108
+http://quotes.money.163.com/service/chddata.html?code=0600770&start=20150104&end=20160108
+
+http://xueqiu.com/S/SH600770/historical.csv
+* 绿联网卡转换
+http://www.asix.com.tw/download.php?sub=driverdetail&PItemID=136
+* nginx
+** enable directory listing
+http://nginxlibrary.com/enable-directory-listing/
+autoindex on
+* docker
+docker run -it ubuntu:16.04
+docker commit 8c542ed36cd6 ubuntu:16.04
+
+nightly
+http://www.afzaalace.com/synergy-stable-builds/

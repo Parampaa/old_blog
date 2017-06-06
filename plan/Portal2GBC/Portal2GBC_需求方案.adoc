@@ -1,0 +1,305 @@
+= Portal2GBC 需求方案
+GB
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+
+== 文档说明
+适配云平台portal 2.0功能
+
+=== 修改记录
+[width="40%"]
+|====================
+| 文档版本|修订时间|修订人|修订内容
+| 1.0     | 2015-11-08|方政|
+|====================
+
+== 需求规格
+=== 原始需求
+----
+From: 李贤平
+Date: Tuesday, October 20, 2015 at 12:28 PM
+To: 郑炳华, 潘妍艳, 段雄文, 马俊, 方政
+Cc: 黄胜华
+Subject: 广东移动某地市WIFI改造方案，，，
+
+我们一个客户中标了该方案。
+1，存量的CMCC网络，当前是通过BRAS连接省公司的portal来进行认证，需要调整为BRAS通过portal 2.0协议来接入到我们云平台来进行认证。
+2，增量客户，使用我们全套的商业wifi功能。
+3，以实现各个客户的portal模板的个性化。
+
+该项目具有一定的可推广性。
+
+云平台如何实现portal2.0，来对接BRAS。请各位考虑一下，以下思路供参考：
+1，云平台实现虚拟热点的概念
+2，做一个热点模拟器，来完成云平台和portal2.0之间的适配和对接
+----
+=== 需求变更
+
+=== 需求分析
+==== 场景分析
+** 现状：
+   . 存量CMCC网络，由BRAS做认证点、采用Portal2.0协议、连接省公司Portal Server做认证。
+   . 我司产品线有AC/AP、网关、云平台，无Portal Server。
+   . 目前我司云平台支持portal的策略优先级:『热点级』<『ap级(apmac)』<『ssid级』
+** 需求：
+   . 改『共享升级Portal Server』为『地市级分别部署Portal Server』
+   . 支持『ssid级』『分组』定制Portal模板
+   . 网络扩容
+
+==== 方案分析
+** 『地市级分别部署Portal Server』：使用『云平台』支持
+    . BRAS对接使用 _Portal2.0_ 接口，云平台目前仅支持 _WiFiDOG_ 接口，需要『扩展』或『转换』
+    . 『转换』方案对原平台影响最小，故选用此方案
+    . 《中国移动WLAN业务PORTAL协议规范V2.0.0》中重定向强制携带项只有：『wlanuserip』『wlanacname』，可选字段『ssid』『apmac』『vlan』均不在文档中
+** 支持『ssid级』认证，分为3种情况：(云平台必备字段『gw_id』『apmac』『ssid』)
+    . 原url携带『wlanuserip』、『wlanacname』: +
+    转换配置默认『gw_id』『ssid』『apmac』
+    . 原url携带『wlanuserip』『wlanacname』、『ssid』： +
+    转换配置默认『gw_id』『apmac』
+    . 原url携带『wlanuserip』『wlanacname』『ssid』『apmac』: +
+    转换配置默认『gw_id』
+** 『分组』
+    . 如何对应多个apmac策略: +
+    配置文件中创建『多个apmac』和『gw_id』的映射表
+
+== 业务流程
+=== portal标准流程
+image::_images/portal_auth.png[caption="Figure 1: ", title="Portal 标准流程"]
+
+=== 网关portal流程
+image::_images/gateway_auth.png[caption="Figure 2: ", title="Gateway 认证流程"]
+
+=== 本方案流程描述
+==== 认证流程
+[plantuml, portal_convert, png]
+....
+终端 -> BRAS: 开始发起http请求
+note right: 连接wifi
+BRAS --> 终端: 重定向至中间件
+终端 -> 中间件: 第二次发起http请求
+note right: http://中间件ip:8080?acname=&userip=&other=
+中间件 --> 终端: 重定向至云平台
+note left: 报文url转换为云平台格式
+终端 -> 云平台: 第三次发起http请求
+note right: http://云平台ip/login?\ngw_id=&gw_address=&gw_port=&url=&\nip=&mac=&apmac=&ssid=&version=
+|||
+云平台 --> 终端: 送出portal页面
+终端 -> 云平台: 输入用户名、密码，提交表单
+云平台 --> 终端: 重定向报文至中间件
+note right: 增加参数<color:red>username、password(DES加密)</color>
+终端 -> 中间件: get请求发起portal认证
+note right: http://中间件ip:8060/auth?token=&\n<color:red>&username=&password=</color>
+|||
+中间件 --> BRAS: portal认证开始
+BRAS -> 中间件: portal验证用户合法，ACK_AUTH成功
+中间件 -> 云平台: request token check
+云平台 --> 中间件: response auth code
+中间件 -> BRAS: 发送AFF_ACK报文告诉Bas认证通过
+|||
+中间件 --> 终端: Http重定向至云平台
+终端 -> 云平台: 访问云平台
+note right: 携带gw_id,token
+云平台 --> 终端: 认证通过
+....
+
+中间件行为如下：  +
+
+* 转换BRAS发出的重定向报文
+** 转换前报文格式: +
+http://中间件ip:8080?acname=&userip=&other=
+** 转换后报文格式： +
+http://云平台ip/login?gw_id=&gw_address=&gw_port=&url=&ip=&mac=&apmac=&ssid=&version=
+
+* 用户get请求发起portal认证处理
+** 提取username和用户密码: +
+http://中间件ip:8060/auth?token=&username=&password=
+** portal认证交互
+
+* token校验交互
+** token校验
+** 通知BRAS认证通过（AFF_ACK）
+** 认证完重定向至云平台，携带（token、gw_id）
+
+* 认证失败： 中间件将终端重定向到以下URL页面 +
+http://auth_server/cmps/admin/php/api/gw_message.php?message=denied
+
+_token check_ 保文说明： +
+
+** request token check: +
+[source, http]
+-----
+GET /cmps/admin.php/api/auth/?stage=login&ip=172.16.1.2&mac=48:74:6e:36:17:2d&token=93230d4f9111b12fd92543cf133618926dd9371e&incoming=0&outgoing=0&gw_id=wlanbras&version=1.0 HTTP/1.0\r\n
+User-Agent: WiFiDog 1.0.0\r\n
+Host: www.example-url.com\r\n
+\r\n
+-----
+
+NOTE: 废弃字段：incoming | outgoing | version
+
+** response auth code: +
+[source, http]
+-----
+HTTP/1.1 200 OK\r\n
+Date: Thu, 31 Jul 2014 11:10:40 GMT\r\n
+Expires: Thu, 19 Nov 1981 08:52:00 GMT\r\n
+Cache-Control: private\r\n
+Pragma: no-cache\r\n
+Content-Length: 33\r\n
+Connection: close\r\n
+Content-Type: text/html; charset=utf-8\r\n
+\r\n
+\r\n
+\r\n
+\r\n
+?Auth: 1\n
+0 0 0 0 200 8640
+-----
+
+==== 云平台强制下线
+[plantuml, req_offline, png]
+....
+participant BRAS
+中间件 <-- 云平台: pong
+note left: 获取用户ip、mac
+中间件 --> BRAS: 发起req_logout
+BRAS -> 中间件: 发起ack_logout
+....
+
+云平台点击下线，云平台发出的 pong response 触发中间件下线。
+
+==== 终端无流量下线或者超时下线
+[plantuml, offline, png]
+....
+BRAS -> 中间件: ntf_logout
+中间件 -> 云平台: 下线请求
+note right: http://auth_server/auth?stage=logout&\ngw_id=&client_num=&client_list=
+云平台 --> 中间件: 回复成功/失败
+note left: success:0/1
+中间件 -> BRAS: ack_logout
+....
+
+中间件收到BRAS发出的下线请求。
+
+== 管理流程
+=== 中间件与平台保活流程
+[plantuml, ping_pong, png]
+....
+中间件 -> 云平台: ping
+note right: http://云平台ip/ping/?\ngw_id=&sys_uptime=&sys_memfree=&sys_load=&wifidog_uptime=
+云平台 -> 中间件: pong
+note left: Http Response: pong\\n
+....
+
+流程介绍: +
+网关设备每隔 60 秒主动发送ping保活。
+
+_ping_ _pong_ 报文说明: +
+
+** ping request: +
+[source, http]
+-----
+GET /cmps/admin.php/api/ping/?gw_id=wlanbras&sys_uptime=1&sys_memfree=3271392&sys_load=0.01&wifidog_uptime=253&res_tpl_version=0&res_product_version=0&res_adver_version=0&userversion=0&totalusernum=0&model=virturl&mac=28:51:32:08:f5:2c&version=1.0 HTTP/1.0\r\n
+User-Agent: WiFiDog 1.0.0\r\n
+Host: www.example-url.com\r\n
+\r\n
+-----
+
+NOTE: 废弃字段: sys_uptime | sys_memfree | sysload | wifidog_uptime | res_tpl_version | res_adver_version | userversion | totalusernum | version
+
+** pong response: +
+[source, http]
+-----
+HTTP/1.1 200 OK\r\n
+Date: Fri, 06 Feb 2015 01:50:58 GMT\r\n
+Expires: Thu, 19 Nov 1981 08:52:00 GMT\r\n
+Cache-Control: private\r\n
+Pragma: no-cache\r\n
+Content-Length: 119\r\n
+Connection: close\r\n
+Content-Type: text/html; charset=utf-8\r\n
+\r\n
+\r\n
+\r\n
+\r\n
+Pong\n
+conf_ver=67\n
+cmd_ver=0\n
+client_num=1\n
+client_list=1.1.1.1|aa:aa:aa:aa:aa:aa\n
+res_tpl_version=10\n
+res_product_version=10\n
+res_adver_version=10\n
+soft_ver=www.example-url.com/cmps/static/zip/ver/xx\n
+reboot_delay_time=0
+-----
+
+NOTE: 废弃字段: conf_ver | cmd_ver | res_tpl_version | res_product_version | res_adver_version | soft_ver | reboot_delay_time
+
+== 系统结构
+本模块使用 C 语言，监听 tcp端口(8080, 8060, xxx), udp端口(50100)，结构如下图：
+[plantuml, structure, png]
+....
+start
+:"读取配置文件portal.conf\n创建tcp 8080、8060、xxx 和udp 50100监听端口";
+fork
+:"tcp 8080 recv";
+:"判断是否重定向";
+fork again
+:"tcp 8060 recv";
+:"用户认证开始";
+fork again
+:"tcp xxx recv";
+if() then (收到pong下线)
+:"终端下线";
+else(收到token responde)
+:"token response处理";
+endif
+fork again
+:"udp 50100 recv";
+:"终端下线和认证流程";
+fork again
+:"定时发起ping";
+fork end
+....
+
+配置文件包含内容：
+
+----
+规则表：
+key1:value1=$gw_id1&key2:value2=$gw_id2...
+
+key的值为 stamac、ssid、apmac、vlan、brasname （优先级从高到低）
+
+策略：
+1. 依次检查 stamac、ssid、apmac、vlan、brasname
+2. 匹配上之后，停止检查
+3. 都匹配不上，则使用默认gw_id
+
+例如：
+1. 规则表：ssid:test=gw001&brasname:AC01=gw002
+终端携带匹配上的ssid、brasname，生效结果：gw001
+
+2. 规则表：ssid:test=gw001&apmac:77:77:77:77:77:77=gw002&stamac:88:88:88:88:88:88=gw003
+终端携带匹配上的ssid、apmac、stamac，生效结果：gw003
+----
+
+* 参数
+** 默认gw_id
+** 默认ssid
+** 默认apmac
+
+* 云平台地址
+** ip/域名
+
+* 分组策略
+** 多apmac与gw_id映射表
+
+* 端口
+** tcp开始认证端口（8060）
+** bas重定向过来报文端口(8080)
+
+

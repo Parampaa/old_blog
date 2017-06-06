@@ -1,0 +1,143 @@
+= TC
+流控
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+
+== 介绍
+Linux操作系统中的流量控制器TC（Traffic Control）用于Linux内核的流量控制，它利用队列规定建立处理数据包的队列，并定义队列中的数据包被发送的方式， 从而实现对流量的控制。 +
+官方文档: link:http://lartc.org/howto/[LARTC] +
+实用链接: link:http://www.tldp.org/HOWTO/html_single/Traffic-Control-HOWTO[流控使用说明文档]
+
+== 流控方式
+[cols="2*<",options="header"]
+|====
+|traditional element	|   Linux component
+|shaping:限制     |   当流量被限制，它的传输速率就被控制在某个值以下。限制值可以大大小于有效带宽，这样可以平滑突发数据流量，使网络更为稳定。shaping（限制）只适用于向外的流量。
+|scheduling:调度  |   通过调度数据包的传输，可以在带宽范围内，按照优先级分配带宽。SCHEDULING(调度)也只适于向外的流量。
+|classifying:分类 |   The filter object performs the classification through the agency of a classifier object. Strictly speaking, Linux classifiers cannot exist outside of a filter.
+|policing:策略	  |   SHAPING用于处理向外的流量，而POLICIING(策略)用于处理接收到的数据。
+|dropping:丢弃	  |   如果流量超过某个设定的带宽，就丢弃数据包，不管是向内还是向外。
+|marking:标记	  |   The dsmark qdisc is used for marking.
+|====
+
+== 流控对象
+=== qdisc(排队规则)
+----
+[root@leander]# tc qdisc add    \ (1)
+>                  dev eth0     \ (2)
+>                  root         \ (3)
+>                  handle 1:0   \ (4)
+>                  htb            (5)
+      
+(1) Add a queuing discipline. The verb could also be del.
+(2) Specify the device onto which we are attaching the new queuing discipline.
+(3) This means "egress" to tc. The word root must be used, however. Another qdisc with limited functionality, the ingress qdisc can be attached to the same device.
+(4) The handle is a user-specified number of the form major:minor. The minor number for any queueing discipline handle must always be zero (0). An acceptable shorthand for a qdisc handle is the syntax "1:", where the minor number is assumed to be zero (0) if not specified.
+(5) This is the queuing discipline to attach, HTB in this example. Queuing discipline specific parameters will follow this. In the example here, we add no qdisc-specific parameters.
+----
+
+==== 可分类
+分类队列规定是对进入网络设备的数据包根据不同的需求以分类的方式区分对待的队列规定。数据包进入一个分类的队列后，它就需要被送到某一个类中，也就是说需要对数据包做分类处理。对数据包进行分类的工具是过滤器，过滤器会返回一个决定，队列规定就根据这个决定把数据包送入相应的类进行排队。每个子类都可以再次使用它们的过滤器进行进一步的分类。直到不需要进一步分类时，数据包才进入该类包含的队列排队。除了能够包含其它队列规定之外，绝大多数分类的队列规定还能够对流量进行整形。这对于需要同时进行调度(如使用 SFQ) 和流量控制的场合非常有用。
+
+===== HTB
+===== HFSC
+===== PRIO
+===== CBQ
+==== 不可分类
+无类队列规定是对进入网络设备(网卡) 的数据流不加区分统一对待的队列规定。使用无类队列规定形成的队列能够 接受数据包以及重新编排、延迟或丢弃数据包。这类队列规定形成的队列可以对整个网络设备(网卡) 的流量进行整形， 但不能细分各种情况… 。常用的无类队列规定主要有 pfifo_fast (先进现出) 、TBF (令牌桶过滤器) 、SFQ (随机公平队列) 、ID (前 向随机丢包)等等。这类队列规定使用的流量整形手段主要是排序、限速和丢包。
+
+===== pfifo_fast
+只要有东西在 band 0 等待，band 1 就不会进行；同样适用于 band 2
+===== TBF
+令牌桶过滤，靠分令牌的速率控制报文发送速率。
+===== SFQ
+随机公平队列，不想让某种回话控制出口带宽。
+===== ESFQ
+===== GRED
+=== class(类)
+----
+[root@leander]# tc class add    \ (1)
+>                  dev eth0     \ (2)
+>                  parent 1:1   \ (3)
+>                  classid 1:6  \ (4)
+>                  htb          \ (5)
+>                  rate 256kbit \ (6)
+>                  ceil 512kbit   (7)
+      
+(1) Add a class. The verb could also be del.
+(2) Specify the device onto which we are attaching the new class.
+(3) Specify the parent handle to which we are attaching the new class.
+(4) This is a unique handle (major:minor) identifying this class. The minor number must be any non-zero (0) number.
+(5) Both of the classful qdiscs require that any children classes be classes of the same type as the parent. Thus an HTB qdisc will contain HTB classes.
+(6)(7) This is a class specific parameter. Consult Section 7.1 for more detail on these parameters.
+----
+
+=== filter(过滤器)
+----
+[root@leander]# tc filter add               \ (1)
+>                  dev eth0                 \ (2)
+>                  parent 1:0               \ (3)
+>                  protocol ip              \ (4)
+>                  prio 5                   \ (5)
+>                  u32                      \ (6)
+>                  match ip port 22 0xffff  \ (7)
+>                  match ip tos 0x10 0xff   \ (8)
+>                  flowid 1:6               \ (9)
+>                  police                   \ (10)
+>                  rate 32000bps            \ (11)
+>                  burst 10240              \ (12)
+>                  mpu 0                    \ (13)
+>                  action drop/continue       (14)
+      
+(1) Add a filter. The verb could also be del.
+(2) Specify the device onto which we are attaching the new filter.
+(3) Specify the parent handle to which we are attaching the new filter.
+(4) This parameter is required. It's use should be obvious, although I don't know more.
+(5) The prio parameter allows a given filter to be preferred above another. The pref is a synonym.
+(6) This is a classifier, and is a required phrase in every tc filter command.
+(7)(8) These are parameters to the classifier. In this case, packets with a type of service flag (indicating interactive usage) and matching port 22 will be selected by this statement.
+(9) The flowid specifies the handle of the target class (or qdisc) to which a matching filter should send its selected packets.
+(10) This is the policer, and is an optional phrase in every tc filter command.
+(11) The policer will perform one action above this rate, and another action below (see action parameter).
+(12) The burst is an exact analog to burst in HTB (burst is a buckets concept).
+(13) The minimum policed unit. To count all traffic, use an mpu of zero (0).
+(14) The action indicates what should be done if the rate based on the attributes of the policer. The first word specifies the action to take if the policer has been exceeded. The second word specifies action to take otherwise.
+----
+
+== 操作
+* tc可以使用以下命令对qdisc、类和过滤器进行操作： +
+. add +
+. remove +
+. change +
+tc filter change 不能修改match部分（如ip），只能修改速率等参数
+. replace +
+tc filter replace 不能修改match部分（如ip），只能修改速率等参数
+. link +
+
+== 示例
+延迟200ms +
+tc qdisc add dev eth0 root netem delay 200ms
+
+删除 +
+tc qdisc del dev eth0 root
+
+显示 +
+tc -s qdisc ls
+
+计算 ＋
+due to the default 10ms timer resolution of Unix, with 10.000 bits average packets, we are limited to 1mbit/s of peakrate!
+1s/10ms x 10,000 = 1000,000
+
+In Linux, policing can only drop a packet and not delay it - there is no 'ingress queue'. +
+
+== 总结
+* 对于入口报文“整形”，使用“ingress policer”。
+* 在linux系统，policing只能丢包，不能延时。
+* CEIL: The ceil argument specifies the maximum bandwidth that a class can use. This limits how much bandwidth that class can borrow. The default ceil is the same as the rate. 
+一个class下有很多子class，这些子class的rate和 等于class的CEIL
+* BURST: Networking hardware can only send one packet at a time and only at a hardware dependent rate.
+

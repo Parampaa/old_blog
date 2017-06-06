@@ -1,0 +1,11 @@
+= 方政的博客
+我有明珠一颗，久被尘劳关锁。今朝尘尽光生，照破山河万朵。
+:icons: font
+
+* link:work/index.html[工作日程]
+* link:stock/index.html[stock记录]
+* link:plan/plan.html[方案]
+* link:help/index.html[知识积累]
+* link:diary/diary.html[日记]
+* link:vimconf/index.html[vimrc配置]
+* link:zen/zen.html[禅悟]

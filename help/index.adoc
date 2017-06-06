@@ -1,0 +1,6 @@
+= 知识积累
+好记行不如烂笔头
+:icons: font
+
+* link:help.html[帮助]
+

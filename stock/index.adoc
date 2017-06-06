@@ -1,0 +1,9 @@
+= stock
+股海无涯，回头是岸
+:icons: font
+
+* link:stock.html[行情表]
+* link:fenxi.html[规律分析]
+* link:SZ-HISTORY.html[深证历史统计]
+* link:SH-HISTORY.html[上证历史统计]
+

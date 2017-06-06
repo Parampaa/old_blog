@@ -1,0 +1,63 @@
+= Redis
+如何数据库？集群概念？
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+:hardbreaks:
+
+== 需求分析
+网关设备之间需要共享数据库。即每个一个网关上面都有完整的数据库。
+网关 A 挂了, 接管 A 的 B 网关需要知道该用户在 A 上的的认证信息。
+
+== 初步了解
+github:
+https://github.com/antirez/redis
+动手实践:
+http://try.redis.io/
+集群概念:
+http://redis.io/topics/cluster-tutorial
+http://redis.io/topics/cluster-spec
+
+== Redis 集群 TCP 端口
+每一个集群节点需要2个 tcp 链接打开。
+
+* 命令端口：6379
+* 数据端口：16379
+
+== Redis 集群和 Docker
+[red]*目前不支持 NAT 环境*, 所以不要想内网与公网通信。:-)
+Docker是个啥东西？
+
+== Redis 集群数据分片
+hash slot = CRC16/16384, 如:
+
+* 节点 A 包含hash slot 从0~5500
+* 节点 B 包含hash slot 从5501~11000
+* 节点 C 包含hash slot 从11001~16383
+
+hash tags?
+
+== Redis 主备模型
+A - A1
+B - B1
+C - C1
+
+== Redis 一致性保证
+描述了一种情况，大部分数据库都存在的问题。
+
+== 创建和使用 Redis 集群
+`Node ID` 作为唯一标示节点。IP 和端口会变，`Node ID` 不变
+
+创建集群的步骤：
+* CLUSTER MEET $IP $PORT
+* CLUSTER REPLICATE $MASTER_NAME
+* CLUSTER ADDSLOT
+
+== ruby 环境
+ruby-2.3.0
+----
+gawk, libreadline6-dev, zlib1g-dev, libssl-dev, libyaml-dev, libsqlite3-dev, sqlite3, autoconf, libgmp-dev, libgdbm-dev, libncurses5-dev, automake, libtool, bison
+----

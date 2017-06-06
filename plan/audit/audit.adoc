@@ -1,0 +1,109 @@
+= 烽火审计模块修改方案
+GB
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+
+== 文档说明
+审计项目分支较多，维护多个版本成本大，所以需要整合审计模块。
+
+=== 修改记录
+[width="40%"]
+|====================
+| 文档版本|修订时间|修订人|修订内容
+| 1.0     | 2016-03-01|方政|
+|====================
+
+== 优化结构图
+
+[plantuml, nouse_0, png]
+....
+rectangle "烽火服务器" as SERVER #red
+cloud "网络" as NET
+frame "配置文件\n audit.conf" as CONF
+frame "过滤规则文件\n filter_fh.conf" as FILTER
+rectangle "PART1\n控制模块" as CTL #yellow
+rectangle "PART2\n数据模块" as DATA #yellow
+
+SERVER -down.> NET : "下发: \n 1.镜像规则 \n 2.服务器地址等参数"
+NET -down.> CTL : "报文接收"
+CTL -down-> CONF: "写入服务器地址等参数"
+CTL -right-> FILTER: "写入镜像规则"
+CONF -right-> DATA: "读取文件"
+FILTER -down-> DATA: "读取文件"
+
+note left of CONF
+mirrorServer   = 192.168.1.1:23456
+mirrorUpSwitch = 1
+devList        = br0
+featureSwitch  = 0
+end note
+
+note right of FILTER
+[FILTER_FH]
+RULER_1=op=20&level=n
+RULER_2=op=23&type=...
+RULER_3=op=24&type=...
+RULER_4=...
+end note
+
+....
+
+=== 烽火过滤规则流程图
+
+[plantuml, nouse_1, png]
+....
+:单包报文;
+->
+:初次过滤]
+note left
+<b><color:royalBlue>丢弃</color>
+(1) //广播报文、组播报文//
+(2) //局域网、本机报文//
+(3) //视频流、语音流报文//
+... ...
+end note
+if (是否镜像全回报文) then (是)
+:回传]
+stop
+else (否)
+if (TCP OR UDP) then (UDP)
+:执行IM规则\nUDP部分过滤]
+note left
+<b><color:royalBlue>依次匹配</color>
+(1) //手机QQ过滤规则//
+(2) //微信过滤规则//
+... ...
+end note
+-> 匹配;
+:回传]
+stop
+else (TCP)
+if (执行IM规则\nTCP部分过滤) then (匹配)
+:回传]
+stop
+else (不匹配)
+if (端口80、8080) then (匹配)
+:执行HTTP规则过滤]
+note right
+<b><color:royalBlue>依次匹配</color>
+(1) //网页过滤规则(执行n级过滤)//
+    //op=20&level=<color:red>n</color> //
+    //op=23$type=<color:red>100</color>$//... ...
+(2) //其他HTTP规则//
+    //op=23$type=<color:red>非100</color>$//... ...
+end note
+-> 匹配;
+:回传]
+stop
+else (不匹配)
+:丢弃]
+stop
+endif
+endif
+endif
+endif
+....

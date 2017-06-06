@@ -1,0 +1,539 @@
+#+TITLE: 工作日志
+* 经费汇总
+剩余 ＋6 元
+第一季度外婆家消费 1392 元
+
+* Task 7
+** DONE 支持数据库的重启恢复
+   CLOSED: [2015-07-06 一 15:21]
+** VERIFY 抓包只抓入口报文（挂起）
+** DONE apache重定向
+   CLOSED: [2015-07-06 一 15:21]
+1. 使用php
+** DONE 学习orgmode链接
+   CLOSED: [2015-06-25 四 16:46]
+[[http://orgmode.org/worg/org-tutorials/orgtutorial_dto.html][TODO学习]]
+** DONE qq在线表
+   CLOSED: [2015-07-07 二 15:23]
+   1. login，0x0001，"Log out"
+    - update qq_session set T3=(select T2 from qq_session where mac=mac and qq=qq and t3 is null)
+      where mac=mac and qq=qq and T3 is null;
+    - insert into qq_session values ();
+
+   2. logout, 0x0062, "request log in"
+    - update qq_session set T3=now where mac=mac and qq=qq and T3 is null;
+
+   3. other
+    - update qq_session set T2=now where mac=mac and qq=qq and T3 is null;
+** DONE 重庆challenge一直已建立问题
+   CLOSED: [2015-07-13 一 14:29]
+  - 终端ip重复
+** DONE AP的重定向携带url
+   CLOSED: [2015-07-15 三 16:50]
+** DONE 答复吴静流量字段
+   CLOSED: [2015-07-13 一 14:29]
+** DONE 外场杰赛认证繁忙问题（DHCP）
+   CLOSED: [2015-07-16 四 16:56]
+1. dhcp有问题，2.2.5.2-1496 版本vlan查询错误
+   dhcp编译有问题：find . -type f |xargs file |grep CR|awk -F : '{print $1}'|xargs sed -i 's!\r!!'
+** VERIFY 微信信息截获
+** DONE 广东portal推不出来帮助解决
+   CLOSED: [2015-07-23 四 14:05]
+   1. nat端口要放开
+
+** DONE 外场杰赛没有话单
+   CLOSED: [2015-07-16 四 16:56]
+** DONE 中科新业对接安朗url携带广园信息
+   CLOSED: [2015-07-28 二 09:23]
+#	modified:   hr/ac_hr_func.c
+#	modified:   hr/ac_hr_func.h
+#	modified:   hr/ac_hr_main.c
+#	modified:   powerac/usrm/ac_usrm_if.c
+#	modified:   powerac/usrm/ac_usrm_public.h
+
+** FEEDBACK 运营商携带apmac(待确认)
+** FEEDBACK 审计功能需求
+*** TODO URL过滤大量非主动性访问报文
+*** TODO
+** FEEDBACK 运营商推不出portal
+** FEEDBACK 中科新业问题？
+** DONE 基于ac2780出hrd补丁，携带url
+   CLOSED: [2015-07-28 二 18:09]
+** DONE 吴静的account携带giga字段
+   CLOSED: [2015-07-29 三 16:51]
+
+* Task 8
+** FEEDBACK 审计功能需求
+*** FEEDBACK URL过滤大量非主动性访问报文
+- 过滤方法：get
+- 过滤格式：css/js/png/jpg/ico/gif
+*** DONE HTTP整理
+    CLOSED: [2016-02-23 Tue 11:00]
+#+BEGIN_SRC sql
+  create table HTTP_INFO {
+  URL             varchar(255),
+  METHOD          varchar(4),
+  TITLE           varchar(64),
+  POSTCONTENT     varchar(255),
+  USERNAME        varchar(64),
+  PASSWORD        varchar(64),
+  KEYWORD         varchar(255),
+  MAINFILE        varchar(255),
+  FILESIZE        varchar(11)
+  };
+#+End_SRC
+*** DONE QQ信息整理
+    CLOSED: [2016-02-23 Tue 11:01]
+#+BEGIN_SRC sql
+  create table IM_MSG (
+  SRC_SYS                 varchar(40),
+  DST_SYS                 varchar(40),
+  DATA_TYPE               varchar(32),
+  CLUES_ID                varchar(40),
+  SRC_IP                  varchar(128),
+  DST_IP                  varchar(128),
+  SRC_PORT                varchar(20),
+  DST_PORT                varchar(20),
+  CAPTURE_TIME            varchar(20),
+  SERVICE_CODE            varchar(20),
+  BASE_STATION_ID         varchar(20),
+  MAC_ADDRESS             varchar(20),
+  AUTH_TYPE               varchar(20),
+  AUTH_ACCOUNT            varchar(40),
+  SERVICE_TYPE            varchar(40),
+  SESSION_ID              varchar(255),
+  LONGITUDE               varchar(11),
+  LATITUDE                varchar(11),
+  IMSI                    varchar(128),
+  EQUIPMENT_ID            varchar(128),
+
+  IM_TYPE      varchar(32),
+  USERNAME     varchar(64),
+  PASSWORD     varchar(64),
+  FROM_ID      varchar(64),
+  TO_ID        varchar(64),
+  CONTENT      varchar(255),
+  ACTION       varchar(10),
+  MAINFILE     varchar(255),
+  FROMNICKNAME varchar(64),
+  TONICKNAME   varchar(64)
+  );
+#+END_SRC
+  | IM_TYPE     | 1030001   |
+  | USERNAME    |           |
+  | PASSWORD    |           |
+  | FROM_ID     | QQ_number |
+  | TO_ID       |           |
+  | CONTENT     |           |
+  | ACTION      | COMMAND   |
+  | MAINFILE    |           |
+  | FROMNICNAME |           |
+  | TONICKNAME  |           |
+
+** VERIFY nasid与apip地址绑定
+** DONE ac与portal服务器断链情况下触发用户免认证
+利用perl脚本发起curl请求，ioctl设置认证状态
+   CLOSED: [2015-09-14 一 13:25]
+** DONE QQ多终端问题
+** DONE portalv2计费报文没有
+   CLOSED: [2015-08-13 Thu 19:37]
+- mac与用户名相同情况下，usrm模块不更新用户名。导致不发计费报文
+** DONE url增加了apip
+   CLOSED: [2015-08-25 二 19:53]
+** FEEDBACK 中科新业无感知问题
+** DELEGATED 域名字段增加
+   CLOSED: [2016-02-23 Tue 11:03]
+* Task 9
+** DONE 烽火代码整理
+   CLOSED: [2016-02-23 Tue 11:03]
+*** DONE 抓包
+*** DONE 配置文件加载
+
+** FEEDBACK AP内存泄漏
+** DONE 杰赛认证不通过
+iptables未放行导致
+   CLOSED: [2015-09-14 一 13:24]
+** DONE 排查企业网9000端口被占用
+中毒，admin账户放开导致被攻击
+* Task 10
+** DONE CGW500上线,审计服务器
+** DONE 正则表达式合入
+1. http 报文会产生tcp分片
+2. http 下行报文过滤
+3. 源tcp port 80
+* Task 11
+** DONE 云平台网关portal server方案
+1. 终端访问任何网站,redirect to login-wifi
+2. 终端在login页面输入登录信息,发送给云平台
+3. 云平台将终端重定向到网关, 携带token. _云平台保存了用户名和密码,计算出的chappassword处理???_
+
+** FEEDBACK 鹏博士ntf_logout没发，家里测下
+** DONE 广电找管文新查下主备问题
+   上行链路检测时间过短,1分钟改为5分钟.
+** FEEDBACK 支持ssid级无流量下线时间检测
+** DONE 打印房屋出租合同
+   CLOSED: [2016-07-29 Fri 22:32]
+** DONE 找房东办理租赁合同,办居住证
+   CLOSED: [2016-07-29 Fri 22:32]
+** DONE 去社区医院办小卡
+** DONE 去国妇幼办大卡
+   CLOSED: [2016-02-23 Tue 11:04]
+* Task 12
+** DONE 审计代码分析
+   CLOSED: [2016-02-23 Tue 11:04]
+
+2015-12-10 16:59:27 [Error] audit[2759]: netlink receive error Socket operation on non-socket
+2015-12-10 16:59:27 [Error] audit[2759]:  recvfrom fail. fd: 0 - Socket operation on non-socket
+
+* Task 2016.01
+** FEEDBACK 中山厂园认证问题
+1. 现象：用户认证不通过
+2. 分析：
+ cat ac.log |grep "PORTAL ACK" 查看日志:
+ aucUserIP  = 172.19.140.171 ucErrCode  = 2
+错误原因码为 2 ，用户已经认证过。
+
+[root@localhost log]# cat ac.log.5|grep "ACK "|grep "aucUserIP  = 172.19.140.171 ucErrCode  = "
+2016-01-15 11:53:29.701 powerac: [U_PORTAL] <INFO> (10964662) ac_pa_handle_ps_req_challenge_msg: ack msg is ===========PORTAL ACK CHALLENGE==== ucVer      = 2 ucType     = 2 ucAuthType = 0 usSerialNo = 27979 usReqID    = 32660 aucUserIP  = 172.19.140.171 ucErrCode  = 0 ucAttrNum  = 1 AttrType   = 3 AttrLen    = 18 AttrValue  = 0x76.b6.fc.59.e8.33.38.b3.8.e0.da.39.a.99.47.4  ==================================
+2016-01-15 11:54:03.964 powerac: [U_PORTAL] <INFO> (10964696) 1619,ac_pa_handle_ps_req_challenge_msg: ack msg is ===========PORTAL ACK CHALLENGE==== ucVer      = 2 ucType     = 2 ucAuthType = 0 usSerialNo = 27998 usReqID    = 32662 aucUserIP  = 172.19.140.171 ucErrCode  = 2 ucAttrNum  = 1 AttrType   = 5 AttrLen    = 7 AttrValue  =  ==================================
+2016-01-15 11:54:03.970 powerac: [U_PORTAL] <INFO> (10964696) 1619,ac_pa_handle_ps_req_challenge_msg: ack msg is ===========PORTAL ACK CHALLENGE==== ucVer      = 2 ucType     = 2 ucAuthType = 0 usSerialNo = 27998 usReqID    = 32663 aucUserIP  = 172.19.140.171 ucErrCode  = 2 ucAttrNum  = 1 AttrType   = 5 AttrLen    = 7 AttrValue  =  ==================================
+2016-01-15 11:54:03.975 powerac: [U_PORTAL] <INFO> (10964696) 1619,ac_pa_handle_ps_req_challenge_msg: ack msg is ===========PORTAL ACK CHALLENGE==== ucVer      = 2 ucType     = 2 ucAuthType = 0 usSerialNo = 27998 usReqID    = 32664 aucUserIP  = 172.19.140.171 ucErrCode  = 2 ucAttrNum  = 1 AttrType   = 5 AttrLen    = 7 AttrValue  =  ==================================
+
+出现失败都是 1分20秒，之后再次认证。
+
+* Task 2016.02
+** DONE 东洲罗顿
+   CLOSED: [2016-02-26 Fri 15:47]
+account增加giga字段
+** DONE 中传用户认证不过问题
+   CLOSED: [2016-02-23 Tue 10:59]
+*** 故障：
+显示在其他设备登录
+
+*** 排查：
+ 据radius侧周盛佳描述，ac侧用户状态未认证，服务器侧继续收到计费报文。
+ 2016-02-19 00:48:28.082 18176626972, 10.8.48.158, 34:80:B3:45:E2:47
+
+**** 同时使用13763202193这个帐号
+10.8.9.142 C4:6A:B7:DF:CF:C6 2月22日 21:41认证成功 2月23日 08:41解除认证
+10.8.9.176 24:DF:6A:CA:8A:7C 2月22日 21:12解除认证 2月23日 09:02认证成功
+*** 解决办法
+1. 首先，管文新打的补丁是有效的。从以下日志看出。
+-bash-3.1# ls -a ac.log*|xargs grep "is off"
+ac.log:2016-02-23 09:45:52.641 powerac: [U_USRM] <ALERT> (3404727) File:../../usrm/ac_usrm_if.c, Line:12100, Fun:ac_usrm_check_usercertstat, 0C:D6:BD:48:06:10 cert state is off, to stop accounting
+ac.log.4:2016-02-22 21:15:36.997 powerac: [U_USRM] <ALERT> (3359712) File:../../usrm/ac_usrm_if.c, Line:12100, Fun:ac_usrm_check_usercertstat, 38:BC:1A:C4:3D:12 cert state is off, to stop accounting
+
+2. 外场保障“在其他设备上登录的故障”其实并非这个问题。很简单，用户 确实在其他设备登录 了：
+
+该用户同时使用13763202193这个帐号
+10.8.9.142 C4:6A:B7:DF:CF:C6 2月22日 21:41认证成功 2月23日 08:41解除认证(IDLE TIMEOUT)
+10.8.9.176 24:DF:6A:CA:8A:7C 2月22日 21:12解除认证 2月23日 09:02认证成功
+
+基于radius只允许一个账户在线。这个用户在 2月23日 08:41 之前是无法认证的，也是报障时间，时间上吻合，所以 很明显，AC没有问题。
+
+3. 解决方法：
+"重认证超时（目前2小时）"跟"无流量下线时间"配置要小一点
+
+AGAIN:
+安力科技园三22D-1楼秘书处
+** DONE 中科新业完成抓包功能
+   CLOSED: [2016-03-16 Wed 13:43]
+   1. 完成与
+** DONE hacker项目解析
+   CLOSED: [2016-03-17 Thu 13:38]
+** DONE 烽火需求修改
+   CLOSED: [2016-03-16 Wed 13:43]
+王力提了三点：
+1. acl和dns规则有可能存在“与”的关系的情况，我们全是“或”的关系，需要修改
+2. http匹配不上，但是acl匹配上的报文应该上报。我觉得这一点有困难，如果acl的规则是80，如果也上报，那么http规则匹配就没有意义了？
+3. http按会话上报，可行性讨论
+
+以下2点确认了，需要修改。
+1. acl与dns是“与“的关系。
+2. im规则与http规则是“或”的关系，只要其中匹配上就需要上报。
+这样的话，修改点1跟修改点2的需求改动很大。
+
+我的计划如下：
+1. 本周先完成中科新业需求，同时对烽火、兴荣接口兼容
+2. 下周在此基础上，再对烽火修改点进行修改。
+3. 最后考虑内核态实现。
+
+* Task 2016.03
+** DONE 学习QOS流控（华三、深信服），输出文档
+   CLOSED: [2016-03-31 Thu 17:42]
+** DONE audit MAKEFILE整理
+   CLOSED: [2016-03-25 Fri 16:58]
+** DONE 雅洁AC中毒
+#+src_begin log
+[root@localhost ~]# ps uax|grep -i ssh
+root      9533  0.0  0.0    968   200 ?        Ss   11:23   0:02 /etc/.SSHH2
+root     17023  0.0  0.1   7256  2316 ?        Ss   11:28   0:00 sshd: root@pts/3
+root     18230  0.0  0.0   4696   872 ?        Ss   11:29   0:00 /usr/sbin/sshd
+root     18323  0.0  0.1   7256  2320 ?        Ss   11:29   0:00 sshd: root@pts/1
+root     21080  0.0  0.0   9160   304 ?        Ss   11:31   0:00 /tmp/.sshhdd1458617515
+root     21083  0.0  0.0   9160   304 ?        S    11:31   0:00 /tmp/.sshhdd1458617515
+root     21084  0.1  0.0   9160   304 ?        S    11:31   0:07 /tmp/.sshhdd1458617515
+root     21087  0.0  0.0   9160   304 ?        S    11:31   0:00 /tmp/.sshhdd1458617515
+root     21088  0.0  0.0   9160   304 ?        S    11:31   0:01 /tmp/.sshhdd1458617515
+root      6141  0.0  0.0   9160   304 ?        S    12:35   0:00 /tmp/.sshhdd1458617515
+root      6244  0.2  0.1   7256  2384 ?        Ss   12:36   0:00 sshd: root@pts/0
+root      7046  0.0  0.0   3884   724 pts/0    S+   12:36   0:00 grep --color -i ssh
+#+src_end
+
+** DELEGATED 中传错误码格式兼容修改
+   CLOSED: [2016-03-31 Thu 17:33]
+** DONE 烽火新版本测试
+   CLOSED: [2016-04-21 Thu 17:50]
+** DONE 中科兴业小需求开发及测试
+   CLOSED: [2016-03-31 Thu 17:03]
+   1. 开发 OK
+   2. 测试 OK
+** DONE hrd携带两个问号
+   CLOSED: [2016-04-21 Thu 17:50]
+** DONE hrd修改nasip不生效
+   CLOSED: [2016-04-14 Thu 14:10]
+** FEEDBACK DNS白名单通配
+** DONE 外场出现portal重定向不生效，用户放行
+   CLOSED: [2016-03-30 Wed 15:09]
+   现象描述：
+   1. 使用 entwlanctl getstalist 查询到用户处于“未认证”
+   2. 但是用户直接可以访问网页，而重定向的匹配规则不生效
+
+   问题查明：
+   1. 掩码配置全“0”导致。
+** DONE tc命令使用
+   CLOSED: [2016-05-03 Tue 09:40]
+** FEEDBACK 中传认证配置端口下发不生效
+   修改 web 端口为 1812，发现 DEVM 传过来端口仍为 1812.
+* Task 2016.04
+** FEEDBACK 亚信需求认证计费字段尽可能多以及一致
+* Task 2016.05
+** DONE ta62本地转发集中认证，断开无线再连上需要重新认证
+   CLOSED: [2016-05-03 Tue 14:57]
+   1. ac-xa01-2516-3062存在该问题
+   2. 潘姐在12月份优化过一次，之后新版本不存在该问题
+** DONE 中科新业审计版本修改
+   CLOSED: [2016-07-29 Fri 22:29]
+*** TODO 大报文手动分片
+*** TODO 中科新业方面修改了规则文档，我们需要同步修改
+*** TODO 配置文件中有个错误，多了一个逗号
+** DELEGATED 网关产品portal推送慢
+   CLOSED: [2016-05-04 Wed 13:38]
+*** DELEGATED 检查socket关闭影响
+    CLOSED: [2016-05-04 Wed 13:38]
+*** DELEGATED libevent库与直接操作差异
+    CLOSED: [2016-05-04 Wed 13:38]
+    废弃，原因为让其他人搞
+** FEEDBACK pppoe性能差优化
+*** DONE 自测性能
+    CLOSED: [2016-05-10 Tue 16:03]
+1. 网页下载 10MBps
+2. speedtest 上下行都是 20Mbps
+*** DONE 对比tp-link与cgw500拨号pppoe性能差异
+    CLOSED: [2016-05-13 Fri 11:45]
+5条流tcp打流5分钟
+1. tp-link
+平均流量: 85.347 Mbps
+2. cgw500
+平均流量: 86.306 Mbps
+** DONE portal域名url过短64改成128
+   CLOSED: [2016-05-10 Tue 16:00]
+** DONE 内置portal出现断错误
+   CLOSED: [2016-05-10 Tue 17:37]
+** DONE iso设备中传中文ssid不自动弹portal
+   CLOSED: [2016-05-13 Fri 11:44]
+原因为苹果服务器加入白名单
+** FEEDBACK openwrt环境下pppoe的mtu值修改为500,不能弹portal
+   增加限制1000~1492
+** FEEDBACK DM下线，AC回应ACK，但是不下线
+cat /var/log/ac.log.2|grep -E "das|force_user"
+
+--
+2016-05-19 16:03:40.975 account: [U_ACCOUNT] <INFO> (472070) Next RADIUS client retransmit in 2 seconds.
+2016-05-19 16:03:40.975 account: [U_ACCOUNT] <INFO> (472070) Received 20 bytes from RADIUS server.
+2016-05-19 16:03:40.975 account: [U_ACCOUNT] <INFO> (472070) Received RADIUS message.
+2016-05-19 16:03:40.975 account: [U_ACCOUNT] <NOTICE> (472070) Received RADIUS packet matched with a pending request, round trip time 0.00 sec.
+2016-05-19 16:03:41.010 account: [U_ACCOUNT] <INFO> (472070) Received 58 bytes from dac(199.199.199.200:39188).
+2016-05-19 16:03:41.010 account: [U_ACCOUNT] <NOTICE> (472070) RADIUS message: code=40 (Disconnect-Request) identifier=64 length=58
+2016-05-19 16:03:41.010 account: [U_ACCOUNT] <INFO> (472070)    Attribute 44 (Acct-Session-Id) length=19       Value: '57363D08-0001F60D'
+2016-05-19 16:03:41.010 account: [U_ACCOUNT] <INFO> (472070)    Attribute 1 (User-Name) length=13       Value: '15614203538'
+2016-05-19 16:03:41.010 account: [U_ACCOUNT] <INFO> (472070)    Attribute 8 (Framed-Ip-Address) length=6       Value: 99.99.158.105
+2016-05-19 16:03:41.011 account: [U_ACCOUNT] <INFO> (472070) das_process_disconnect, disconnect user: name(15614203538), mac(20:68:9d:92:82:c4), ip(99.99.158.105).
+2016-05-19 16:03:41.011 account: [U_ACCOUNT] <INFO> (472070) das_process_disconnect, disconnect user: 1 users matched.
+2016-05-19 16:03:41.011 account: [U_ACCOUNT] <INFO> (472070) das_response, send 20 bytes to dac(199.199.199.200:39188).
+2016-05-19 16:03:41.011 account: [U_ACCOUNT] <NOTICE> (472070) RADIUS message: code=41 (Disconnect-Ack) identifier=64 length=20
+2016-05-19 16:03:41.026 account: [U_ACCOUNT] <INFO> (472070) radius_ipc_proc, transmit msg(12102), len(644).
+2016-05-19 16:03:41.027 account: [U_ACCOUNT] <NOTICE> (472070) local_ipc_proc, recv event(12102).
+2016-05-19 16:03:41.027 account: [U_ACCOUNT] <INFO> (472070) accounting_user_stop, user info: ^Iuser_mac: 5c:f7:c3:92:cc:53. ^Iuser_ip: 99.99.168.147. ^Iuser_name: 15530017525. ^Iap_mac: 00:34:cb:38:d1:dc. ^Iap_ssid: XY-WIFI. ^Inas_ip: 172.204.0.2. ^Inas_id: 0000.0000.000.00.460. ^Iacct_interim_interval: 300. ^Inas_port_id: 0. ^Iterminate cause: 1.
+2016-05-19 16:03:41.027 account: [U_ACCOUNT] <NOTICE> (472070) 5c:f7:c3:92:cc:53 
+2016-05-19 16:03:41.027 account: [U_ACCOUNT] <NOTICE> (472070) accounting_user_stop, user(15530017525), is at state(1).
+2016-05-19 16:03:41.028 account: [U_ACCOUNT] <INFO> (472070) radius_ipc_proc, transmit msg(12101), len(644).
+** DONE 锐安审计答疑
+   CLOSED: [2016-06-05 Sun 23:00]
+问题： 
+- 终端上下线与认证事件的区别
+- 一定会有回应报文么
+* Task 2016.06
+** DONE 锐安审计完成开发和测试
+   CLOSED: [2016-06-22 Wed 09:34]
+** DONE 企业网增加三个字段，用于联通测试
+   CLOSED: [2016-06-16 Thu 17:12]
+1. 域名功能
+2. Vendor specific
+3. Sever-type
+4. Nas-port
+* Task 2016.07
+** TODO MAC认证服务器搭建
+** TODO TS命令完成检测重复功能
+** TODO 网关产品分类解决
+** TODO dhcp需要支持胖瘦自适应
+** TODO vidpeek在x86上失败(字节序问题)
+** TODO 锐安审计 netlink 问题：
+Jun 22 14:57:21.165063 audit.ra [<10497> ad_log_ra.c:0968] netlink receive error No buffer space available
+
+** TODO 白名单url不生效(支付宝域名未解析？)
+   - 需要手机上的dns缓存机制
+     
+auth.alipaydns.com
+110.76.18.46
+
+omeo.alipaydns.com
+110.76.20.32
+
+a.alipayobjects.com
+117. 71. 17.160
+117. 71. 17.159
+
+apilocate.amap.com  apiinit.amap.com restapi.amap.com
+140.205.177.185
+106.11.69.57
+140.205.176.208
+106.11.68.56
+
+kcart.alipay.com
+110.76.10.93
+110.75.134.73
+
+passport.alipay.com
+140.205.134.4
+
+
+
+140.205.142.13
+140.205.174.93 
+
+retry:
+140.205.174.1
+140.205.99.5
+140.205.99.1
+117.78.56.131
+119.147.226.65
+
+无用
+log.mmstat.com
+140.205.248.86
+
+** TODO pppoe拨号中断
+[root@CGW3000 log]# cat messages|grep ppp
+May 29 17:56:14 CGW3000 pppd[2549]: LCP terminated by peer
+May 29 17:56:14 CGW3000 pppd[2549]: Connect time 2875.0 minutes.
+May 29 17:56:14 CGW3000 pppd[2549]: Sent 3254401358 bytes, received 990517970 bytes.
+May 29 17:56:17 CGW3000 pppd[2549]: Connection terminated.
+May 29 17:56:18 CGW3000 pppd[2549]: Modem hangup
+May 29 17:56:18 CGW3000 pppd[2549]: Exit.
+May 29 17:56:18 CGW3000 pppoe-connect: PPPoE connection lost; attempting re-connection.
+May 29 17:56:23 CGW3000 pppd[19803]: Plugin /appfs/etc/ppp/plugins/rp-pppoe.so loaded.
+May 29 17:56:23 CGW3000 pppd[19803]: RP-PPPoE plugin version 3.8p compiled against pppd 2.4.5
+May 29 17:56:23 CGW3000 pppd[19803]: pppd 2.4.5 started by root, uid 0
+May 29 17:56:23 CGW3000 pppd[19803]: PPP session is 18265
+May 29 17:56:23 CGW3000 pppd[19803]: Connected to 76:91:2b:9b:00:17 via interface eth0
+May 29 17:56:23 CGW3000 pppd[19803]: Using interface ppp0
+May 29 17:56:23 CGW3000 pppd[19803]: Connect: ppp0 <--> eth0
+May 29 17:56:26 CGW3000 pppd[19803]: Remote message: Authentication success,Welcome!
+May 29 17:56:26 CGW3000 pppd[19803]: PAP authentication succeeded
+May 29 17:56:26 CGW3000 pppd[19803]: peer from calling number 76:91:2B:9B:00:17 authorized
+May 29 17:56:26 CGW3000 pppd[19803]: local  IP address 113.99.68.249
+May 29 17:56:26 CGW3000 pppd[19803]: remote IP address 113.99.68.1
+May 29 17:56:26 CGW3000 pppd[19803]: primary   DNS address 202.96.134.133
+May 29 17:56:26 CGW3000 pppd[19803]: secondary DNS address 202.96.128.166
+May 30 10:30:32 CGW3000 xl2tpd[15236]: start_pppd: I'm running: 
+May 30 10:30:32 CGW3000 xl2tpd[15236]: "/appfs/sbin/pppd" 
+May 30 10:30:32 CGW3000 xl2tpd[15236]: "/tmp/xl2tpd/pppopt/gw_vpn" 
+May 30 10:30:32 CGW3000 pppd[15265]: pppd 2.4.5 started by root, uid 0
+May 30 10:30:32 CGW3000 pppd[15265]: using channel 3
+May 30 10:30:32 CGW3000 pppd[15265]: Couldn't allocate PPP unit 0 as it is already in use
+May 30 10:30:32 CGW3000 pppd[15265]: Using interface ppp1
+May 30 10:30:32 CGW3000 pppd[15265]: Connect: ppp1 <--> /dev/pts/1
+May 30 10:30:32 CGW3000 pppd[15265]: sent [LCP ConfReq id=0x1 <asyncmap 0x0> <magic 0xa9205a>]
+May 30 10:30:32 CGW3000 pppd[15265]: rcvd [LCP ConfReq id=0x1 <mru 1410> <asyncmap 0x0> <auth chap MD5> <magic 0x828bfc20> <pcomp> <accomp>]
+May 30 10:30:32 CGW3000 pppd[15265]: sent [LCP ConfRej id=0x1 <pcomp> <accomp>]
+May 30 10:30:32 CGW3000 pppd[15265]: rcvd [LCP ConfReq id=0x2 <mru 1410> <asyncmap 0x0> <auth chap MD5> <magic 0x828bfc20>]
+May 30 10:30:32 CGW3000 pppd[15265]: sent [LCP ConfAck id=0x2 <mru 1410> <asyncmap 0x0> <auth chap MD5> <magic 0x828bfc20>]
+May 30 10:30:35 CGW3000 pppd[15265]: sent [LCP ConfReq id=0x1 <asyncmap 0x0> <magic 0xa9205a>]
+May 30 10:30:35 CGW3000 pppd[15265]: rcvd [LCP ConfAck id=0x1 <asyncmap 0x0> <magic 0xa9205a>]
+May 30 10:30:35 CGW3000 pppd[15265]: rcvd [CHAP Challenge id=0xd0 <b6ee231f7fa2dc7d3e20714e6427305ed4356b>, name = "LinuxVPNserver"]
+May 30 10:30:35 CGW3000 pppd[15265]: sent [CHAP Response id=0xd0 <bb6f0ec3b7acf909323784b0ae0afbf6>, name = "test"]
+May 30 10:30:35 CGW3000 pppd[15265]: rcvd [CHAP Success id=0xd0 "Access granted"]
+May 30 10:30:35 CGW3000 pppd[15265]: CHAP authentication succeeded: Access granted
+May 30 10:30:35 CGW3000 pppd[15265]: CHAP authentication succeeded
+May 30 10:30:35 CGW3000 pppd[15265]: sent [IPCP ConfReq id=0x1 <compress VJ 0f 01> <addr 0.0.0.0>]
+May 30 10:30:35 CGW3000 pppd[15265]: rcvd [IPCP ConfReq id=0x1 <compress VJ 0f 01> <addr 192.168.1.99>]
+May 30 10:30:35 CGW3000 pppd[15265]: sent [IPCP ConfAck id=0x1 <compress VJ 0f 01> <addr 192.168.1.99>]
+May 30 10:30:35 CGW3000 pppd[15265]: rcvd [IPCP ConfNak id=0x1 <addr 192.168.1.128>]
+May 30 10:30:35 CGW3000 pppd[15265]: sent [IPCP ConfReq id=0x2 <compress VJ 0f 01> <addr 192.168.1.128>]
+May 30 10:30:35 CGW3000 pppd[15265]: rcvd [IPCP ConfAck id=0x2 <compress VJ 0f 01> <addr 192.168.1.128>]
+May 30 10:30:35 CGW3000 pppd[15265]: local  IP address 192.168.1.128
+May 30 10:30:35 CGW3000 pppd[15265]: remote IP address 192.168.1.99
+May 30 10:30:35 CGW3000 pppd[15265]: Script /etc/ppp/ip-up started (pid 16212)
+May 30 10:30:35 CGW3000 pppd[15265]: Script /etc/ppp/ip-up finished (pid 16212), status = 0x0
+May 30 10:32:05 CGW3000 pppd[15265]: rcvd [LCP TermReq id=0x3 "User request"]
+May 30 10:32:05 CGW3000 pppd[15265]: LCP terminated by peer (User request)
+May 30 10:32:05 CGW3000 pppd[15265]: Connect time 1.5 minutes.
+May 30 10:32:05 CGW3000 pppd[15265]: Sent 145176 bytes, received 26349 bytes.
+May 30 10:32:05 CGW3000 pppd[15265]: Script /etc/ppp/ip-down started (pid 10056)
+May 30 10:32:05 CGW3000 pppd[15265]: sent [LCP TermAck id=0x3]
+May 30 10:32:05 CGW3000 xl2tpd[15236]: Terminating pppd: sending TERM signal to pid 15265
+May 30 10:32:05 CGW3000 pppd[15265]: Terminating on signal 15
+May 30 10:32:05 CGW3000 pppd[15265]: Modem hangup
+May 30 10:32:05 CGW3000 pppd[15265]: Connection terminated.
+May 30 10:32:05 CGW3000 pppd[15265]: Script /etc/ppp/ip-down finished (pid 10056), status = 0x0
+May 30 10:32:05 CGW3000 pppd[15265]: Exit.
+May 30 14:21:23 CGW3000 snmpManager.cgi[2842]: [CGI][DEBUG][home_page_html_replace][461] gateway is ppp0#012!
+May 30 14:22:37 CGW3000 dhcpd: [DEBUG] next_iface4 . if_name: ppp0, info->flags: 4305
+May 30 14:22:37 CGW3000 dhcpd: [DEBUG] next_iface . info->name: ppp0, ifaces->sock: 10
+May 30 16:50:36 CGW3000 snmpManager.cgi[2842]: [CGI][DEBUG][home_page_html_replace][461] gateway is ppp0#012!
+May 31 12:10:22 CGW3000 kernel: [324625.066347] Loading kernel module for a network device with CAP_SYS_MODULE (deprecated).  Use CAP_NET_ADMIN and alias netdev-pppoe instead
+May 31 14:06:43 CGW3000 snmpManager.cgi[2842]: [CGI][DEBUG][home_page_html_replace][461] gateway is ppp0#012!
+May 31 17:51:21 CGW3000 pppd[19803]: LCP terminated by peer
+May 31 17:51:21 CGW3000 pppd[19803]: Connect time 2875.0 minutes.
+May 31 17:51:21 CGW3000 pppd[19803]: Sent 4144020071 bytes, received 3166895554 bytes.
+May 31 17:51:24 CGW3000 pppd[19803]: Connection terminated.
+May 31 17:51:24 CGW3000 pppd[19803]: Modem hangup
+May 31 17:51:24 CGW3000 pppd[19803]: Exit.
+May 31 17:51:24 CGW3000 pppoe-connect: PPPoE connection lost; attempting re-connection.
+May 31 17:51:29 CGW3000 pppd[31047]: Plugin /appfs/etc/ppp/plugins/rp-pppoe.so loaded.
+May 31 17:51:29 CGW3000 pppd[31047]: RP-PPPoE plugin version 3.8p compiled against pppd 2.4.5
+May 31 17:51:29 CGW3000 pppd[31047]: pppd 2.4.5 started by root, uid 0
+May 31 17:51:29 CGW3000 pppd[31047]: PPP session is 20155
+May 31 17:51:29 CGW3000 pppd[31047]: Connected to 76:91:2b:9b:00:17 via interface eth0
+May 31 17:51:29 CGW3000 pppd[31047]: Using interface ppp0
+May 31 17:51:29 CGW3000 pppd[31047]: Connect: ppp0 <--> eth0
+May 31 17:51:32 CGW3000 pppd[31047]: Remote message: Authentication success,Welcome!
+May 31 17:51:32 CGW3000 pppd[31047]: PAP authentication succeeded
+May 31 17:51:32 CGW3000 pppd[31047]: peer from calling number 76:91:2B:9B:00:17 authorized
+May 31 17:51:32 CGW3000 pppd[31047]: local  IP address 113.99.69.160
+May 31 17:51:32 CGW3000 pppd[31047]: remote IP address 113.99.68.1
+May 31 17:51:32 CGW3000 pppd[31047]: primary   DNS address 202.96.134.133
+May 31 17:51:32 CGW3000 pppd[31047]: secondary DNS address 202.96.128.166
+[root@CGW3000 log]# 
+
+* 2017.01.06
+**  部门活动
+13:30~14:00：  从公司出发。
+14:30~15:30：  打保龄球和台球.
+               保龄球  ：开两个球道，每个6局，共计300块。
+               台球    ：开两个台，每个台一个小时共计80块。
+15:30~16:00：  走到饭店。
+16:00~17:00：  在饭店包房玩杀人游戏（扑克牌我带）。
+17:00~19:00：  吃晚饭，地点也在金桥国际广场，具体饭店大家推荐一下，西贝莜面村、古丽仙西域情餐厅
+19:00~21:00：  上海歌城唱歌，中包两个小时共计280，酒水零食120，共计400块。

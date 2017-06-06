@@ -1,0 +1,16 @@
+#+TITLE: entwlan流程
+
+* wlan
+- br.c
+br_init -> br_handle_frame_hook
+- br_input.c
+br_handle_frame -> br_l2w_rcv_hook 处理数据集中交换报文
+br_handle_frame -> br_apl2w_handle_frame_hook
+- packet.c
+br_apl2w_handle_frame:
+1. 根据运行模式，判断本地转发，返回
+2. 根据端口类型：
+   + ACCESS
+   + CALF
+   + BEAR
+   + VDEV

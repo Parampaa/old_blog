@@ -1,0 +1,39 @@
+#+TITLE: Project
+
+* sprint0
+time: 12.19-1.15
+** broadcom sdk upgrade prepare
+** board prepare
+** PPPoe Emulation
+** Document prepare
+
+
+* sprint1
+time: 1.16-1.26
+** broadcom sdk upgrade prepare
+** l2fwd
+** Qos
+** PPPoe Emulation
+
+
+* sprint2
+time: 2.3-2.26
+** 
+** Qos
+
+* sprint3
+time: 2.27-3.19
+** broadcom sdk upgrade(502L03)
+** port management
+** 
+** Multica
+** Broadcaset
+
+* sprint4
+time: 3.20-4.15
+** broadcom sdk upgrade(502L03)
+** cfm
+** 802.1x
+** PPPoe Emulation
+
+** Throughput

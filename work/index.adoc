@@ -1,0 +1,23 @@
+= 生活还是工作？
+学习应该是生活的常态.
+:icons: font
+
+* link:DHCP负载均衡.html[DHCP负载均衡]
+* link:HOWTO_linux.html[HOWTO_linux]
+* link:Managing_Projects_with_GNU_Make.html[Managing_Projects_with_GNU_Make]
+* link:code_complete.html[code_complete]
+* link:info.html[info]
+* link:learning_nodejs.html[learning_nodejs]
+* link:linux/README.html[linux/README]
+* link:linux/linux_kernel_development.html[linux/linux_kernel_development]
+* link:linux_0.11_learn.html[linux_0.11_learn]
+* link:linux_kernel_development.html[linux_kernel_development]
+* link:lisp.html[lisp]
+* link:openwrt.html[openwrt]
+* link:portal认证问题汇总.html[portal认证问题汇总]
+* link:pppoe.html[pppoe]
+* link:qos.html[qos]
+* link:redis学习.html[redis学习]
+* link:sprint.html[sprint]
+* link:work.html[work]
+* link:x86_汇编语言.html[x86_汇编语言]

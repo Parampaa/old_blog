@@ -1,0 +1,9 @@
+= MacOS vimrc配置
+fabius8
+:icons: font
+
+[source, vimrc]
+
+----
+include::mac_vimrc[Mac OS]
+----

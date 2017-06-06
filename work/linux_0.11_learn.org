@@ -1,0 +1,22 @@
+#+TITIE: linux内核 0.11 学习
+#+Author: fangzheng
+
+* 概述
+fs/ 文件系统程序，看之前最好看下 Andrew S.Tanenbaum 的
+《操作系统设计与实现》有关 MINIX 文件系统的章节。
+
+mm/ 内存管理程序，需要了解 intel 80x86 微处理器的保护模式
+运行方式有足够的理解。参考《intel 80386 programmer's Reference Manual》
+
+* Linux 内核体系结构
+** Linux内核堆内存的使用方法
+应用程序员仅需与『逻辑地址』打交道，『分段』和『分页』机制对他来说是透明的。
+『分页』机制启动，『线性地址』就是『物理地址』
+** 引导启动程序
+1. PC 电源打开，80x86 结构 cpu 将进入『实模式』，并从地址0xFFFF0开始自动执行
+程序代码，这个地址通常是 ROM-BIOS 中的地址。
+2. bootsect.s 代码是磁盘引导块程序，驻留在磁盘的第一个扇区。由 BIOS 加载到内存
+0x7C00 处，然后将自己移动奥内存0X90000处。
+3. bootsect 将 setup 模块（setup.s） 从磁盘加载到内存，跟在 bootsect 后面，
+然后利用 bios 中断0x13取磁盘参数表中当前启动引导盘的参数，出现"Loding system"。
+

@@ -1,0 +1,9 @@
+= Centos_vimrc配置
+fabius8
+:icons: font
+
+[source, vimrc]
+
+----
+include::centos_vimrc[linux]
+----

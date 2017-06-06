@@ -1,0 +1,1407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>info</title>
+<!-- 2017-04-20 Thu 16:48 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">info</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. URL</a></li>
+<li><a href="#sec-2">2. Remote Host PC</a>
+<ul>
+<li><a href="#sec-2-1">2.1. Hemin</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. INFO</a>
+<ul>
+<li><a href="#sec-3-1">3.1. serial option</a></li>
+<li><a href="#sec-3-2">3.2. 局端登陆</a></li>
+<li><a href="#sec-3-3">3.3. ONT登陆</a></li>
+<li><a href="#sec-3-4">3.4. wiki</a></li>
+<li><a href="#sec-3-5">3.5. How to set up the testing platform used to receive packets at Lan0 from PC</a></li>
+<li><a href="#sec-3-6">3.6. 编译</a></li>
+<li><a href="#sec-3-7">3.7. post-review</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Username and Password AD4</a></li>
+<li><a href="#sec-5">5. Proxy</a></li>
+<li><a href="#sec-6">6. Learn</a>
+<ul>
+<li><a href="#sec-6-1">6.1. First Learn</a></li>
+<li><a href="#sec-6-2">6.2. Second Learn</a></li>
+<li><a href="#sec-6-3">6.3. Broadcom l2 config:</a></li>
+<li><a href="#sec-6-4">6.4. doc url</a></li>
+<li><a href="#sec-6-5">6.5. upgrade</a>
+<ul>
+<li><a href="#sec-6-5-1">6.5.1. By OLT</a></li>
+<li><a href="#sec-6-5-2">6.5.2. By web</a></li>
+<li><a href="#sec-6-5-3">6.5.3. command</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-7">7. HowTO Create Vlan</a></li>
+<li><a href="#sec-8">8. STC IP</a></li>
+<li><a href="#sec-9">9. 设备</a></li>
+<li><a href="#sec-10">10. daily report</a>
+<ul>
+<li><a href="#sec-10-1">10.1. 2016.12.30</a></li>
+<li><a href="#sec-10-2">10.2. 2016.01.04</a></li>
+<li><a href="#sec-10-3">10.3. 2016.01.09</a></li>
+<li><a href="#sec-10-4">10.4. 2016.01.10</a></li>
+<li><a href="#sec-10-5">10.5. 2016.01.11</a></li>
+<li><a href="#sec-10-6">10.6. 2016.01.12</a></li>
+<li><a href="#sec-10-7">10.7. 2017.01.16</a></li>
+<li><a href="#sec-10-8">10.8. 2017.01.17</a></li>
+<li><a href="#sec-10-9">10.9. 2017.01.18</a></li>
+<li><a href="#sec-10-10">10.10. 2017.01.20</a></li>
+<li><a href="#sec-10-11">10.11. 2017.01.23</a>
+<ul>
+<li><a href="#sec-10-11-1">10.11.1. ERR LOG:</a></li>
+</ul>
+</li>
+<li><a href="#sec-10-12">10.12. 2017.02.06</a>
+<ul>
+<li><a href="#sec-10-12-1">10.12.1. ERROR</a></li>
+<li><a href="#sec-10-12-2">10.12.2. 打印最多</a></li>
+</ul>
+</li>
+<li><a href="#sec-10-13">10.13. 2017.02.16</a>
+<ul>
+<li><a href="#sec-10-13-1">10.13.1. <span class="done DONE">DONE</span> 寻找宏隔离</a></li>
+<li><a href="#sec-10-13-2">10.13.2. <span class="done DONE">DONE</span> commit修改</a></li>
+<li><a href="#sec-10-13-3">10.13.3. <span class="todo TODO">TODO</span> field mask 修改gem_flow -&gt; ingress_port</a></li>
+<li><a href="#sec-10-13-4">10.13.4. create cscope file</a></li>
+<li><a href="#sec-10-13-5">10.13.5. code commit</a></li>
+</ul>
+</li>
+<li><a href="#sec-10-14">10.14. 2017.02.17</a></li>
+<li><a href="#sec-10-15">10.15. 2017.02.20</a></li>
+<li><a href="#sec-10-16">10.16. 2017.02.21</a></li>
+<li><a href="#sec-10-17">10.17. 2017.02.22</a>
+<ul>
+<li><a href="#sec-10-17-1">10.17.1. ERROR start up bcm_setup.sh</a></li>
+</ul>
+</li>
+<li><a href="#sec-10-18">10.18. 2017.02.23</a></li>
+<li><a href="#sec-10-19">10.19. 2017.02.24</a></li>
+<li><a href="#sec-10-20">10.20. 2017.03.03</a></li>
+<li><a href="#sec-10-21">10.21. 2017.03.07</a></li>
+<li><a href="#sec-10-22">10.22. 2017.03.09</a>
+<ul>
+<li><a href="#sec-10-22-1">10.22.1. hg strip</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+#+TITLE INFO<br  />
+</p>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> URL</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<a href="https://hrportal.alcatel-sbell.com.cn/DefaultLogin_V2.aspx">https://hrportal.alcatel-sbell.com.cn/DefaultLogin_V2.aspx</a><br  />
+zhengf<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Remote Host PC</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+IP：135.251.228.199<br  />
+User：fangzheng<br  />
+Password: 123456<br  />
+</p>
+</div>
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Hemin</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+IP：135.251.228.201<br  />
+hemin<br  />
+dont5get<br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> INFO</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> serial option</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+baud rate: 115200<br  />
+data bits: 8<br  />
+parity: none<br  />
+stop bits: 1<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> 局端登陆</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+OLT   135.251.195.177<br  />
+      isadmin<br  />
+      isamcli!<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="section-number-3">3.3</span> ONT登陆</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+Username: ONTUSER<br  />
+Password: SUGAR2A041<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3-4" class="outline-3">
+<h3 id="sec-3-4"><span class="section-number-3">3.4</span> wiki</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+<a href="http://135.251.228.99/wiki">http://135.251.228.99/wiki</a><br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-5" class="outline-3">
+<h3 id="sec-3-5"><span class="section-number-3">3.5</span> How to set up the testing platform used to receive packets at Lan0 from PC</h3>
+<div class="outline-text-3" id="text-3-5">
+<p>
+// enable ic debug<br  />
+bs /b/c system cfg={ic_dbg_stats=yes}<br  />
+</p>
+
+<p>
+bs /bdmf/link port/index=wan0 bridge/index=0    <br  />
+</p>
+
+<p>
+bs /b/d egress_tm/dir=us,index=1<br  />
+bs /bdmf/new egress_tm/dir=us,index=1,level=queue,mode=sp tcont/index=1<br  />
+bs /bdmf/configure egress_tm/dir=us,index=1 queue_cfg&lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;={drop_threshold=2000,queue_id=0}<br  />
+</p>
+
+<p>
+// 00:0e:c6:c5:b3:a3 varies, it depends on the PC you will use<br  />
+bs <i>bdmf/configure bridge/index=0 mac[{mac=00:0e:c6:c5:b3:a3}]={ports=lan0,sal_action=forward,dal_action=forward}<br  />
+/</i> 00:11:22:33:44:81 is WAN0’s mac address<br  />
+bs /bdmf/configure bridge/index=0 mac[{mac=00:11:22:33:44:81}]={ports=wan0,sal_action=forward,dal_action=forward}<br  />
+</p>
+
+<p>
+bs /bdmf/new gem/index=30,flow_type=ethernet,gem_port=300,us_cfg={tcont={tcont/index=1}},ds_cfg={discard_prty=low,destination=eth}<br  />
+</p>
+
+<p>
+bs /bdmf/new ingress_class/dir=us,cfg={type=flow,fields=ingress_port+outer_vid,prty=5}<br  />
+bs /bdmf/new ingress_class/dir=ds,cfg={type=flow,fields=ingress_port+outer_vid,prty=4}<br  />
+</p>
+
+<p>
+bs /bdmf/new vlan_action/dir=us,index=0,action={cmd=replace,ovid=100,opbit=0,otpid=0}<br  />
+bs /bdmf/new vlan_action/dir=ds,index=0,action={cmd=replace,ovid=200,opbit=0,otpid=0}   ???<br  />
+</p>
+
+<p>
+bs /bdmf/attr/add ingress_class/dir=us,index=0 flow string key={ingress_port=lan0,outer_vid=1000},result={qos_method=flow,action=forward,forw_mode=flow,egress_port=wan0,wan_flow=30}<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-6" class="outline-3">
+<h3 id="sec-3-6"><span class="section-number-3">3.6</span> 编译</h3>
+<div class="outline-text-3" id="text-3-6">
+<p>
+172.24.213.171<br  />
+zhengf soup.358<br  />
+</p>
+
+<p>
+cd build/brcm<br  />
+make ASB_PLATFORM=brcm voip=no AONT_VOIP=n ONT_TYPE=xg250wxa<br  />
+ TOP_DIR='<i>repo_aont12/qianqiax</i>'HD_R56_FDT1256<br  />
+红字部分改成自己的目录.<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-7" class="outline-3">
+<h3 id="sec-3-7"><span class="section-number-3">3.7</span> post-review</h3>
+<div class="outline-text-3" id="text-3-7">
+<p>
+ALU02330093<br  />
+hg pull –u<br  />
+hg ci -m "IR ALU02236983:modify fcache dev  number for 416L04"  rootfs/brcm/fs.src/common/usr/cfg/dev.cfg  -u qianqiax<br  />
+post-review  &#x2013;target-people=jianchep,qianqiax  &#x2013;bugs-closed=ALU02230093  -p<br  />
+hg push<br  />
+</p>
+
+<p>
+note: hg pull –u 为了保证自己的代码库pull到最新的changetset，才能push<br  />
+     hg ci是将自己的代码放到临时库上，ci之后，如果发现代码有问题，想先退回来，用hg rollback；<br  />
+     hg ci 需要FR或者对应的IR号上传，目前先用IR ALU02236983<br  />
+     post-review 发出review邀请，只有在网页上review-&gt;ship it-&gt;submit之后，才能push<br  />
+     hg push 如果没有成功，如果是因为多头的情况，需要先rollback，重新pull和ci，再push.<br  />
+</p>
+
+<p>
+出现人名的地方全部都是CSL，如果写错，会不成功。<br  />
+</p>
+
+<p>
+hg import &#x2013;no-commit patch2.diff<br  />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Username and Password AD4</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+zhengf<br  />
+Sq7&amp;!Kt47{<br  />
+gaoyajie321#@!<br  />
+密码：E%t4pQ9&amp;$2<br  />
+</p>
+
+<p>
+CIP: T!he3dJo<br  />
+Corporate Intranet Login is : Zheng FANG<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Proxy</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+<a href="http://cnproxy.cn.alcatel-lucent.com/proxy.pac">http://cnproxy.cn.alcatel-lucent.com/proxy.pac</a><br  />
+155.132.90.26:8000<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Learn</h2>
+<div class="outline-text-2" id="text-6">
+</div><div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> First Learn</h3>
+<div class="outline-text-3" id="text-6-1">
+<ol class="org-ol">
+<li>case title 请参考附件中case的名字，比如Test Case Mnemonic：FT_ONU_L2FWD_VLAN_01<br  />
+</li>
+</ol>
+<p>
+<a href="http://135.251.228.99/wiki/index.php/FT_ONU_L2FWD_VLAN_01">http://135.251.228.99/wiki/index.php/FT_ONU_L2FWD_VLAN_01</a><br  />
+<a href="http://135.251.228.99/wiki/index.php/FT_ONU_QOS_QUEUE_04">http://135.251.228.99/wiki/index.php/FT_ONU_QOS_QUEUE_04</a><br  />
+<a href="http://135.251.228.99/wiki/index.php/FT_ONU_QOS_PBITMARK_14">http://135.251.228.99/wiki/index.php/FT_ONU_QOS_PBITMARK_14</a><br  />
+</p>
+
+<ol class="org-ol">
+<li>Software_Solution<br  />
+</li>
+</ol>
+<p>
+<a href="http://135.251.228.99/wiki/index.php/Project_aont30#Software_Feasibility_Study">http://135.251.228.99/wiki/index.php/Project_aont30#Software_Feasibility_Study</a><br  />
+<a href="http://135.251.228.99/wiki/index.php/Software_Solution_Options">http://135.251.228.99/wiki/index.php/Software_Solution_Options</a><br  />
+</p>
+
+<p>
+3.OLT配置<br  />
+附件： test cmd and 7360通用配置手册。<br  />
+4.6858 SFU FS<br  />
+附件：SFU FS<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-6-2" class="outline-3">
+<h3 id="sec-6-2"><span class="section-number-3">6.2</span> Second Learn</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+1.网页升级：192.168.1.254/upgrade.cgi<br  />
+登陆用户名密码查看：cfgcli -e WebAccount.   （注意最后有一个点）<br  />
+查找3FE..开头的文件，upgrade<br  />
+</p>
+
+<p>
+2.版本库地址：<br  />
+<a href="http://135.251.206.224/IMAGE/HDR56/">http://135.251.206.224/IMAGE/HDR56/</a><br  />
+</p>
+
+<p>
+3.Broadcom（提CSP用）：<br  />
+<a href="https://support.broadcom.com/">https://support.broadcom.com/</a><br  />
+用户名密码： Account: wei.h.yan@alcatel-sbell.com.cn Pwd: 1234qwerQWER<br  />
+</p>
+
+<p>
+4.weblib地址：（查看文档）<br  />
+<a href="https://ct.web.alcatel-lucent.com/scm-lib4/index.cgi">https://ct.web.alcatel-lucent.com/scm-lib4/index.cgi</a><br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-6-3" class="outline-3">
+<h3 id="sec-6-3"><span class="section-number-3">6.3</span> Broadcom l2 config:</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+<a href="http://135.251.25.50/wiki/index.php/Project_aont30#Typical_L2_configuration_script">http://135.251.25.50/wiki/index.php/Project_aont30#Typical_L2_configuration_script</a><br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-6-4" class="outline-3">
+<h3 id="sec-6-4"><span class="section-number-3">6.4</span> doc url</h3>
+<div class="outline-text-3" id="text-6-4">
+<p>
+<a href="http://aww.sh.bel.alcatel.be/metrics/datawarehouse/query/FeatureBinder.cgi?number=3HH-13652-AAAA">http://aww.sh.bel.alcatel.be/metrics/datawarehouse/query/FeatureBinder.cgi?number=3HH-13652-AAAA</a><br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-6-5" class="outline-3">
+<h3 id="sec-6-5"><span class="section-number-3">6.5</span> upgrade</h3>
+<div class="outline-text-3" id="text-6-5">
+</div><div id="outline-container-sec-6-5-1" class="outline-4">
+<h4 id="sec-6-5-1"><span class="section-number-4">6.5.1</span> By OLT</h4>
+<div class="outline-text-4" id="text-6-5-1">
+<p>
+show equipment ont sw-version<br  />
+show equipment ont interface 1/1/2/2/30 detail<br  />
+show interface port ont:1/1/2/2/30<br  />
+configure equipment ont interface 1/1/2/2/30 sw-ver-pland 3FE&#x2026;<br  />
+show equipment ont sw-download<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-6-5-2" class="outline-4">
+<h4 id="sec-6-5-2"><span class="section-number-4">6.5.2</span> By web</h4>
+<div class="outline-text-4" id="text-6-5-2">
+<ol class="org-ol">
+<li>get the upgrade image<br  />
+</li>
+<li>set local ip 192.168.1.100/24<br  />
+</li>
+<li>connect to lan<br  />
+</li>
+<li>login web 192.168.1.254<br  />
+adminadmin/ALC#FGU or superadmin/12345<br  />
+</li>
+<li>username and password can be got by:<br  />
+cfgcli -g InternetGatewayDevice.X_Authentication.WebAccount.Username<br  />
+cfgcli -g InternetGatewayDevice.X_Authentication.WebAccount.Password<br  />
+登陆用户名密码查看：cfgcli -e WebAccount.   （注意最后有一个点）<br  />
+</li>
+<li>192.168.1.254/upgrade.cgi<br  />
+</li>
+<li>select the file 3FE46346&#x2026; to upgrade<br  />
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-6-5-3" class="outline-4">
+<h4 id="sec-6-5-3"><span class="section-number-4">6.5.3</span> command</h4>
+<div class="outline-text-4" id="text-6-5-3">
+<p>
+omcli omciMgr showRSSI<br  />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> HowTO Create Vlan</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+//创建用于ONU管理的单层RB VLAN 300，并应用PQ Profile （ingress-qos） PQ0<br  />
+configure vlan id 200 mode residential-bridge in-qos-prof-name name:PQ0<br  />
+</p>
+
+<p>
+//查看配置vlan<br  />
+info configure service<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> STC IP</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+135.251.207.66 port 3/3 3/4<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> 设备</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+借裴建成 光模块 1个<br  />
+从 LUZHIFEI 领 光模块 一个<br  />
+领 1 个xg-020-gxa板子<br  />
+借cheng guanglin usb千兆网卡一个<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> daily report</h2>
+<div class="outline-text-2" id="text-10">
+</div><div id="outline-container-sec-10-1" class="outline-3">
+<h3 id="sec-10-1"><span class="section-number-3">10.1</span> 2016.12.30</h3>
+<div class="outline-text-3" id="text-10-1">
+<p>
+Sharing xg240gxa with LIU Antony, after he get board to configure.<br  />
+光模块找 LU ZHIFEI<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-10-2" class="outline-3">
+<h3 id="sec-10-2"><span class="section-number-3">10.2</span> 2016.01.04</h3>
+</div>
+<div id="outline-container-sec-10-3" class="outline-3">
+<h3 id="sec-10-3"><span class="section-number-3">10.3</span> 2016.01.09</h3>
+<div class="outline-text-3" id="text-10-3">
+<p>
+板子可以起来了。可以先烧录HD_56.850p111.tar中的3FE46346FFGA50。<br  />
+在cfe阶段把boardid选择为XG020GXA，把PartNumber设置为3FE46310AAAA。<br  />
+需要注意的是XG020GXA的GE口用普通的网线不能LINK，需要用硬件提供的临时网线，可以找shen fei C。<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-10-4" class="outline-3">
+<h3 id="sec-10-4"><span class="section-number-3">10.4</span> 2016.01.10</h3>
+<div class="outline-text-3" id="text-10-4">
+<p>
+领光模块，去3号楼调整下。<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-10-5" class="outline-3">
+<h3 id="sec-10-5"><span class="section-number-3">10.5</span> 2016.01.11</h3>
+<div class="outline-text-3" id="text-10-5">
+<p>
+Issues/concerns:<br  />
+None<br  />
+</p>
+
+<p>
+Accomplishments of this today:<br  />
+</p>
+<ol class="org-ol">
+<li>Try let XG-020-GX device online on OLT.<br  />
+</li>
+</ol>
+
+<p>
+The technical Summary:<br  />
+</p>
+<ol class="org-ol">
+<li>Last week, I share xg240gxa with Antony LIU, watch he get board to setup.<br  />
+I learn how to make equipment upgrades by web, not try in CFE and OLT.<br  />
+Understand the basic commands to check the pon's status and device info.<br  />
+Like `bs /b/e gpon', `omcli omciMgr showRSSI', `cat /etc/buidinfo', etc.<br  />
+</li>
+<li>Today, my new ONT board is not in normal which is in o2_3 status.<br  />
+I look for help from XU qiting.<br  />
+At last we find the default serial number was conflict.<br  />
+After we modify serial num, the status goto o5(normal).<br  />
+I got a document from XU about how to sovle this kind of problem.<br  />
+</li>
+</ol>
+
+<p>
+Task/issue to be worked tomorrow<br  />
+</p>
+<ol class="org-ol">
+<li>In order to learn L2 forwarding,<br  />
+I need to learn how to configure in OLT, and how it works in ONU.<br  />
+</li>
+<li>Run script in ONU.<br  />
+</li>
+</ol>
+
+<p>
+Task/issue pending<br  />
+</p>
+
+<p>
+Plan in the near future<br  />
+</p>
+<ol class="org-ol">
+<li>L2 forwarding study<br  />
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-10-6" class="outline-3">
+<h3 id="sec-10-6"><span class="section-number-3">10.6</span> 2016.01.12</h3>
+<div class="outline-text-3" id="text-10-6">
+<p>
+Issues/concerns:<br  />
+None<br  />
+</p>
+
+<p>
+Accomplishments of this today:<br  />
+</p>
+<ol class="org-ol">
+<li>Try upgrade 3FE46346mix001 version on XG-020-GX-A<br  />
+</li>
+<li>Register device ON OLT<br  />
+</li>
+<li>Configure VLAN on OLT<br  />
+</li>
+<li>Use TestCenter run L3 flow to check normal<br  />
+</li>
+</ol>
+
+<p>
+The technical Summary:<br  />
+</p>
+<ol class="org-ol">
+<li>Use `configure equipment ont interface ng2:1/1/5 sernum ALCL:99998888 \<br  />
+     sw-ver-pland disable pref-channel-pair 1/1/3/2' to register in OLT:<br  />
+a) Be careful about $interface $sernum, these should be right and unique<br  />
+b) $sw-ver-pland this parameter means disable update version from OLT<br  />
+c) $pref-channel-pair, this parameter I need to figure it out later.<br  />
+</li>
+<li>I still has a bit misunderstand fo vlan configure. when I use<br  />
+`configure bridge port ng:1/1/5/1/1 vlan-id 3333 tag single-tagged', I got Error blow:<br  />
+"Error : VLAN MGT error 277 : Attach ingress QoS profile to VLAN port refused due to missing bandwidth profile on queue."<br  />
+I will add this to TODO list and check what I was missing.<br  />
+</li>
+</ol>
+<p>
+Task/issue to be worked tomorrow<br  />
+</p>
+<ol class="org-ol">
+<li>There is someting to leave tommorrow<br  />
+</li>
+</ol>
+
+<p>
+Task/issue pending<br  />
+</p>
+
+<p>
+Plan in the near future<br  />
+</p>
+<ol class="org-ol">
+<li>Configure VLAN on OLT<br  />
+</li>
+<li>Use TestCenter run L3 flow to check normal<br  />
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-10-7" class="outline-3">
+<h3 id="sec-10-7"><span class="section-number-3">10.7</span> 2017.01.16</h3>
+<div class="outline-text-3" id="text-10-7">
+<p>
+Issues/concerns:<br  />
+None<br  />
+</p>
+
+<p>
+Accomplishments of this today:<br  />
+</p>
+<ol class="org-ol">
+<li>Contact HP to repair computer<br  />
+</li>
+<li>Learn 7360 FX xPON General Configure(GPON)<br  />
+</li>
+</ol>
+
+<p>
+The technical Summary:<br  />
+</p>
+<ol class="org-ol">
+<li>Continue familiar with the command on GPON data config<br  />
+a) Fix error come from `configure bridge port ng:1/1/5/1/1 vlan-id 3333 tag single-tagged'<br  />
+   which brandwidth-profie need to be bind to port<br  />
+b) Have little concept of vpls, Leading understanding of command 'configure service vpls` not deep<br  />
+</li>
+</ol>
+
+<p>
+Task/issue to be worked tomorrow<br  />
+</p>
+<ol class="org-ol">
+<li>Continue familiar with the command on GPON data config<br  />
+</li>
+<li>Use TestCenter run L3 flow to check normal<br  />
+</li>
+</ol>
+
+<p>
+Task/issue pending<br  />
+</p>
+
+<p>
+Plan in the near future<br  />
+</p>
+<ol class="org-ol">
+<li>Use TestCenter run L3 flow to check normal<br  />
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-10-8" class="outline-3">
+<h3 id="sec-10-8"><span class="section-number-3">10.8</span> 2017.01.17</h3>
+<div class="outline-text-3" id="text-10-8">
+<p>
+Issues/concerns:<br  />
+None<br  />
+</p>
+
+<p>
+Accomplishments of this today:<br  />
+</p>
+<ol class="org-ol">
+<li>Read 3FQ-40013-ABAE-TQZZA-01P10-Weblib<br  />
+a) HOWTO use search for strings<br  />
+</li>
+<li>In CFE mode, input 'b' set boardid to XG020GXA<br  />
+</li>
+</ol>
+
+<p>
+The technical Summary:<br  />
+</p>
+<ol class="org-ol">
+<li>The XG250WXA code substitutes XG240WXA code, as XG020GXA share firmware<br  />
+with XG240WXA, the CFE parameter about boardid need to be set exactly XG020GXA.<br  />
+</li>
+<li>Reference information from LI Qipan to set boardid leading error message.<br  />
+Upgrade the firmware to solve it.<br  />
+</li>
+</ol>
+
+<p>
+Task/issue to be worked tomorrow<br  />
+</p>
+<ol class="org-ol">
+<li>Use TestCenter run L3 flow<br  />
+</li>
+</ol>
+
+<p>
+Task/issue pending<br  />
+</p>
+
+<p>
+Plan in the near future<br  />
+</p>
+<ol class="org-ol">
+<li>Use TestCenter run L3 flow<br  />
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-10-9" class="outline-3">
+<h3 id="sec-10-9"><span class="section-number-3">10.9</span> 2017.01.18</h3>
+<div class="outline-text-3" id="text-10-9">
+<p>
+Issues/concerns:<br  />
+None<br  />
+</p>
+
+<p>
+Accomplishments of this today:<br  />
+</p>
+<ol class="org-ol">
+<li></li>
+<li></li>
+</ol>
+
+<p>
+The technical Summary:<br  />
+</p>
+<ol class="org-ol">
+<li>We will discuss the work we need to do to test the factory side,<br  />
+and discuss whether to test the Layer 2 forwarding.<br  />
+The next step is to do a Layer 2 forwarding test<br  />
+</li>
+</ol>
+
+<p>
+Task/issue to be worked tomorrow<br  />
+</p>
+<ol class="org-ol">
+<li>Use TestCenter run L2 flow<br  />
+</li>
+</ol>
+
+<p>
+Task/issue pending<br  />
+</p>
+
+<p>
+Plan in the near future<br  />
+</p>
+<ol class="org-ol">
+<li>Use TestCenter run L2 flow<br  />
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-10-10" class="outline-3">
+<h3 id="sec-10-10"><span class="section-number-3">10.10</span> 2017.01.20</h3>
+</div>
+<div id="outline-container-sec-10-11" class="outline-3">
+<h3 id="sec-10-11"><span class="section-number-3">10.11</span> 2017.01.23</h3>
+<div class="outline-text-3" id="text-10-11">
+</div><div id="outline-container-sec-10-11-1" class="outline-4">
+<h4 id="sec-10-11-1"><span class="section-number-4">10.11.1</span> ERR LOG:</h4>
+<div class="outline-text-4" id="text-10-11-1">
+<p>
+AONT login: &gt;&gt;&gt;&gt;on_omci_start_io()<br  />
+ERR: ingress_class_attr_cfg_write#1275: Can't configure two classification with same type and same priority<br  />
+ERR: bdmf_mattr_set#4111: : status:Error in parameters. bdmf_mattr_set()<br  />
+ERR: bdmfDrvCreateIngressClass() Line:1349 failed, ret = 1<br  />
+_new_and_set#480: ingress_class: error:Error in parabuildRdpaIngressClassFlow:dir=0<br  />
+buildRdpaIngressClassFlow:key.ingress_port=0<br  />
+buildRdpaIngressClassFlow:flow-&gt;wanFlowId=3<br  />
+buildRdpaIngressClassFlow:key.gem_flow=3<br  />
+buildRdpaIngressClassFlow:result.wan_flow=1<br  />
+meters (-1)<br  />
+ERR: ingress_class_attr_cfg_write#1275: Can't configure two classification with same type and same priority<br  />
+ERR: bdmf_mattr_set#4111: : status:Error in parameters. bdmf_mattr_set()<br  />
+DrvCreateIngressClass() Line:1349 failed, ret = 1<br  />
+Deleting incidental broadegress_tm_id 4 us_queue_index -1 not found<br  />
+cast gem port<br  />
+OG_DRV_IOC_IOCTL failed, cmd:25<br  />
+hal_bcm_send_iocthe omci-EgressTm:<sup><a id="fnr.1.100" name="fnr.1.100" class="footref" href="#fn.1">1</a></sup>'s EgressTm:<sup><a id="fnr.2" name="fnr.2" class="footref" href="#fn.2">2</a></sup>.<br  />
+egress_tm_id 1 us_queue_index -1 not found<br  />
+tl_cmd :: ioctl failed.<br  />
+ERR deleteIngressClass:IngressClassMgr::deleteIngressClass can not find ingress class by key<br  />
+ERR deleteVlanAction:VlanActionMgr::deleteVlanAction : can not find vlan action<br  />
+ERR createDnGemUnmatchFlow:create gemport unmatch flow failed !<br  />
+Jan 23 09:53:43 [ERROR] hal_itf_qos.cc:977 get the LanPort info failed by the Flow:<sup><a id="fnr.3" name="fnr.3" class="footref" href="#fn.3">3</a></sup>.<br  />
+</p>
+
+<p>
+PQMapper: addUntagPtagRule()!!! invoked inside SET for FLOW Service<br  />
+PQMapper::get_uni_us_TagMode fail pptp_ptr_id =101<br  />
+ERR: bdmf_new_and_set#480: ingress_class: error:Error in parameters (-1)<br  />
+OG_DRV_IOC_IOCTL failed, cmd:25<br  />
+hal_bcm_send_ioctl_cmd :: ioctl failed.<br  />
+ERR deleteIngressClass:IngressClassMgr::deleteIngressClass can not find ingress class by key<br  />
+ERR deleteVlanAction:VlanActionMgr::deleteVlanAction : can not find vlan action<br  />
+ERR createDnGemUnmatchFlow:create gemport unmatch flow failed !<br  />
+Jan 23 09:53:43 [ERROR] hal_itf_qos.cc:977 get the LanPort info failed by the Flow:<sup><a id="fnr.3.100" name="fnr.3.100" class="footref" href="#fn.3">3</a></sup>.<br  />
+</p>
+
+<p>
+!!!!!!!!!!!!!!set_table_id @ 105 is not 240Wb<br  />
+!!!!!!!!!!!!!!PbitQueueTableMgr @ 84  table_based_id=4;  table_max_id = 12;<br  />
+dltGemFlowCfmOam: gemPortId=65533<br  />
+hal_gpon_delete_gemport,delete the GemID:<sup><a id="fnr.4" name="fnr.4" class="footref" href="#fn.4">4</a></sup>.<br  />
+ERR deleteDnBcastGemFlow:deleteDnBcastGemFlow failed !<br  />
+hal_delete_hw_gem_port, GemPortID:<sup><a id="fnr.4.100" name="fnr.4.100" class="footref" href="#fn.4">4</a></sup>, no_gemport_flowId:<sup><a id="fnr.5" name="fnr.5" class="footref" href="#fn.5">5</a></sup>.<br  />
+find_gem_flow_id:<sup><a id="fnr.4.100" name="fnr.4.100" class="footref" href="#fn.4">4</a></sup> success.<br  />
+dltGemFlowCfmOam: gemPortId=1057<br  />
+hal_gpon_delete_gemport,delete the GemID:<sup><a id="fnr.6" name="fnr.6" class="footref" href="#fn.6">6</a></sup>.<br  />
+hal_delete_hw_gem_port, GemPortID:<sup><a id="fnr.6.100" name="fnr.6.100" class="footref" href="#fn.6">6</a></sup>, no_gemport_flowId:<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>.<br  />
+find_gem_flow_id:<sup><a id="fnr.6.100" name="fnr.6.100" class="footref" href="#fn.6">6</a></sup> success.<br  />
+### PVID removed from port<br  />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-10-12" class="outline-3">
+<h3 id="sec-10-12"><span class="section-number-3">10.12</span> 2017.02.06</h3>
+<div class="outline-text-3" id="text-10-12">
+</div><div id="outline-container-sec-10-12-1" class="outline-4">
+<h4 id="sec-10-12-1"><span class="section-number-4">10.12.1</span> ERROR</h4>
+<div class="outline-text-4" id="text-10-12-1">
+<p>
+[root@AONT: ONTUSER]# &gt;&gt;&gt;&gt;on_omci_complete_io()<br  />
+&gt;&gt;&gt;&gt;on_omci_start_io()<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-10-12-2" class="outline-4">
+<h4 id="sec-10-12-2"><span class="section-number-4">10.12.2</span> 打印最多</h4>
+<div class="outline-text-4" id="text-10-12-2">
+<p>
+bs /b/e system max_prints:-1<br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-10-13" class="outline-3">
+<h3 id="sec-10-13"><span class="section-number-3">10.13</span> 2017.02.16</h3>
+<div class="outline-text-3" id="text-10-13">
+</div><div id="outline-container-sec-10-13-1" class="outline-4">
+<h4 id="sec-10-13-1"><span class="section-number-4">10.13.1</span> <span class="done DONE">DONE</span> 寻找宏隔离</h4>
+<div class="outline-text-4" id="text-10-13-1">
+</div>
+</div>
+<div id="outline-container-sec-10-13-2" class="outline-4">
+<h4 id="sec-10-13-2"><span class="section-number-4">10.13.2</span> <span class="done DONE">DONE</span> commit修改</h4>
+<div class="outline-text-4" id="text-10-13-2">
+</div>
+</div>
+<div id="outline-container-sec-10-13-3" class="outline-4">
+<h4 id="sec-10-13-3"><span class="section-number-4">10.13.3</span> <span class="todo TODO">TODO</span> field mask 修改gem_flow -&gt; ingress_port</h4>
+</div>
+<div id="outline-container-sec-10-13-4" class="outline-4">
+<h4 id="sec-10-13-4"><span class="section-number-4">10.13.4</span> create cscope file</h4>
+<div class="outline-text-4" id="text-10-13-4">
+<p>
+find . -type f |grep -E "\.c$|\.h$|\.mk\(|makeRule|Makefile\)" &gt; cscope.files<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-10-13-5" class="outline-4">
+<h4 id="sec-10-13-5"><span class="section-number-4">10.13.5</span> code commit</h4>
+<div class="outline-text-4" id="text-10-13-5">
+<p>
+hg clone ssh://zhengf@172.24.213.171//repo/zhengf/HD_R5601_FDT1356<br  />
+hg commit -m "IR ALU02330093:support insmod rdpa_mw.ko parameter of ip_class_mothed" bcm/script/bcm_drivers<br  />
+post-review &#x2013;target-people=jianchep,qianqiax &#x2013;bugs-closed=ALU02330093 -p<br  />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-10-14" class="outline-3">
+<h3 id="sec-10-14"><span class="section-number-3">10.14</span> 2017.02.17</h3>
+<div class="outline-text-3" id="text-10-14">
+<p>
+hg strip -r 16153 -f<br  />
+hg rollback 只能用一次<br  />
+</p>
+</div>
+
+<ol class="org-ol"><li><a id="sec-10-14-0-1" name="sec-10-14-0-1"></a>修改sfu hgu<br  /><div class="outline-text-5" id="text-10-14-0-1">
+<p>
+ritool set OperatorID XXXX<br  />
+cfgcli -r<br  />
+reboot<br  />
+</p>
+</div>
+</li></ol>
+</div>
+<div id="outline-container-sec-10-15" class="outline-3">
+<h3 id="sec-10-15"><span class="section-number-3">10.15</span> 2017.02.20</h3>
+<div class="outline-text-3" id="text-10-15">
+<p>
+5601的repo还没有建立，我们进代码要先进到HD_R56_FDT1256代码库里面在<br  />
+</p>
+
+<p>
+SDK opensource<br  />
+</p>
+<ol class="org-ol">
+<li><a href="http://135.251.228.99/ext_repo/ext_repo.php">http://135.251.228.99/ext_repo/ext_repo.php</a><br  />
+</li>
+</ol>
+
+<p>
+buildinfo<br  />
+<a href="http://135.251.206.106:8084/job/HDR5601_FDT1356_build_stage2/">http://135.251.206.106:8084/job/HDR5601_FDT1356_build_stage2/</a><br  />
+</p>
+
+
+<p>
+<a href="http://135.251.206.224:10000/repomanage/index.jsp">http://135.251.206.224:10000/repomanage/index.jsp</a><br  />
+</p>
+
+<p>
+版本名字<br  />
+3FE46346<br  />
+</p>
+
+<p>
+o2_3 状态<br  />
+sfptool write 0 0xa2 110 0<br  />
+sfptool write 0 0xa2 110 1<br  />
+sfptool write 0 0xa2 110 0<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-10-16" class="outline-3">
+<h3 id="sec-10-16"><span class="section-number-3">10.16</span> 2017.02.21</h3>
+<div class="outline-text-3" id="text-10-16">
+<p>
+每个字段的含义： 参照 附件988规范  9.3.13章节。 即可hal_dp 删创 流的代码看看。<br  />
+</p>
+
+<p>
+[root@AONT: /]# omcli omciMgr showAllUpStreamFlowInfo 0<br  />
+(1023/1024/1025/1026/1027/1028/1029/1030)(portID=0x101,flowID=3,isBackup=0),Act=1,EthType=0,(FOP=15:FOV=4096)+(FIP=8:FIV=100)-&gt;(TOP=15:TOV=0)+(TIP=8:TIV=1100) CfgToSal =1,CfgPbitUnmatchRule =0<br  />
+(1039/1040/1041/1042/1043/1044/1045/1046)(portID=0x101,flowID=4,isBackup=0),Act=1,EthType=0,(FOP=15:FOV=4096)+(FIP=8:FIV=200)-&gt;(TOP=15:TOV=0)+(TIP=8:TIV=1200) CfgToSal =1,CfgPbitUnmatchRule =0<br  />
+(1039/1040/1041/1042/1043/1044/1045/1046)(portID=0x101,flowID=5,isBackup=0),Act=1,EthType=0,(FOP=8:FOV=200)+(FIP=8:FIV=4096)-&gt;(TOP=15:TOV=0)+(TIP=9:TIV=1200) CfgToSal =1,CfgPbitUnmatchRule =0<br  />
+(1055/1056/1057/1058/1059/1060/1061/1062)(portID=0x101,flowID=0,isBackup=0),Act=0,EthType=0,(FOP=15:FOV=4096)+(FIP=14:FIV=4096)-&gt;(TOP=15:TOV=0)+(TIP=8:TIV=1300) CfgToSal =1,CfgPbitUnmatchRule =0<br  />
+(1055/1056/1057/1058/1059/1060/1061/1062)(portID=0x101,flowID=1,isBackup=0),Act=0,EthType=0,(FOP=14:FOV=4096)+(FIP=14:FIV=4096)-&gt;(TOP=15:TOV=0)+(TIP=9:TIV=1300) CfgToSal =1,CfgPbitUnmatchRule =0<br  />
+(1087/1088/1089/1090/1091/1092/1093/1094)(portID=0x101,flowID=6,isBackup=0),Act=1,EthType=0,(FOP=15:FOV=4096)+(FIP=8:FIV=500)-&gt;(TOP=15:TOV=0)+(TIP=8:TIV=2500) CfgToSal =1,CfgPbitUnmatchRule =0<br  />
+(1087/1088/1089/1090/1091/1092/1093/1094)(portID=0x101,flowID=7,isBackup=0),Act=1,EthType=0,(FOP=8:FOV=500)+(FIP=8:FIV=4096)-&gt;(TOP=15:TOV=0)+(TIP=9:TIV=2500) CfgToSal =1,CfgPbitUnmatchRule =0<br  />
+(1103/1104/1105/1106/1107/1108/1109/1110)(portID=0x101,flowID=8,isBackup=0),Act=1,EthType=0,(FOP=15:FOV=4096)+(FIP=8:FIV=600)-&gt;(TOP=15:TOV=0)+(TIP=8:TIV=2600) CfgToSal =1,CfgPbitUnmatchRule =0<br  />
+(1103/1104/1105/1106/1107/1108/1109/1110)(portID=0x101,flowID=9,isBackup=0),Act=1,EthType=0,(FOP=8:FOV=600)+(FIP=8:FIV=4096)-&gt;(TOP=15:TOV=0)+(TIP=9:TIV=2600) CfgToSal =1,CfgPbitUnmatchRule =0<br  />
+(1055/-1/-1/-1/-1/-1/-1/-1)(portID=0x101,flowID=2,isBackup=0),Act=0,EthType=0,(FOP=15:FOV=4096)+(FIP=15:FIV=0)-&gt;(TOP=15:TOV=0)+(TIP=0:TIV=1300) CfgToSal =1,CfgPbitUnmatchRule =0<br  />
+</p>
+</div>
+
+<ol class="org-ol"><li><a id="sec-10-16-0-1" name="sec-10-16-0-1"></a>单模块编译<br  /><div class="outline-text-5" id="text-10-16-0-1">
+<ol class="org-ol">
+<li>cd sysdrivers/bcmdrv/502L02/src/<br  />
+</li>
+<li>make ASB_PLATFORM=brcm voip=no AONT_VOIP=n ONT_TYPE=xg250wxa TOP_DIR=`hg root`<br  />
+(这里会将ko直接安装到fs.install下)<br  />
+</li>
+<li>cd build/brcm/xg250wxa/<br  />
+</li>
+<li>make noRemake=1 ASB_PLATFORM=brcm voip=no AONT_VOIP=n ONT_TYPE=xg250wxa<br  />
+</li>
+</ol>
+<p>
+(生成版本)<br  />
+</p>
+
+<p>
+编译到出版本耗时5分钟。<br  />
+</p>
+</div>
+</li>
+
+
+
+
+
+<li><a id="sec-10-16-0-2" name="sec-10-16-0-2"></a>oflt<br  /><div class="outline-text-5" id="text-10-16-0-2">
+<p>
+oflt phy mode show 1    显示phy状态<br  />
+</p>
+</div>
+</li></ol>
+</div>
+<div id="outline-container-sec-10-17" class="outline-3">
+<h3 id="sec-10-17"><span class="section-number-3">10.17</span> 2017.02.22</h3>
+<div class="outline-text-3" id="text-10-17">
+</div><div id="outline-container-sec-10-17-1" class="outline-4">
+<h4 id="sec-10-17-1"><span class="section-number-4">10.17.1</span> ERROR start up bcm_setup.sh</h4>
+<div class="outline-text-4" id="text-10-17-1">
+<p>
+Initializing port&#x2026;<br  />
+ERRERR: port_attr_cfg_write#661: : status:Out of range. emac emac1 is not configured in system<br  />
+ERR: bdmf_configure#1499: : status:Out of range. config:index=lan1,cfg={emac=emac1,sal_miss_action=drop,dal_miss_action=forward},emac_cfg={emac_param={rx_flow_control=yes}}<br  />
+</p>
+<pre class="example">
+bdmf_new_and_configure#423: port: config:index=lan0,cfg={emac=eERR: port_attr_cfg_write#661: : status:Out of range. emac emac2 is not configured in system
+</pre>
+<p>
+ERR: bdmf_configure#1499: : status:Out of range. config:index=lan2,cfg={emac=emac2,sal_miss_action=drop,dal_miss_action=forward},emac_cfg={emac_param={rx_flow_control=yes}}<br  />
+mac0,sal_miss_action=drop,dal_miss_action=forward},emac_cfg={emacERR: port_attr_cfg_write#661: : status:Out of range. emac emac3 is not configured in system<br  />
+ERR: bdmf_configure#1499: : status:Out of range. config:index=lan3,cfg={emac=emac3,sal_miss_action=drop,dal_miss_action=forward},emac_cfg={emac_param={rx_flow_control=yes}}<br  />
+_param={rx_flow_control=yes}}  error:Entry already exists (-7)<br  />
+ERR: port_attr_cfg_write#687: : status:Entry already exists. emac emac4 is already configured to other port<br  />
+ERR: bdmf_configure#1499: : status:Entry already exists. config:index=lan4,cfg={emac=emac4,dal_miss_action=forward},emac_cfg={emac_param={rx_flow_control=yes}}<br  />
+</p>
+<p>
+MON: Bdmf/New&gt; fERR: port_post_init#482: status:Entry already exists Port wan0 is already configured<br  />
+ailed with error code Entry already exists(-7)<br  />
+ERR: bdmf_new_and_configure#423: port: config:index=landgasp: kerSysRegisterDyingGaspHandler: dsl registered<br  />
+1,cfg={emac=emac1,sal_miss_action=drop,dal_miss_action=forward},emac_cfg={emac_param={rx_flklpd: Unknown symbol phy_admin_state_set (err 0)<br  />
+klpd: Unknown symbol phy_admin_state_get (err 0)<br  />
+ow_control=yes}}  error:Out of range (-8)<br  />
+</p>
+<p>
+MON: Bdmf/New&gt; failed with error code Out of range(-8)<br  />
+ERR: bdmf_new_and_configure#423: port: config:index=lan2,cfg={emac=emac2,sal_miss_action=drop,dal_miss_action=forward},emac_cfg={emac_param={rx_flow_control=yes}}  error:Out of range (-8)<br  />
+</p>
+<p>
+MON: Bdmf/New&gt; failed with error code Out of range(-8)<br  />
+ERR: bdmf_new_and_configure#423: port: config:index=lan3,cfg={emac=emac3,sal_miss_action=drop,dal_miss_action=forward},emac_cfg={emac_param={rx_flow_control=yes}}  error:Out of range (-8)<br  />
+</p>
+<p>
+ failed: Out of range<br  />
+MON: Bdmf/New&gt; failed with error code Out of range(-8)<br  />
+ERR: bdmf_new_and_configure#423: porIPTV ddr base addr: 0x000000001c260000<br  />
+IPTV virtual ddr base addr: ffffff8000f81000<br  />
+t: config:index=lan4,cfg={Broadcom Packet Flow Cache HW acceleration enabled.<br  />
+emac=emac4,dal_miss_actionBroadcom Packet Flow Cache HW acceleration enabled.<br  />
+=forward},emac_cfg={emac_param={rx_flow_control=yes}}  error:Entry already exists (-7)<br  />
+</p>
+<p>
+Object creation failed: Entry already exists<br  />
+MON: Bdmf/New&gt; failed with error code Entry already exists(-7)<br  />
+ERR: bdmf_new_and_configure#423: port: config:index=wan0 nf_conntrack version 0.5.0 (3595 buckets, 14380 max)<br  />
+ error:Entry already exists (-7)<br  />
+</p>
+<p>
+MON: Bdmf/New&gt; failed with error code Entry already exists(-7)<br  />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-10-18" class="outline-3">
+<h3 id="sec-10-18"><span class="section-number-3">10.18</span> 2017.02.23</h3>
+<div class="outline-text-3" id="text-10-18">
+<p>
+find . -type f |grep -v 414L04|grep -v 416L03|grep -v smarthome|grep -v voip |grep -v "apps/private/appkgs/"|grep -v "OPENSOURCE/public"|grep -v "xs/OPENSOURCE/gpl/appkgs/" |grep -E "\.cc$|\.c$|\.h$|\.mk\(|makeRule|Makefile\)" &gt; cscope.files<br  />
+</p>
+
+<p>
+no kernel:<br  />
+find . -type f |grep -v 414L04|grep -v "kernel/linux-4.1"|grep -v 416L03|grep -v smarthome|grep -v voip |grep -v "xs/OPENSOURCE/public"|grep -v "xs/OPENSOURCE/gpl/appkgs/" |grep -E "\.cc$|\.c$|\.h$|\.mk\(|makeRule|Makefile\)" &gt; cscope.files<br  />
+</p>
+
+<p>
+串口打印错误：<br  />
+LPORT MDIO write transaction failed or busy rc=0,fail=1,0<br  />
+pgrep omci | xargs kill -9<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-10-19" class="outline-3">
+<h3 id="sec-10-19"><span class="section-number-3">10.19</span> 2017.02.24</h3>
+<div class="outline-text-3" id="text-10-19">
+<p>
+镜像mirror：<br  />
+bs /bdmf/con port/index=wan0 mirror_cfg={rx_dst_port={port/index=lan0},tx_dst_port={port/index=lan0}}<br  />
+</p>
+
+<p>
+bs /b/n vlan_action/dir=us,index=1,action={cmd=push+remark,ovid=214,opbit=0,otpid=0x8100,ivid=0,ipbit=0,itpid=0x8100}<br  />
+</p>
+
+<p>
+bs /bdmf/new ingress_class/dir=us,index=1,cfg={type=flow,fields=ingress_port+vlan_num,prty=55,acl_mode=black,port_mask=lan0+lan1+lan2+lan3+lan4+lan5+lan6+lan7}<br  />
+</p>
+
+<p>
+bs /b/attr/add ingress_class/dir=us,index=1 flow string key={ingress_port=lan0,vlan_num=0},result={qos_method=flow,wan_flow=0,action=forward,policer=null,forw_mode=flow,egress_port=wan0,queue_id=0,vlan_action={vlan_action/dir=us,index=1},opbit_remark=no,opbit_val=0,ipbit_remark=no,ipbit_val=0,dscp_remark=no,dscp_val=0,pbit_to_gem_table=null,action_vec=0,service_queue_id=disable,dei=copy,trap_reason=no_trap}<br  />
+</p>
+
+<p>
+bs /b/attr/add ingress_class/dir=us,index=1 flow string key={ingress_port=lan0,vlan_num=1},result={qos_method=flow,wan_flow=0,action=forward,policer=null,forw_mode=flow,egress_port=wan0,queue_id=0,vlan_action={vlan_action/dir=us,index=1},opbit_remark=no,opbit_val=0,ipbit_remark=no,ipbit_val=0,dscp_remark=no,dscp_val=0,pbit_to_gem_table=null,action_vec=0,service_queue_id=disable,dei=copy,trap_reason=no_trap}<br  />
+</p>
+
+<p>
+bs /b/c bridge/index=1 mac[{mac=00:00:11:00:00:01}]={ports=lan0,sal_action=forward,dal_action=forward}<br  />
+bs /b/c bridge/index=1 mac[{mac=00:00:21:00:00:01}]={ports=wan0,sal_action=forward,dal_action=forward}<br  />
+</p>
+
+<p>
+bs /bdmf/con port/index=wan0 mirror_cfg={rx_dst_port={port/index=lan0},tx_dst_port={port/index=lan0}}<br  />
+</p>
+
+<p>
+bs /b/c system cfg={ic_dbg_stats=yes}<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-10-20" class="outline-3">
+<h3 id="sec-10-20"><span class="section-number-3">10.20</span> 2017.03.03</h3>
+<div class="outline-text-3" id="text-10-20">
+<p>
+Li Qipan 单编kernel<br  />
+make noRemake=1 INNER_IMG=kernel<br  />
+</p>
+
+<p>
+6858<br  />
+docs16130<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-10-21" class="outline-3">
+<h3 id="sec-10-21"><span class="section-number-3">10.21</span> 2017.03.07</h3>
+<div class="outline-text-3" id="text-10-21">
+<p>
+Pon口：show trouble-shooting statistics  channel-pair 1/1/3/2<br  />
+Nt:  show port nt-b:xfp:1<br  />
+</p>
+
+<p>
+<a href="https://ask.wireshark.org/questions/4843/the-npf-driver-isnt-running">https://ask.wireshark.org/questions/4843/the-npf-driver-isnt-running</a><br  />
+As a local administrator do this:<br  />
+net start npf<br  />
+</p>
+
+<p>
+omcli omciMgr showAllUpStreamFlowInfo 0<br  />
+omcli omciMgr setQosTrc 2<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-10-22" class="outline-3">
+<h3 id="sec-10-22"><span class="section-number-3">10.22</span> 2017.03.09</h3>
+<div class="outline-text-3" id="text-10-22">
+<p>
+parameter<br  />
+<i>sys/module</i><br  />
+</p>
+
+<p>
+cpu dump<br  />
+</p>
+
+<p>
+Packet Dump<br  />
+</p>
+
+<p>
+Tx Packet Dump<br  />
+bs /b/c cpu/index=host tx_dump={enable=yes}<br  />
+</p>
+
+<p>
+Rx Packet Dump<br  />
+bs /b/c cpu/index=host rxq_cfg&lt;sup&gt;&lt;a id="fnr.7" name="fnr.7" class="footref" href="#fn.7"&gt;7&lt;/a&gt;&lt;/sup&gt;="&lt;dump_data=true&gt;"<br  />
+</p>
+
+<p>
+o2 o3 不对<br  />
+<a href="http://135.251.228.99/wiki/index.php/6858-o2/3">http://135.251.228.99/wiki/index.php/6858-o2/3</a><br  />
+</p>
+</div>
+
+<div id="outline-container-sec-10-22-1" class="outline-4">
+<h4 id="sec-10-22-1"><span class="section-number-4">10.22.1</span> hg strip</h4>
+<div class="outline-text-4" id="text-10-22-1">
+<p>
+当commit A之后，错误地做了pull命令，导致rollback不了commit A的正确做法：<br  />
+</p>
+<ol class="org-ol">
+<li>hg strip -r 『commit A的上一个commit』<br  />
+</li>
+<li>hg strip -r 『commit A』 —keep<br  />
+</li>
+</ol>
+
+<p>
+参考网站：<br  />
+<a href="http://stackoverflow.com/questions/4760684/mercurial-undo-last-commit">http://stackoverflow.com/questions/4760684/mercurial-undo-last-commit</a><br  />
+</p>
+
+<p>
+phytool sm 4 0x0<br  />
+phytool sm 4 0xfff0a<br  />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p>DEFINITION NOT FOUND.</p></div>
+
+<div class="footdef"><sup><a id="fn.2" name="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p>DEFINITION NOT FOUND.</p></div>
+
+<div class="footdef"><sup><a id="fn.3" name="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p>DEFINITION NOT FOUND.</p></div>
+
+<div class="footdef"><sup><a id="fn.4" name="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p>DEFINITION NOT FOUND.</p></div>
+
+<div class="footdef"><sup><a id="fn.5" name="fn.5" class="footnum" href="#fnr.5">5</a></sup> <p>DEFINITION NOT FOUND.</p></div>
+
+<div class="footdef"><sup><a id="fn.6" name="fn.6" class="footnum" href="#fnr.6">6</a></sup> <p>DEFINITION NOT FOUND.</p></div>
+
+<div class="footdef"><sup><a id="fn.7" name="fn.7" class="footnum" href="#fnr.7">7</a></sup> <p>DEFINITION NOT FOUND.</p></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="date">Created: 2017-04-20 Thu 16:48</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

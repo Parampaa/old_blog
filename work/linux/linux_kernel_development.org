@@ -1,0 +1,10 @@
+#+TITLE: Linux Kernel Development
+
+* Introduction to the Linux Kernel
+* Process Management
+** The Process
+通常包含『打开文件』『待处理的信号』『内部内核数据』『进程状态』
+『内存地址空间』『一个或多个线程』『数据区包含全局变量』
+
+线程包含唯一的程序计数
+

@@ -1,0 +1,1535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>工作日志</title>
+<!-- 2017-02-04 Sat 19:49 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">工作日志</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. 经费汇总</a></li>
+<li><a href="#sec-2">2. Task 7</a>
+<ul>
+<li><a href="#sec-2-1">2.1. <span class="done DONE">DONE</span> 支持数据库的重启恢复</a></li>
+<li><a href="#sec-2-2">2.2. VERIFY 抓包只抓入口报文（挂起）</a></li>
+<li><a href="#sec-2-3">2.3. <span class="done DONE">DONE</span> apache重定向</a></li>
+<li><a href="#sec-2-4">2.4. <span class="done DONE">DONE</span> 学习orgmode链接</a></li>
+<li><a href="#sec-2-5">2.5. <span class="done DONE">DONE</span> qq在线表</a></li>
+<li><a href="#sec-2-6">2.6. <span class="done DONE">DONE</span> 重庆challenge一直已建立问题</a></li>
+<li><a href="#sec-2-7">2.7. <span class="done DONE">DONE</span> AP的重定向携带url</a></li>
+<li><a href="#sec-2-8">2.8. <span class="done DONE">DONE</span> 答复吴静流量字段</a></li>
+<li><a href="#sec-2-9">2.9. <span class="done DONE">DONE</span> 外场杰赛认证繁忙问题（DHCP）</a></li>
+<li><a href="#sec-2-10">2.10. VERIFY 微信信息截获</a></li>
+<li><a href="#sec-2-11">2.11. <span class="done DONE">DONE</span> 广东portal推不出来帮助解决</a></li>
+<li><a href="#sec-2-12">2.12. <span class="done DONE">DONE</span> 外场杰赛没有话单</a></li>
+<li><a href="#sec-2-13">2.13. <span class="done DONE">DONE</span> 中科新业对接安朗url携带广园信息</a></li>
+<li><a href="#sec-2-14">2.14. FEEDBACK 运营商携带apmac(待确认)</a></li>
+<li><a href="#sec-2-15">2.15. FEEDBACK 审计功能需求</a>
+<ul>
+<li><a href="#sec-2-15-1">2.15.1. <span class="todo TODO">TODO</span> URL过滤大量非主动性访问报文</a></li>
+<li><a href="#sec-2-15-2">2.15.2. <span class="todo TODO">TODO</span> </a></li>
+</ul>
+</li>
+<li><a href="#sec-2-16">2.16. FEEDBACK 运营商推不出portal</a></li>
+<li><a href="#sec-2-17">2.17. FEEDBACK 中科新业问题？</a></li>
+<li><a href="#sec-2-18">2.18. <span class="done DONE">DONE</span> 基于ac2780出hrd补丁，携带url</a></li>
+<li><a href="#sec-2-19">2.19. <span class="done DONE">DONE</span> 吴静的account携带giga字段</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Task 8</a>
+<ul>
+<li><a href="#sec-3-1">3.1. FEEDBACK 审计功能需求</a>
+<ul>
+<li><a href="#sec-3-1-1">3.1.1. FEEDBACK URL过滤大量非主动性访问报文</a></li>
+<li><a href="#sec-3-1-2">3.1.2. <span class="done DONE">DONE</span> HTTP整理</a></li>
+<li><a href="#sec-3-1-3">3.1.3. <span class="done DONE">DONE</span> QQ信息整理</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-2">3.2. VERIFY nasid与apip地址绑定</a></li>
+<li><a href="#sec-3-3">3.3. <span class="done DONE">DONE</span> ac与portal服务器断链情况下触发用户免认证</a></li>
+<li><a href="#sec-3-4">3.4. <span class="done DONE">DONE</span> QQ多终端问题</a></li>
+<li><a href="#sec-3-5">3.5. <span class="done DONE">DONE</span> portalv2计费报文没有</a></li>
+<li><a href="#sec-3-6">3.6. <span class="done DONE">DONE</span> url增加了apip</a></li>
+<li><a href="#sec-3-7">3.7. FEEDBACK 中科新业无感知问题</a></li>
+<li><a href="#sec-3-8">3.8. DELEGATED 域名字段增加</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Task 9</a>
+<ul>
+<li><a href="#sec-4-1">4.1. <span class="done DONE">DONE</span> 烽火代码整理</a>
+<ul>
+<li><a href="#sec-4-1-1">4.1.1. <span class="done DONE">DONE</span> 抓包</a></li>
+<li><a href="#sec-4-1-2">4.1.2. <span class="done DONE">DONE</span> 配置文件加载</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-2">4.2. FEEDBACK AP内存泄漏</a></li>
+<li><a href="#sec-4-3">4.3. <span class="done DONE">DONE</span> 杰赛认证不通过</a></li>
+<li><a href="#sec-4-4">4.4. <span class="done DONE">DONE</span> 排查企业网9000端口被占用</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5. Task 10</a>
+<ul>
+<li><a href="#sec-5-1">5.1. <span class="done DONE">DONE</span> CGW500上线,审计服务器</a></li>
+<li><a href="#sec-5-2">5.2. <span class="done DONE">DONE</span> 正则表达式合入</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6. Task 11</a>
+<ul>
+<li><a href="#sec-6-1">6.1. <span class="done DONE">DONE</span> 云平台网关portal server方案</a></li>
+<li><a href="#sec-6-2">6.2. FEEDBACK 鹏博士ntf_logout没发，家里测下</a></li>
+<li><a href="#sec-6-3">6.3. <span class="done DONE">DONE</span> 广电找管文新查下主备问题</a></li>
+<li><a href="#sec-6-4">6.4. FEEDBACK 支持ssid级无流量下线时间检测</a></li>
+<li><a href="#sec-6-5">6.5. <span class="done DONE">DONE</span> 打印房屋出租合同</a></li>
+<li><a href="#sec-6-6">6.6. <span class="done DONE">DONE</span> 找房东办理租赁合同,办居住证</a></li>
+<li><a href="#sec-6-7">6.7. <span class="done DONE">DONE</span> 去社区医院办小卡</a></li>
+<li><a href="#sec-6-8">6.8. <span class="done DONE">DONE</span> 去国妇幼办大卡</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7. Task 12</a>
+<ul>
+<li><a href="#sec-7-1">7.1. <span class="done DONE">DONE</span> 审计代码分析</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8. Task 2016.01</a>
+<ul>
+<li><a href="#sec-8-1">8.1. FEEDBACK 中山厂园认证问题</a></li>
+</ul>
+</li>
+<li><a href="#sec-9">9. Task 2016.02</a>
+<ul>
+<li><a href="#sec-9-1">9.1. <span class="done DONE">DONE</span> 东洲罗顿</a></li>
+<li><a href="#sec-9-2">9.2. <span class="done DONE">DONE</span> 中传用户认证不过问题</a>
+<ul>
+<li><a href="#sec-9-2-1">9.2.1. 故障：</a></li>
+<li><a href="#sec-9-2-2">9.2.2. 排查：</a></li>
+<li><a href="#sec-9-2-3">9.2.3. 解决办法</a></li>
+</ul>
+</li>
+<li><a href="#sec-9-3">9.3. <span class="done DONE">DONE</span> 中科新业完成抓包功能</a></li>
+<li><a href="#sec-9-4">9.4. <span class="done DONE">DONE</span> hacker项目解析</a></li>
+<li><a href="#sec-9-5">9.5. <span class="done DONE">DONE</span> 烽火需求修改</a></li>
+</ul>
+</li>
+<li><a href="#sec-10">10. Task 2016.03</a>
+<ul>
+<li><a href="#sec-10-1">10.1. <span class="done DONE">DONE</span> 学习QOS流控（华三、深信服），输出文档</a></li>
+<li><a href="#sec-10-2">10.2. <span class="done DONE">DONE</span> audit MAKEFILE整理</a></li>
+<li><a href="#sec-10-3">10.3. <span class="done DONE">DONE</span> 雅洁AC中毒</a></li>
+<li><a href="#sec-10-4">10.4. DELEGATED 中传错误码格式兼容修改</a></li>
+<li><a href="#sec-10-5">10.5. <span class="done DONE">DONE</span> 烽火新版本测试</a></li>
+<li><a href="#sec-10-6">10.6. <span class="done DONE">DONE</span> 中科兴业小需求开发及测试</a></li>
+<li><a href="#sec-10-7">10.7. <span class="done DONE">DONE</span> hrd携带两个问号</a></li>
+<li><a href="#sec-10-8">10.8. <span class="done DONE">DONE</span> hrd修改nasip不生效</a></li>
+<li><a href="#sec-10-9">10.9. FEEDBACK DNS白名单通配</a></li>
+<li><a href="#sec-10-10">10.10. <span class="done DONE">DONE</span> 外场出现portal重定向不生效，用户放行</a></li>
+<li><a href="#sec-10-11">10.11. <span class="done DONE">DONE</span> tc命令使用</a></li>
+<li><a href="#sec-10-12">10.12. FEEDBACK 中传认证配置端口下发不生效</a></li>
+</ul>
+</li>
+<li><a href="#sec-11">11. Task 2016.04</a>
+<ul>
+<li><a href="#sec-11-1">11.1. FEEDBACK 亚信需求认证计费字段尽可能多以及一致</a></li>
+</ul>
+</li>
+<li><a href="#sec-12">12. Task 2016.05</a>
+<ul>
+<li><a href="#sec-12-1">12.1. <span class="done DONE">DONE</span> ta62本地转发集中认证，断开无线再连上需要重新认证</a></li>
+<li><a href="#sec-12-2">12.2. <span class="done DONE">DONE</span> 中科新业审计版本修改</a>
+<ul>
+<li><a href="#sec-12-2-1">12.2.1. <span class="todo TODO">TODO</span> 大报文手动分片</a></li>
+<li><a href="#sec-12-2-2">12.2.2. <span class="todo TODO">TODO</span> 中科新业方面修改了规则文档，我们需要同步修改</a></li>
+<li><a href="#sec-12-2-3">12.2.3. <span class="todo TODO">TODO</span> 配置文件中有个错误，多了一个逗号</a></li>
+</ul>
+</li>
+<li><a href="#sec-12-3">12.3. DELEGATED 网关产品portal推送慢</a>
+<ul>
+<li><a href="#sec-12-3-1">12.3.1. DELEGATED 检查socket关闭影响</a></li>
+<li><a href="#sec-12-3-2">12.3.2. DELEGATED libevent库与直接操作差异</a></li>
+</ul>
+</li>
+<li><a href="#sec-12-4">12.4. FEEDBACK pppoe性能差优化</a>
+<ul>
+<li><a href="#sec-12-4-1">12.4.1. <span class="done DONE">DONE</span> 自测性能</a></li>
+<li><a href="#sec-12-4-2">12.4.2. <span class="done DONE">DONE</span> 对比tp-link与cgw500拨号pppoe性能差异</a></li>
+</ul>
+</li>
+<li><a href="#sec-12-5">12.5. <span class="done DONE">DONE</span> portal域名url过短64改成128</a></li>
+<li><a href="#sec-12-6">12.6. <span class="done DONE">DONE</span> 内置portal出现断错误</a></li>
+<li><a href="#sec-12-7">12.7. <span class="done DONE">DONE</span> iso设备中传中文ssid不自动弹portal</a></li>
+<li><a href="#sec-12-8">12.8. FEEDBACK openwrt环境下pppoe的mtu值修改为500,不能弹portal</a></li>
+<li><a href="#sec-12-9">12.9. FEEDBACK DM下线，AC回应ACK，但是不下线</a></li>
+<li><a href="#sec-12-10">12.10. <span class="done DONE">DONE</span> 锐安审计答疑</a></li>
+</ul>
+</li>
+<li><a href="#sec-13">13. Task 2016.06</a>
+<ul>
+<li><a href="#sec-13-1">13.1. <span class="done DONE">DONE</span> 锐安审计完成开发和测试</a></li>
+<li><a href="#sec-13-2">13.2. <span class="done DONE">DONE</span> 企业网增加三个字段，用于联通测试</a></li>
+</ul>
+</li>
+<li><a href="#sec-14">14. Task 2016.07</a>
+<ul>
+<li><a href="#sec-14-1">14.1. <span class="todo TODO">TODO</span> MAC认证服务器搭建</a></li>
+<li><a href="#sec-14-2">14.2. <span class="todo TODO">TODO</span> TS命令完成检测重复功能</a></li>
+<li><a href="#sec-14-3">14.3. <span class="todo TODO">TODO</span> 网关产品分类解决</a></li>
+<li><a href="#sec-14-4">14.4. <span class="todo TODO">TODO</span> dhcp需要支持胖瘦自适应</a></li>
+<li><a href="#sec-14-5">14.5. <span class="todo TODO">TODO</span> vidpeek在x86上失败(字节序问题)</a></li>
+<li><a href="#sec-14-6">14.6. <span class="todo TODO">TODO</span> 锐安审计 netlink 问题：</a></li>
+<li><a href="#sec-14-7">14.7. <span class="todo TODO">TODO</span> 白名单url不生效(支付宝域名未解析？)</a></li>
+<li><a href="#sec-14-8">14.8. <span class="todo TODO">TODO</span> pppoe拨号中断</a></li>
+</ul>
+</li>
+<li><a href="#sec-15">15. 2017.01.06</a>
+<ul>
+<li><a href="#sec-15-1">15.1. 部门活动</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> 经费汇总</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+剩余 ＋6 元<br  />
+第一季度外婆家消费 1392 元<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Task 7</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> <span class="done DONE">DONE</span> 支持数据库的重启恢复</h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> VERIFY 抓包只抓入口报文（挂起）</h3>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> <span class="done DONE">DONE</span> apache重定向</h3>
+<div class="outline-text-3" id="text-2-3">
+<ol class="org-ol">
+<li>使用php<br  />
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-sec-2-4" class="outline-3">
+<h3 id="sec-2-4"><span class="section-number-3">2.4</span> <span class="done DONE">DONE</span> 学习orgmode链接</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+<a href="http://orgmode.org/worg/org-tutorials/orgtutorial_dto.html">TODO学习</a><br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-5" class="outline-3">
+<h3 id="sec-2-5"><span class="section-number-3">2.5</span> <span class="done DONE">DONE</span> qq在线表</h3>
+<div class="outline-text-3" id="text-2-5">
+<ol class="org-ol">
+<li>login，0x0001，"Log out"<br  />
+<ul class="org-ul">
+<li>update qq_session set T3=(select T2 from qq_session where mac=mac and qq=qq and t3 is null)<br  />
+where mac=mac and qq=qq and T3 is null;<br  />
+</li>
+<li>insert into qq_session values ();<br  />
+</li>
+</ul>
+</li>
+
+<li>logout, 0x0062, "request log in"<br  />
+<ul class="org-ul">
+<li>update qq_session set T3=now where mac=mac and qq=qq and T3 is null;<br  />
+</li>
+</ul>
+</li>
+
+<li>other<br  />
+<ul class="org-ul">
+<li>update qq_session set T2=now where mac=mac and qq=qq and T3 is null;<br  />
+</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-sec-2-6" class="outline-3">
+<h3 id="sec-2-6"><span class="section-number-3">2.6</span> <span class="done DONE">DONE</span> 重庆challenge一直已建立问题</h3>
+<div class="outline-text-3" id="text-2-6">
+<ul class="org-ul">
+<li>终端ip重复<br  />
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-7" class="outline-3">
+<h3 id="sec-2-7"><span class="section-number-3">2.7</span> <span class="done DONE">DONE</span> AP的重定向携带url</h3>
+<div class="outline-text-3" id="text-2-7">
+</div>
+</div>
+<div id="outline-container-sec-2-8" class="outline-3">
+<h3 id="sec-2-8"><span class="section-number-3">2.8</span> <span class="done DONE">DONE</span> 答复吴静流量字段</h3>
+<div class="outline-text-3" id="text-2-8">
+</div>
+</div>
+<div id="outline-container-sec-2-9" class="outline-3">
+<h3 id="sec-2-9"><span class="section-number-3">2.9</span> <span class="done DONE">DONE</span> 外场杰赛认证繁忙问题（DHCP）</h3>
+<div class="outline-text-3" id="text-2-9">
+<ol class="org-ol">
+<li>dhcp有问题，2.2.5.2-1496 版本vlan查询错误<br  />
+dhcp编译有问题：find . -type f |xargs file |grep CR|awk -F : '{print $1}'|xargs sed -i 's!\r!!'<br  />
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-sec-2-10" class="outline-3">
+<h3 id="sec-2-10"><span class="section-number-3">2.10</span> VERIFY 微信信息截获</h3>
+</div>
+<div id="outline-container-sec-2-11" class="outline-3">
+<h3 id="sec-2-11"><span class="section-number-3">2.11</span> <span class="done DONE">DONE</span> 广东portal推不出来帮助解决</h3>
+<div class="outline-text-3" id="text-2-11">
+<ol class="org-ol">
+<li>nat端口要放开<br  />
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-2-12" class="outline-3">
+<h3 id="sec-2-12"><span class="section-number-3">2.12</span> <span class="done DONE">DONE</span> 外场杰赛没有话单</h3>
+<div class="outline-text-3" id="text-2-12">
+</div>
+</div>
+<div id="outline-container-sec-2-13" class="outline-3">
+<h3 id="sec-2-13"><span class="section-number-3">2.13</span> <span class="done DONE">DONE</span> 中科新业对接安朗url携带广园信息</h3>
+<div class="outline-text-3" id="text-2-13">
+<p>
+#    modified:   hr/ac_hr_func.c<br  />
+#    modified:   hr/ac_hr_func.h<br  />
+#    modified:   hr/ac_hr_main.c<br  />
+#    modified:   powerac/usrm/ac_usrm_if.c<br  />
+#    modified:   powerac/usrm/ac_usrm_public.h<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-14" class="outline-3">
+<h3 id="sec-2-14"><span class="section-number-3">2.14</span> FEEDBACK 运营商携带apmac(待确认)</h3>
+</div>
+<div id="outline-container-sec-2-15" class="outline-3">
+<h3 id="sec-2-15"><span class="section-number-3">2.15</span> FEEDBACK 审计功能需求</h3>
+<div class="outline-text-3" id="text-2-15">
+</div><div id="outline-container-sec-2-15-1" class="outline-4">
+<h4 id="sec-2-15-1"><span class="section-number-4">2.15.1</span> <span class="todo TODO">TODO</span> URL过滤大量非主动性访问报文</h4>
+</div>
+<div id="outline-container-sec-2-15-2" class="outline-4">
+<h4 id="sec-2-15-2"><span class="section-number-4">2.15.2</span> <span class="todo TODO">TODO</span> </h4>
+</div>
+</div>
+<div id="outline-container-sec-2-16" class="outline-3">
+<h3 id="sec-2-16"><span class="section-number-3">2.16</span> FEEDBACK 运营商推不出portal</h3>
+</div>
+<div id="outline-container-sec-2-17" class="outline-3">
+<h3 id="sec-2-17"><span class="section-number-3">2.17</span> FEEDBACK 中科新业问题？</h3>
+</div>
+<div id="outline-container-sec-2-18" class="outline-3">
+<h3 id="sec-2-18"><span class="section-number-3">2.18</span> <span class="done DONE">DONE</span> 基于ac2780出hrd补丁，携带url</h3>
+<div class="outline-text-3" id="text-2-18">
+</div>
+</div>
+<div id="outline-container-sec-2-19" class="outline-3">
+<h3 id="sec-2-19"><span class="section-number-3">2.19</span> <span class="done DONE">DONE</span> 吴静的account携带giga字段</h3>
+<div class="outline-text-3" id="text-2-19">
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Task 8</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> FEEDBACK 审计功能需求</h3>
+<div class="outline-text-3" id="text-3-1">
+</div><div id="outline-container-sec-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1"><span class="section-number-4">3.1.1</span> FEEDBACK URL过滤大量非主动性访问报文</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<ul class="org-ul">
+<li>过滤方法：get<br  />
+</li>
+<li>过滤格式：css/js/png/jpg/ico/gif<br  />
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-1-2" class="outline-4">
+<h4 id="sec-3-1-2"><span class="section-number-4">3.1.2</span> <span class="done DONE">DONE</span> HTTP整理</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<div class="org-src-container">
+
+<pre class="src src-sql">  create table HTTP_INFO {
+  URL             varchar(255),
+  METHOD          varchar(4),
+  TITLE           varchar(64),
+  POSTCONTENT     varchar(255),
+  USERNAME        varchar(64),
+  PASSWORD        varchar(64),
+  KEYWORD         varchar(255),
+  MAINFILE        varchar(255),
+  FILESIZE        varchar(11)
+  };
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3-1-3" class="outline-4">
+<h4 id="sec-3-1-3"><span class="section-number-4">3.1.3</span> <span class="done DONE">DONE</span> QQ信息整理</h4>
+<div class="outline-text-4" id="text-3-1-3">
+<div class="org-src-container">
+
+<pre class="src src-sql">  create table IM_MSG (
+  SRC_SYS                 varchar(40),
+  DST_SYS                 varchar(40),
+  DATA_TYPE               varchar(32),
+  CLUES_ID                varchar(40),
+  SRC_IP                  varchar(128),
+  DST_IP                  varchar(128),
+  SRC_PORT                varchar(20),
+  DST_PORT                varchar(20),
+  CAPTURE_TIME            varchar(20),
+  SERVICE_CODE            varchar(20),
+  BASE_STATION_ID         varchar(20),
+  MAC_ADDRESS             varchar(20),
+  AUTH_TYPE               varchar(20),
+  AUTH_ACCOUNT            varchar(40),
+  SERVICE_TYPE            varchar(40),
+  SESSION_ID              varchar(255),
+  LONGITUDE               varchar(11),
+  LATITUDE                varchar(11),
+  IMSI                    varchar(128),
+  EQUIPMENT_ID            varchar(128),
+
+  IM_TYPE      varchar(32),
+  USERNAME     varchar(64),
+  PASSWORD     varchar(64),
+  FROM_ID      varchar(64),
+  TO_ID        varchar(64),
+  CONTENT      varchar(255),
+  ACTION       varchar(10),
+  MAINFILE     varchar(255),
+  FROMNICKNAME varchar(64),
+  TONICKNAME   varchar(64)
+  );
+</pre>
+</div>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">IM_TYPE</td>
+<td class="left">1030001</td>
+</tr>
+
+<tr>
+<td class="left">USERNAME</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">PASSWORD</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">FROM_ID</td>
+<td class="left">QQ_number</td>
+</tr>
+
+<tr>
+<td class="left">TO_ID</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">CONTENT</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ACTION</td>
+<td class="left">COMMAND</td>
+</tr>
+
+<tr>
+<td class="left">MAINFILE</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">FROMNICNAME</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">TONICKNAME</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> VERIFY nasid与apip地址绑定</h3>
+</div>
+<div id="outline-container-sec-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="section-number-3">3.3</span> <span class="done DONE">DONE</span> ac与portal服务器断链情况下触发用户免认证</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+利用perl脚本发起curl请求，ioctl设置认证状态<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-4" class="outline-3">
+<h3 id="sec-3-4"><span class="section-number-3">3.4</span> <span class="done DONE">DONE</span> QQ多终端问题</h3>
+</div>
+<div id="outline-container-sec-3-5" class="outline-3">
+<h3 id="sec-3-5"><span class="section-number-3">3.5</span> <span class="done DONE">DONE</span> portalv2计费报文没有</h3>
+<div class="outline-text-3" id="text-3-5">
+<ul class="org-ul">
+<li>mac与用户名相同情况下，usrm模块不更新用户名。导致不发计费报文<br  />
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-6" class="outline-3">
+<h3 id="sec-3-6"><span class="section-number-3">3.6</span> <span class="done DONE">DONE</span> url增加了apip</h3>
+<div class="outline-text-3" id="text-3-6">
+</div>
+</div>
+<div id="outline-container-sec-3-7" class="outline-3">
+<h3 id="sec-3-7"><span class="section-number-3">3.7</span> FEEDBACK 中科新业无感知问题</h3>
+</div>
+<div id="outline-container-sec-3-8" class="outline-3">
+<h3 id="sec-3-8"><span class="section-number-3">3.8</span> DELEGATED 域名字段增加</h3>
+<div class="outline-text-3" id="text-3-8">
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Task 9</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> <span class="done DONE">DONE</span> 烽火代码整理</h3>
+<div class="outline-text-3" id="text-4-1">
+</div>
+<div id="outline-container-sec-4-1-1" class="outline-4">
+<h4 id="sec-4-1-1"><span class="section-number-4">4.1.1</span> <span class="done DONE">DONE</span> 抓包</h4>
+</div>
+<div id="outline-container-sec-4-1-2" class="outline-4">
+<h4 id="sec-4-1-2"><span class="section-number-4">4.1.2</span> <span class="done DONE">DONE</span> 配置文件加载</h4>
+</div>
+</div>
+
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> FEEDBACK AP内存泄漏</h3>
+</div>
+<div id="outline-container-sec-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> <span class="done DONE">DONE</span> 杰赛认证不通过</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+iptables未放行导致<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-4" class="outline-3">
+<h3 id="sec-4-4"><span class="section-number-3">4.4</span> <span class="done DONE">DONE</span> 排查企业网9000端口被占用</h3>
+<div class="outline-text-3" id="text-4-4">
+<p>
+中毒，admin账户放开导致被攻击<br  />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Task 10</h2>
+<div class="outline-text-2" id="text-5">
+</div><div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> <span class="done DONE">DONE</span> CGW500上线,审计服务器</h3>
+</div>
+<div id="outline-container-sec-5-2" class="outline-3">
+<h3 id="sec-5-2"><span class="section-number-3">5.2</span> <span class="done DONE">DONE</span> 正则表达式合入</h3>
+<div class="outline-text-3" id="text-5-2">
+<ol class="org-ol">
+<li>http 报文会产生tcp分片<br  />
+</li>
+<li>http 下行报文过滤<br  />
+</li>
+<li>源tcp port 80<br  />
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Task 11</h2>
+<div class="outline-text-2" id="text-6">
+</div><div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> <span class="done DONE">DONE</span> 云平台网关portal server方案</h3>
+<div class="outline-text-3" id="text-6-1">
+<ol class="org-ol">
+<li>终端访问任何网站,redirect to login-wifi<br  />
+</li>
+<li>终端在login页面输入登录信息,发送给云平台<br  />
+</li>
+<li>云平台将终端重定向到网关, 携带token. <span class="underline">云平台保存了用户名和密码,计算出的chappassword处理???</span><br  />
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-6-2" class="outline-3">
+<h3 id="sec-6-2"><span class="section-number-3">6.2</span> FEEDBACK 鹏博士ntf_logout没发，家里测下</h3>
+</div>
+<div id="outline-container-sec-6-3" class="outline-3">
+<h3 id="sec-6-3"><span class="section-number-3">6.3</span> <span class="done DONE">DONE</span> 广电找管文新查下主备问题</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+上行链路检测时间过短,1分钟改为5分钟.<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-6-4" class="outline-3">
+<h3 id="sec-6-4"><span class="section-number-3">6.4</span> FEEDBACK 支持ssid级无流量下线时间检测</h3>
+</div>
+<div id="outline-container-sec-6-5" class="outline-3">
+<h3 id="sec-6-5"><span class="section-number-3">6.5</span> <span class="done DONE">DONE</span> 打印房屋出租合同</h3>
+<div class="outline-text-3" id="text-6-5">
+</div>
+</div>
+<div id="outline-container-sec-6-6" class="outline-3">
+<h3 id="sec-6-6"><span class="section-number-3">6.6</span> <span class="done DONE">DONE</span> 找房东办理租赁合同,办居住证</h3>
+<div class="outline-text-3" id="text-6-6">
+</div>
+</div>
+<div id="outline-container-sec-6-7" class="outline-3">
+<h3 id="sec-6-7"><span class="section-number-3">6.7</span> <span class="done DONE">DONE</span> 去社区医院办小卡</h3>
+</div>
+<div id="outline-container-sec-6-8" class="outline-3">
+<h3 id="sec-6-8"><span class="section-number-3">6.8</span> <span class="done DONE">DONE</span> 去国妇幼办大卡</h3>
+<div class="outline-text-3" id="text-6-8">
+</div>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Task 12</h2>
+<div class="outline-text-2" id="text-7">
+</div><div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> <span class="done DONE">DONE</span> 审计代码分析</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+2015-12-10 16:59:27 [Error] audit<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>: netlink receive error Socket operation on non-socket<br  />
+2015-12-10 16:59:27 [Error] audit<sup><a id="fnr.1.100" name="fnr.1.100" class="footref" href="#fn.1">1</a></sup>:  recvfrom fail. fd: 0 - Socket operation on non-socket<br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Task 2016.01</h2>
+<div class="outline-text-2" id="text-8">
+</div><div id="outline-container-sec-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> FEEDBACK 中山厂园认证问题</h3>
+<div class="outline-text-3" id="text-8-1">
+<ol class="org-ol">
+<li>现象：用户认证不通过<br  />
+</li>
+<li>分析：<br  />
+cat ac.log |grep "PORTAL ACK" 查看日志:<br  />
+aucUserIP  = 172.19.140.171 ucErrCode  = 2<br  />
+</li>
+</ol>
+<p>
+错误原因码为 2 ，用户已经认证过。<br  />
+</p>
+
+<p>
+[root@localhost log]# cat ac.log.5|grep "ACK "|grep "aucUserIP  = 172.19.140.171 ucErrCode  = "<br  />
+2016-01-15 11:53:29.701 powerac: [U_PORTAL] &lt;INFO&gt; (10964662) ac_pa_handle_ps_req_challenge_msg: ack msg is <code>==========PORTAL ACK CHALLENGE===</code> ucVer      = 2 ucType     = 2 ucAuthType = 0 usSerialNo = 27979 usReqID    = 32660 aucUserIP  = 172.19.140.171 ucErrCode  = 0 ucAttrNum  = 1 AttrType   = 3 AttrLen    = 18 AttrValue  = 0x76.b6.fc.59.e8.33.38.b3.8.e0.da.39.a.99.47.4  <code>================================</code><br  />
+2016-01-15 11:54:03.964 powerac: [U_PORTAL] &lt;INFO&gt; (10964696) 1619,ac_pa_handle_ps_req_challenge_msg: ack msg is <code>==========PORTAL ACK CHALLENGE===</code> ucVer      = 2 ucType     = 2 ucAuthType = 0 usSerialNo = 27998 usReqID    = 32662 aucUserIP  = 172.19.140.171 ucErrCode  = 2 ucAttrNum  = 1 AttrType   = 5 AttrLen    = 7 AttrValue  =  <code>================================</code><br  />
+2016-01-15 11:54:03.970 powerac: [U_PORTAL] &lt;INFO&gt; (10964696) 1619,ac_pa_handle_ps_req_challenge_msg: ack msg is <code>==========PORTAL ACK CHALLENGE===</code> ucVer      = 2 ucType     = 2 ucAuthType = 0 usSerialNo = 27998 usReqID    = 32663 aucUserIP  = 172.19.140.171 ucErrCode  = 2 ucAttrNum  = 1 AttrType   = 5 AttrLen    = 7 AttrValue  =  <code>================================</code><br  />
+2016-01-15 11:54:03.975 powerac: [U_PORTAL] &lt;INFO&gt; (10964696) 1619,ac_pa_handle_ps_req_challenge_msg: ack msg is <code>==========PORTAL ACK CHALLENGE===</code> ucVer      = 2 ucType     = 2 ucAuthType = 0 usSerialNo = 27998 usReqID    = 32664 aucUserIP  = 172.19.140.171 ucErrCode  = 2 ucAttrNum  = 1 AttrType   = 5 AttrLen    = 7 AttrValue  =  <code>================================</code><br  />
+</p>
+
+<p>
+出现失败都是 1分20秒，之后再次认证。<br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Task 2016.02</h2>
+<div class="outline-text-2" id="text-9">
+</div><div id="outline-container-sec-9-1" class="outline-3">
+<h3 id="sec-9-1"><span class="section-number-3">9.1</span> <span class="done DONE">DONE</span> 东洲罗顿</h3>
+<div class="outline-text-3" id="text-9-1">
+<p>
+account增加giga字段<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-9-2" class="outline-3">
+<h3 id="sec-9-2"><span class="section-number-3">9.2</span> <span class="done DONE">DONE</span> 中传用户认证不过问题</h3>
+<div class="outline-text-3" id="text-9-2">
+</div>
+<div id="outline-container-sec-9-2-1" class="outline-4">
+<h4 id="sec-9-2-1"><span class="section-number-4">9.2.1</span> 故障：</h4>
+<div class="outline-text-4" id="text-9-2-1">
+<p>
+显示在其他设备登录<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-9-2-2" class="outline-4">
+<h4 id="sec-9-2-2"><span class="section-number-4">9.2.2</span> 排查：</h4>
+<div class="outline-text-4" id="text-9-2-2">
+<p>
+据radius侧周盛佳描述，ac侧用户状态未认证，服务器侧继续收到计费报文。<br  />
+2016-02-19 00:48:28.082 18176626972, 10.8.48.158, 34:80:B3:45:E2:47<br  />
+</p>
+</div>
+
+<ol class="org-ol"><li><a id="sec-9-2-2-1" name="sec-9-2-2-1"></a>同时使用13763202193这个帐号<br  /><div class="outline-text-5" id="text-9-2-2-1">
+<p>
+10.8.9.142 C4:6A:B7:DF:CF:C6 2月22日 21:41认证成功 2月23日 08:41解除认证<br  />
+10.8.9.176 24:DF:6A:CA:8A:7C 2月22日 21:12解除认证 2月23日 09:02认证成功<br  />
+</p>
+</div>
+</li></ol>
+</div>
+<div id="outline-container-sec-9-2-3" class="outline-4">
+<h4 id="sec-9-2-3"><span class="section-number-4">9.2.3</span> 解决办法</h4>
+<div class="outline-text-4" id="text-9-2-3">
+<ol class="org-ol">
+<li>首先，管文新打的补丁是有效的。从以下日志看出。<br  />
+</li>
+</ol>
+<p>
+-bash-3.1# ls -a ac.log*|xargs grep "is off"<br  />
+ac.log:2016-02-23 09:45:52.641 powerac: [U_USRM] &lt;ALERT&gt; (3404727) <a href="../../usrm/ac_usrm_if.c">../../usrm/ac_usrm_if.c</a>, Line:12100, Fun:ac_usrm_check_usercertstat, 0C:D6:BD:48:06:10 cert state is off, to stop accounting<br  />
+ac.log.4:2016-02-22 21:15:36.997 powerac: [U_USRM] &lt;ALERT&gt; (3359712) <a href="../../usrm/ac_usrm_if.c">../../usrm/ac_usrm_if.c</a>, Line:12100, Fun:ac_usrm_check_usercertstat, 38:BC:1A:C4:3D:12 cert state is off, to stop accounting<br  />
+</p>
+
+<ol class="org-ol">
+<li>外场保障“在其他设备上登录的故障”其实并非这个问题。很简单，用户 确实在其他设备登录 了：<br  />
+</li>
+</ol>
+
+<p>
+该用户同时使用13763202193这个帐号<br  />
+10.8.9.142 C4:6A:B7:DF:CF:C6 2月22日 21:41认证成功 2月23日 08:41解除认证(IDLE TIMEOUT)<br  />
+10.8.9.176 24:DF:6A:CA:8A:7C 2月22日 21:12解除认证 2月23日 09:02认证成功<br  />
+</p>
+
+<p>
+基于radius只允许一个账户在线。这个用户在 2月23日 08:41 之前是无法认证的，也是报障时间，时间上吻合，所以 很明显，AC没有问题。<br  />
+</p>
+
+<ol class="org-ol">
+<li>解决方法：<br  />
+</li>
+</ol>
+<p>
+"重认证超时（目前2小时）"跟"无流量下线时间"配置要小一点<br  />
+</p>
+
+<p>
+AGAIN:<br  />
+安力科技园三22D-1楼秘书处<br  />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-9-3" class="outline-3">
+<h3 id="sec-9-3"><span class="section-number-3">9.3</span> <span class="done DONE">DONE</span> 中科新业完成抓包功能</h3>
+<div class="outline-text-3" id="text-9-3">
+<ol class="org-ol">
+<li>完成与<br  />
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-sec-9-4" class="outline-3">
+<h3 id="sec-9-4"><span class="section-number-3">9.4</span> <span class="done DONE">DONE</span> hacker项目解析</h3>
+<div class="outline-text-3" id="text-9-4">
+</div>
+</div>
+<div id="outline-container-sec-9-5" class="outline-3">
+<h3 id="sec-9-5"><span class="section-number-3">9.5</span> <span class="done DONE">DONE</span> 烽火需求修改</h3>
+<div class="outline-text-3" id="text-9-5">
+<p>
+王力提了三点：<br  />
+</p>
+<ol class="org-ol">
+<li>acl和dns规则有可能存在“与”的关系的情况，我们全是“或”的关系，需要修改<br  />
+</li>
+<li>http匹配不上，但是acl匹配上的报文应该上报。我觉得这一点有困难，如果acl的规则是80，如果也上报，那么http规则匹配就没有意义了？<br  />
+</li>
+<li>http按会话上报，可行性讨论<br  />
+</li>
+</ol>
+
+<p>
+以下2点确认了，需要修改。<br  />
+</p>
+<ol class="org-ol">
+<li>acl与dns是“与“的关系。<br  />
+</li>
+<li>im规则与http规则是“或”的关系，只要其中匹配上就需要上报。<br  />
+</li>
+</ol>
+<p>
+这样的话，修改点1跟修改点2的需求改动很大。<br  />
+</p>
+
+<p>
+我的计划如下：<br  />
+</p>
+<ol class="org-ol">
+<li>本周先完成中科新业需求，同时对烽火、兴荣接口兼容<br  />
+</li>
+<li>下周在此基础上，再对烽火修改点进行修改。<br  />
+</li>
+<li>最后考虑内核态实现。<br  />
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> Task 2016.03</h2>
+<div class="outline-text-2" id="text-10">
+</div><div id="outline-container-sec-10-1" class="outline-3">
+<h3 id="sec-10-1"><span class="section-number-3">10.1</span> <span class="done DONE">DONE</span> 学习QOS流控（华三、深信服），输出文档</h3>
+<div class="outline-text-3" id="text-10-1">
+</div>
+</div>
+<div id="outline-container-sec-10-2" class="outline-3">
+<h3 id="sec-10-2"><span class="section-number-3">10.2</span> <span class="done DONE">DONE</span> audit MAKEFILE整理</h3>
+<div class="outline-text-3" id="text-10-2">
+</div>
+</div>
+<div id="outline-container-sec-10-3" class="outline-3">
+<h3 id="sec-10-3"><span class="section-number-3">10.3</span> <span class="done DONE">DONE</span> 雅洁AC中毒</h3>
+<div class="outline-text-3" id="text-10-3">
+<p>
+#+src_begin log<br  />
+[root@localhost ~]# ps uax|grep -i ssh<br  />
+root      9533  0.0  0.0    968   200 ?        Ss   11:23   0:02 <i>etc</i>.SSHH2<br  />
+root     17023  0.0  0.1   7256  2316 ?        Ss   11:28   0:00 sshd: root@pts/3<br  />
+root     18230  0.0  0.0   4696   872 ?        Ss   11:29   0:00 /usr/sbin/sshd<br  />
+root     18323  0.0  0.1   7256  2320 ?        Ss   11:29   0:00 sshd: root@pts/1<br  />
+root     21080  0.0  0.0   9160   304 ?        Ss   11:31   0:00 <i>tmp</i>.sshhdd1458617515<br  />
+root     21083  0.0  0.0   9160   304 ?        S    11:31   0:00 <i>tmp</i>.sshhdd1458617515<br  />
+root     21084  0.1  0.0   9160   304 ?        S    11:31   0:07 <i>tmp</i>.sshhdd1458617515<br  />
+root     21087  0.0  0.0   9160   304 ?        S    11:31   0:00 <i>tmp</i>.sshhdd1458617515<br  />
+root     21088  0.0  0.0   9160   304 ?        S    11:31   0:01 <i>tmp</i>.sshhdd1458617515<br  />
+root      6141  0.0  0.0   9160   304 ?        S    12:35   0:00 <i>tmp</i>.sshhdd1458617515<br  />
+root      6244  0.2  0.1   7256  2384 ?        Ss   12:36   0:00 sshd: root@pts/0<br  />
+root      7046  0.0  0.0   3884   724 pts/0    S+   12:36   0:00 grep &#x2013;color -i ssh<br  />
+#+src_end<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-10-4" class="outline-3">
+<h3 id="sec-10-4"><span class="section-number-3">10.4</span> DELEGATED 中传错误码格式兼容修改</h3>
+<div class="outline-text-3" id="text-10-4">
+</div>
+</div>
+<div id="outline-container-sec-10-5" class="outline-3">
+<h3 id="sec-10-5"><span class="section-number-3">10.5</span> <span class="done DONE">DONE</span> 烽火新版本测试</h3>
+<div class="outline-text-3" id="text-10-5">
+</div>
+</div>
+<div id="outline-container-sec-10-6" class="outline-3">
+<h3 id="sec-10-6"><span class="section-number-3">10.6</span> <span class="done DONE">DONE</span> 中科兴业小需求开发及测试</h3>
+<div class="outline-text-3" id="text-10-6">
+<ol class="org-ol">
+<li>开发 OK<br  />
+</li>
+<li>测试 OK<br  />
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-sec-10-7" class="outline-3">
+<h3 id="sec-10-7"><span class="section-number-3">10.7</span> <span class="done DONE">DONE</span> hrd携带两个问号</h3>
+<div class="outline-text-3" id="text-10-7">
+</div>
+</div>
+<div id="outline-container-sec-10-8" class="outline-3">
+<h3 id="sec-10-8"><span class="section-number-3">10.8</span> <span class="done DONE">DONE</span> hrd修改nasip不生效</h3>
+<div class="outline-text-3" id="text-10-8">
+</div>
+</div>
+<div id="outline-container-sec-10-9" class="outline-3">
+<h3 id="sec-10-9"><span class="section-number-3">10.9</span> FEEDBACK DNS白名单通配</h3>
+</div>
+<div id="outline-container-sec-10-10" class="outline-3">
+<h3 id="sec-10-10"><span class="section-number-3">10.10</span> <span class="done DONE">DONE</span> 外场出现portal重定向不生效，用户放行</h3>
+<div class="outline-text-3" id="text-10-10">
+<p>
+现象描述：<br  />
+</p>
+<ol class="org-ol">
+<li>使用 entwlanctl getstalist 查询到用户处于“未认证”<br  />
+</li>
+<li>但是用户直接可以访问网页，而重定向的匹配规则不生效<br  />
+</li>
+</ol>
+
+<p>
+问题查明：<br  />
+</p>
+<ol class="org-ol">
+<li>掩码配置全“0”导致。<br  />
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-sec-10-11" class="outline-3">
+<h3 id="sec-10-11"><span class="section-number-3">10.11</span> <span class="done DONE">DONE</span> tc命令使用</h3>
+<div class="outline-text-3" id="text-10-11">
+</div>
+</div>
+<div id="outline-container-sec-10-12" class="outline-3">
+<h3 id="sec-10-12"><span class="section-number-3">10.12</span> FEEDBACK 中传认证配置端口下发不生效</h3>
+<div class="outline-text-3" id="text-10-12">
+<p>
+修改 web 端口为 1812，发现 DEVM 传过来端口仍为 1812.<br  />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Task 2016.04</h2>
+<div class="outline-text-2" id="text-11">
+</div><div id="outline-container-sec-11-1" class="outline-3">
+<h3 id="sec-11-1"><span class="section-number-3">11.1</span> FEEDBACK 亚信需求认证计费字段尽可能多以及一致</h3>
+</div>
+</div>
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> Task 2016.05</h2>
+<div class="outline-text-2" id="text-12">
+</div><div id="outline-container-sec-12-1" class="outline-3">
+<h3 id="sec-12-1"><span class="section-number-3">12.1</span> <span class="done DONE">DONE</span> ta62本地转发集中认证，断开无线再连上需要重新认证</h3>
+<div class="outline-text-3" id="text-12-1">
+<ol class="org-ol">
+<li>ac-xa01-2516-3062存在该问题<br  />
+</li>
+<li>潘姐在12月份优化过一次，之后新版本不存在该问题<br  />
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-sec-12-2" class="outline-3">
+<h3 id="sec-12-2"><span class="section-number-3">12.2</span> <span class="done DONE">DONE</span> 中科新业审计版本修改</h3>
+<div class="outline-text-3" id="text-12-2">
+</div>
+<div id="outline-container-sec-12-2-1" class="outline-4">
+<h4 id="sec-12-2-1"><span class="section-number-4">12.2.1</span> <span class="todo TODO">TODO</span> 大报文手动分片</h4>
+</div>
+<div id="outline-container-sec-12-2-2" class="outline-4">
+<h4 id="sec-12-2-2"><span class="section-number-4">12.2.2</span> <span class="todo TODO">TODO</span> 中科新业方面修改了规则文档，我们需要同步修改</h4>
+</div>
+<div id="outline-container-sec-12-2-3" class="outline-4">
+<h4 id="sec-12-2-3"><span class="section-number-4">12.2.3</span> <span class="todo TODO">TODO</span> 配置文件中有个错误，多了一个逗号</h4>
+</div>
+</div>
+<div id="outline-container-sec-12-3" class="outline-3">
+<h3 id="sec-12-3"><span class="section-number-3">12.3</span> DELEGATED 网关产品portal推送慢</h3>
+<div class="outline-text-3" id="text-12-3">
+</div>
+<div id="outline-container-sec-12-3-1" class="outline-4">
+<h4 id="sec-12-3-1"><span class="section-number-4">12.3.1</span> DELEGATED 检查socket关闭影响</h4>
+<div class="outline-text-4" id="text-12-3-1">
+</div>
+</div>
+<div id="outline-container-sec-12-3-2" class="outline-4">
+<h4 id="sec-12-3-2"><span class="section-number-4">12.3.2</span> DELEGATED libevent库与直接操作差异</h4>
+<div class="outline-text-4" id="text-12-3-2">
+<p>
+废弃，原因为让其他人搞<br  />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-12-4" class="outline-3">
+<h3 id="sec-12-4"><span class="section-number-3">12.4</span> FEEDBACK pppoe性能差优化</h3>
+<div class="outline-text-3" id="text-12-4">
+</div><div id="outline-container-sec-12-4-1" class="outline-4">
+<h4 id="sec-12-4-1"><span class="section-number-4">12.4.1</span> <span class="done DONE">DONE</span> 自测性能</h4>
+<div class="outline-text-4" id="text-12-4-1">
+<ol class="org-ol">
+<li>网页下载 10MBps<br  />
+</li>
+<li>speedtest 上下行都是 20Mbps<br  />
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-sec-12-4-2" class="outline-4">
+<h4 id="sec-12-4-2"><span class="section-number-4">12.4.2</span> <span class="done DONE">DONE</span> 对比tp-link与cgw500拨号pppoe性能差异</h4>
+<div class="outline-text-4" id="text-12-4-2">
+<p>
+5条流tcp打流5分钟<br  />
+</p>
+<ol class="org-ol">
+<li>tp-link<br  />
+</li>
+</ol>
+<p>
+平均流量: 85.347 Mbps<br  />
+</p>
+<ol class="org-ol">
+<li>cgw500<br  />
+</li>
+</ol>
+<p>
+平均流量: 86.306 Mbps<br  />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-12-5" class="outline-3">
+<h3 id="sec-12-5"><span class="section-number-3">12.5</span> <span class="done DONE">DONE</span> portal域名url过短64改成128</h3>
+<div class="outline-text-3" id="text-12-5">
+</div>
+</div>
+<div id="outline-container-sec-12-6" class="outline-3">
+<h3 id="sec-12-6"><span class="section-number-3">12.6</span> <span class="done DONE">DONE</span> 内置portal出现断错误</h3>
+<div class="outline-text-3" id="text-12-6">
+</div>
+</div>
+<div id="outline-container-sec-12-7" class="outline-3">
+<h3 id="sec-12-7"><span class="section-number-3">12.7</span> <span class="done DONE">DONE</span> iso设备中传中文ssid不自动弹portal</h3>
+<div class="outline-text-3" id="text-12-7">
+<p>
+原因为苹果服务器加入白名单<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-12-8" class="outline-3">
+<h3 id="sec-12-8"><span class="section-number-3">12.8</span> FEEDBACK openwrt环境下pppoe的mtu值修改为500,不能弹portal</h3>
+<div class="outline-text-3" id="text-12-8">
+<p>
+增加限制1000~1492<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-12-9" class="outline-3">
+<h3 id="sec-12-9"><span class="section-number-3">12.9</span> FEEDBACK DM下线，AC回应ACK，但是不下线</h3>
+<div class="outline-text-3" id="text-12-9">
+<p>
+cat /var/log/ac.log.2|grep -E "das|force_user"<br  />
+</p>
+
+<p>
+&#x2013;<br  />
+2016-05-19 16:03:40.975 account: [U_ACCOUNT] &lt;INFO&gt; (472070) Next RADIUS client retransmit in 2 seconds.<br  />
+2016-05-19 16:03:40.975 account: [U_ACCOUNT] &lt;INFO&gt; (472070) Received 20 bytes from RADIUS server.<br  />
+2016-05-19 16:03:40.975 account: [U_ACCOUNT] &lt;INFO&gt; (472070) Received RADIUS message.<br  />
+2016-05-19 16:03:40.975 account: [U_ACCOUNT] &lt;NOTICE&gt; (472070) Received RADIUS packet matched with a pending request, round trip time 0.00 sec.<br  />
+2016-05-19 16:03:41.010 account: [U_ACCOUNT] &lt;INFO&gt; (472070) Received 58 bytes from dac(199.199.199.200:39188).<br  />
+2016-05-19 16:03:41.010 account: [U_ACCOUNT] &lt;NOTICE&gt; (472070) RADIUS message: code=40 (Disconnect-Request) identifier=64 length=58<br  />
+2016-05-19 16:03:41.010 account: [U_ACCOUNT] &lt;INFO&gt; (472070)    Attribute 44 (Acct-Session-Id) length=19       Value: '57363D08-0001F60D'<br  />
+2016-05-19 16:03:41.010 account: [U_ACCOUNT] &lt;INFO&gt; (472070)    Attribute 1 (User-Name) length=13       Value: '15614203538'<br  />
+2016-05-19 16:03:41.010 account: [U_ACCOUNT] &lt;INFO&gt; (472070)    Attribute 8 (Framed-Ip-Address) length=6       Value: 99.99.158.105<br  />
+2016-05-19 16:03:41.011 account: [U_ACCOUNT] &lt;INFO&gt; (472070) das_process_disconnect, disconnect user: name(15614203538), mac(20:68:9d:92:82:c4), ip(99.99.158.105).<br  />
+2016-05-19 16:03:41.011 account: [U_ACCOUNT] &lt;INFO&gt; (472070) das_process_disconnect, disconnect user: 1 users matched.<br  />
+2016-05-19 16:03:41.011 account: [U_ACCOUNT] &lt;INFO&gt; (472070) das_response, send 20 bytes to dac(199.199.199.200:39188).<br  />
+2016-05-19 16:03:41.011 account: [U_ACCOUNT] &lt;NOTICE&gt; (472070) RADIUS message: code=41 (Disconnect-Ack) identifier=64 length=20<br  />
+2016-05-19 16:03:41.026 account: [U_ACCOUNT] &lt;INFO&gt; (472070) radius_ipc_proc, transmit msg(12102), len(644).<br  />
+2016-05-19 16:03:41.027 account: [U_ACCOUNT] &lt;NOTICE&gt; (472070) local_ipc_proc, recv event(12102).<br  />
+2016-05-19 16:03:41.027 account: [U_ACCOUNT] &lt;INFO&gt; (472070) accounting_user_stop, user info: ^Iuser_mac: 5c:f7:c3:92:cc:53. ^Iuser_ip: 99.99.168.147. ^Iuser_name: 15530017525. ^Iap_mac: 00:34:cb:38:d1:dc. ^Iap_ssid: XY-WIFI. ^Inas_ip: 172.204.0.2. ^Inas_id: 0000.0000.000.00.460. ^Iacct_interim_interval: 300. ^Inas_port_id: 0. ^Iterminate cause: 1.<br  />
+2016-05-19 16:03:41.027 account: [U_ACCOUNT] &lt;NOTICE&gt; (472070) 5c:f7:c3:92:cc:53<br  />
+2016-05-19 16:03:41.027 account: [U_ACCOUNT] &lt;NOTICE&gt; (472070) accounting_user_stop, user(15530017525), is at state(1).<br  />
+2016-05-19 16:03:41.028 account: [U_ACCOUNT] &lt;INFO&gt; (472070) radius_ipc_proc, transmit msg(12101), len(644).<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-12-10" class="outline-3">
+<h3 id="sec-12-10"><span class="section-number-3">12.10</span> <span class="done DONE">DONE</span> 锐安审计答疑</h3>
+<div class="outline-text-3" id="text-12-10">
+<p>
+问题：<br  />
+</p>
+<ul class="org-ul">
+<li>终端上下线与认证事件的区别<br  />
+</li>
+<li>一定会有回应报文么<br  />
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> Task 2016.06</h2>
+<div class="outline-text-2" id="text-13">
+</div><div id="outline-container-sec-13-1" class="outline-3">
+<h3 id="sec-13-1"><span class="section-number-3">13.1</span> <span class="done DONE">DONE</span> 锐安审计完成开发和测试</h3>
+<div class="outline-text-3" id="text-13-1">
+</div>
+</div>
+<div id="outline-container-sec-13-2" class="outline-3">
+<h3 id="sec-13-2"><span class="section-number-3">13.2</span> <span class="done DONE">DONE</span> 企业网增加三个字段，用于联通测试</h3>
+<div class="outline-text-3" id="text-13-2">
+<ol class="org-ol">
+<li>域名功能<br  />
+</li>
+<li>Vendor specific<br  />
+</li>
+<li>Sever-type<br  />
+</li>
+<li>Nas-port<br  />
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> Task 2016.07</h2>
+<div class="outline-text-2" id="text-14">
+</div><div id="outline-container-sec-14-1" class="outline-3">
+<h3 id="sec-14-1"><span class="section-number-3">14.1</span> <span class="todo TODO">TODO</span> MAC认证服务器搭建</h3>
+</div>
+<div id="outline-container-sec-14-2" class="outline-3">
+<h3 id="sec-14-2"><span class="section-number-3">14.2</span> <span class="todo TODO">TODO</span> TS命令完成检测重复功能</h3>
+</div>
+<div id="outline-container-sec-14-3" class="outline-3">
+<h3 id="sec-14-3"><span class="section-number-3">14.3</span> <span class="todo TODO">TODO</span> 网关产品分类解决</h3>
+</div>
+<div id="outline-container-sec-14-4" class="outline-3">
+<h3 id="sec-14-4"><span class="section-number-3">14.4</span> <span class="todo TODO">TODO</span> dhcp需要支持胖瘦自适应</h3>
+</div>
+<div id="outline-container-sec-14-5" class="outline-3">
+<h3 id="sec-14-5"><span class="section-number-3">14.5</span> <span class="todo TODO">TODO</span> vidpeek在x86上失败(字节序问题)</h3>
+</div>
+<div id="outline-container-sec-14-6" class="outline-3">
+<h3 id="sec-14-6"><span class="section-number-3">14.6</span> <span class="todo TODO">TODO</span> 锐安审计 netlink 问题：</h3>
+<div class="outline-text-3" id="text-14-6">
+<p>
+Jun 22 14:57:21.165063 audit.ra [&lt;10497&gt; ad_log_ra.c:0968] netlink receive error No buffer space available<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-14-7" class="outline-3">
+<h3 id="sec-14-7"><span class="section-number-3">14.7</span> <span class="todo TODO">TODO</span> 白名单url不生效(支付宝域名未解析？)</h3>
+<div class="outline-text-3" id="text-14-7">
+<ul class="org-ul">
+<li>需要手机上的dns缓存机制<br  />
+</li>
+</ul>
+
+<p>
+auth.alipaydns.com<br  />
+110.76.18.46<br  />
+</p>
+
+<p>
+omeo.alipaydns.com<br  />
+110.76.20.32<br  />
+</p>
+
+<p>
+a.alipayobjects.com<br  />
+</p>
+<ol class="org-ol">
+<li>71. 17.160<br  />
+</li>
+<li>71. 17.159<br  />
+</li>
+</ol>
+
+<p>
+apilocate.amap.com  apiinit.amap.com restapi.amap.com<br  />
+140.205.177.185<br  />
+106.11.69.57<br  />
+140.205.176.208<br  />
+106.11.68.56<br  />
+</p>
+
+<p>
+kcart.alipay.com<br  />
+110.76.10.93<br  />
+110.75.134.73<br  />
+</p>
+
+<p>
+passport.alipay.com<br  />
+140.205.134.4<br  />
+</p>
+
+
+
+<p>
+140.205.142.13<br  />
+140.205.174.93<br  />
+</p>
+
+<p>
+retry:<br  />
+140.205.174.1<br  />
+140.205.99.5<br  />
+140.205.99.1<br  />
+117.78.56.131<br  />
+119.147.226.65<br  />
+</p>
+
+<p>
+无用<br  />
+log.mmstat.com<br  />
+140.205.248.86<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-14-8" class="outline-3">
+<h3 id="sec-14-8"><span class="section-number-3">14.8</span> <span class="todo TODO">TODO</span> pppoe拨号中断</h3>
+<div class="outline-text-3" id="text-14-8">
+<p>
+[root@CGW3000 log]# cat messages|grep ppp<br  />
+May 29 17:56:14 CGW3000 pppd<sup><a id="fnr.2" name="fnr.2" class="footref" href="#fn.2">2</a></sup>: LCP terminated by peer<br  />
+May 29 17:56:14 CGW3000 pppd<sup><a id="fnr.2.100" name="fnr.2.100" class="footref" href="#fn.2">2</a></sup>: Connect time 2875.0 minutes.<br  />
+May 29 17:56:14 CGW3000 pppd<sup><a id="fnr.2.100" name="fnr.2.100" class="footref" href="#fn.2">2</a></sup>: Sent 3254401358 bytes, received 990517970 bytes.<br  />
+May 29 17:56:17 CGW3000 pppd<sup><a id="fnr.2.100" name="fnr.2.100" class="footref" href="#fn.2">2</a></sup>: Connection terminated.<br  />
+May 29 17:56:18 CGW3000 pppd<sup><a id="fnr.2.100" name="fnr.2.100" class="footref" href="#fn.2">2</a></sup>: Modem hangup<br  />
+May 29 17:56:18 CGW3000 pppd<sup><a id="fnr.2.100" name="fnr.2.100" class="footref" href="#fn.2">2</a></sup>: Exit.<br  />
+May 29 17:56:18 CGW3000 pppoe-connect: PPPoE connection lost; attempting re-connection.<br  />
+May 29 17:56:23 CGW3000 pppd<sup><a id="fnr.3" name="fnr.3" class="footref" href="#fn.3">3</a></sup>: Plugin /appfs/etc/ppp/plugins/rp-pppoe.so loaded.<br  />
+May 29 17:56:23 CGW3000 pppd<sup><a id="fnr.3.100" name="fnr.3.100" class="footref" href="#fn.3">3</a></sup>: RP-PPPoE plugin version 3.8p compiled against pppd 2.4.5<br  />
+May 29 17:56:23 CGW3000 pppd<sup><a id="fnr.3.100" name="fnr.3.100" class="footref" href="#fn.3">3</a></sup>: pppd 2.4.5 started by root, uid 0<br  />
+May 29 17:56:23 CGW3000 pppd<sup><a id="fnr.3.100" name="fnr.3.100" class="footref" href="#fn.3">3</a></sup>: PPP session is 18265<br  />
+May 29 17:56:23 CGW3000 pppd<sup><a id="fnr.3.100" name="fnr.3.100" class="footref" href="#fn.3">3</a></sup>: Connected to 76:91:2b:9b:00:17 via interface eth0<br  />
+May 29 17:56:23 CGW3000 pppd<sup><a id="fnr.3.100" name="fnr.3.100" class="footref" href="#fn.3">3</a></sup>: Using interface ppp0<br  />
+May 29 17:56:23 CGW3000 pppd<sup><a id="fnr.3.100" name="fnr.3.100" class="footref" href="#fn.3">3</a></sup>: Connect: ppp0 &lt;&#x2013;&gt; eth0<br  />
+May 29 17:56:26 CGW3000 pppd<sup><a id="fnr.3.100" name="fnr.3.100" class="footref" href="#fn.3">3</a></sup>: Remote message: Authentication success,Welcome!<br  />
+May 29 17:56:26 CGW3000 pppd<sup><a id="fnr.3.100" name="fnr.3.100" class="footref" href="#fn.3">3</a></sup>: PAP authentication succeeded<br  />
+May 29 17:56:26 CGW3000 pppd<sup><a id="fnr.3.100" name="fnr.3.100" class="footref" href="#fn.3">3</a></sup>: peer from calling number 76:91:2B:9B:00:17 authorized<br  />
+May 29 17:56:26 CGW3000 pppd<sup><a id="fnr.3.100" name="fnr.3.100" class="footref" href="#fn.3">3</a></sup>: local  IP address 113.99.68.249<br  />
+May 29 17:56:26 CGW3000 pppd<sup><a id="fnr.3.100" name="fnr.3.100" class="footref" href="#fn.3">3</a></sup>: remote IP address 113.99.68.1<br  />
+May 29 17:56:26 CGW3000 pppd<sup><a id="fnr.3.100" name="fnr.3.100" class="footref" href="#fn.3">3</a></sup>: primary   DNS address 202.96.134.133<br  />
+May 29 17:56:26 CGW3000 pppd<sup><a id="fnr.3.100" name="fnr.3.100" class="footref" href="#fn.3">3</a></sup>: secondary DNS address 202.96.128.166<br  />
+May 30 10:30:32 CGW3000 xl2tpd<sup><a id="fnr.4" name="fnr.4" class="footref" href="#fn.4">4</a></sup>: start_pppd: I'm running:<br  />
+May 30 10:30:32 CGW3000 xl2tpd<sup><a id="fnr.4.100" name="fnr.4.100" class="footref" href="#fn.4">4</a></sup>: "/appfs/sbin/pppd"<br  />
+May 30 10:30:32 CGW3000 xl2tpd<sup><a id="fnr.4.100" name="fnr.4.100" class="footref" href="#fn.4">4</a></sup>: "/tmp/xl2tpd/pppopt/gw_vpn"<br  />
+May 30 10:30:32 CGW3000 pppd<sup><a id="fnr.5" name="fnr.5" class="footref" href="#fn.5">5</a></sup>: pppd 2.4.5 started by root, uid 0<br  />
+May 30 10:30:32 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: using channel 3<br  />
+May 30 10:30:32 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: Couldn't allocate PPP unit 0 as it is already in use<br  />
+May 30 10:30:32 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: Using interface ppp1<br  />
+May 30 10:30:32 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: Connect: ppp1 &lt;&#x2013;&gt; /dev/pts/1<br  />
+May 30 10:30:32 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: sent [LCP ConfReq id=0x1 &lt;asyncmap 0x0&gt; &lt;magic 0xa9205a&gt;]<br  />
+May 30 10:30:32 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: rcvd [LCP ConfReq id=0x1 &lt;mru 1410&gt; &lt;asyncmap 0x0&gt; &lt;auth chap MD5&gt; &lt;magic 0x828bfc20&gt; &lt;pcomp&gt; &lt;accomp&gt;]<br  />
+May 30 10:30:32 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: sent [LCP ConfRej id=0x1 &lt;pcomp&gt; &lt;accomp&gt;]<br  />
+May 30 10:30:32 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: rcvd [LCP ConfReq id=0x2 &lt;mru 1410&gt; &lt;asyncmap 0x0&gt; &lt;auth chap MD5&gt; &lt;magic 0x828bfc20&gt;]<br  />
+May 30 10:30:32 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: sent [LCP ConfAck id=0x2 &lt;mru 1410&gt; &lt;asyncmap 0x0&gt; &lt;auth chap MD5&gt; &lt;magic 0x828bfc20&gt;]<br  />
+May 30 10:30:35 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: sent [LCP ConfReq id=0x1 &lt;asyncmap 0x0&gt; &lt;magic 0xa9205a&gt;]<br  />
+May 30 10:30:35 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: rcvd [LCP ConfAck id=0x1 &lt;asyncmap 0x0&gt; &lt;magic 0xa9205a&gt;]<br  />
+May 30 10:30:35 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: rcvd [CHAP Challenge id=0xd0 &lt;b6ee231f7fa2dc7d3e20714e6427305ed4356b&gt;, name = "LinuxVPNserver"]<br  />
+May 30 10:30:35 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: sent [CHAP Response id=0xd0 &lt;bb6f0ec3b7acf909323784b0ae0afbf6&gt;, name = "test"]<br  />
+May 30 10:30:35 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: rcvd [CHAP Success id=0xd0 "Access granted"]<br  />
+May 30 10:30:35 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: CHAP authentication succeeded: Access granted<br  />
+May 30 10:30:35 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: CHAP authentication succeeded<br  />
+May 30 10:30:35 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: sent [IPCP ConfReq id=0x1 &lt;compress VJ 0f 01&gt; &lt;addr 0.0.0.0&gt;]<br  />
+May 30 10:30:35 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: rcvd [IPCP ConfReq id=0x1 &lt;compress VJ 0f 01&gt; &lt;addr 192.168.1.99&gt;]<br  />
+May 30 10:30:35 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: sent [IPCP ConfAck id=0x1 &lt;compress VJ 0f 01&gt; &lt;addr 192.168.1.99&gt;]<br  />
+May 30 10:30:35 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: rcvd [IPCP ConfNak id=0x1 &lt;addr 192.168.1.128&gt;]<br  />
+May 30 10:30:35 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: sent [IPCP ConfReq id=0x2 &lt;compress VJ 0f 01&gt; &lt;addr 192.168.1.128&gt;]<br  />
+May 30 10:30:35 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: rcvd [IPCP ConfAck id=0x2 &lt;compress VJ 0f 01&gt; &lt;addr 192.168.1.128&gt;]<br  />
+May 30 10:30:35 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: local  IP address 192.168.1.128<br  />
+May 30 10:30:35 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: remote IP address 192.168.1.99<br  />
+May 30 10:30:35 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: Script /etc/ppp/ip-up started (pid 16212)<br  />
+May 30 10:30:35 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: Script /etc/ppp/ip-up finished (pid 16212), status = 0x0<br  />
+May 30 10:32:05 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: rcvd [LCP TermReq id=0x3 "User request"]<br  />
+May 30 10:32:05 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: LCP terminated by peer (User request)<br  />
+May 30 10:32:05 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: Connect time 1.5 minutes.<br  />
+May 30 10:32:05 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: Sent 145176 bytes, received 26349 bytes.<br  />
+May 30 10:32:05 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: Script /etc/ppp/ip-down started (pid 10056)<br  />
+May 30 10:32:05 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: sent [LCP TermAck id=0x3]<br  />
+May 30 10:32:05 CGW3000 xl2tpd<sup><a id="fnr.4.100" name="fnr.4.100" class="footref" href="#fn.4">4</a></sup>: Terminating pppd: sending TERM signal to pid 15265<br  />
+May 30 10:32:05 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: Terminating on signal 15<br  />
+May 30 10:32:05 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: Modem hangup<br  />
+May 30 10:32:05 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: Connection terminated.<br  />
+May 30 10:32:05 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: Script /etc/ppp/ip-down finished (pid 10056), status = 0x0<br  />
+May 30 10:32:05 CGW3000 pppd<sup><a id="fnr.5.100" name="fnr.5.100" class="footref" href="#fn.5">5</a></sup>: Exit.<br  />
+May 30 14:21:23 CGW3000 snmpManager.cgi<sup><a id="fnr.6" name="fnr.6" class="footref" href="#fn.6">6</a></sup>: [CGI][DEBUG][home_page_html_replace]&lt;sup&gt;&lt;a id="fnr.7" name="fnr.7" class="footref" href="#fn.7"&gt;7&lt;/a&gt;&lt;/sup&gt; gateway is ppp0#012!<br  />
+May 30 14:22:37 CGW3000 dhcpd: [DEBUG] next_iface4 . if_name: ppp0, info-&gt;flags: 4305<br  />
+May 30 14:22:37 CGW3000 dhcpd: [DEBUG] next_iface . info-&gt;name: ppp0, ifaces-&gt;sock: 10<br  />
+May 30 16:50:36 CGW3000 snmpManager.cgi<sup><a id="fnr.6.100" name="fnr.6.100" class="footref" href="#fn.6">6</a></sup>: [CGI][DEBUG][home_page_html_replace]&lt;sup&gt;&lt;a id="fnr.7.100" name="fnr.7.100" class="footref" href="#fn.7"&gt;7&lt;/a&gt;&lt;/sup&gt; gateway is ppp0#012!<br  />
+May 31 12:10:22 CGW3000 kernel: [324625.066347] Loading kernel module for a network device with CAP_SYS_MODULE (deprecated).  Use CAP_NET_ADMIN and alias netdev-pppoe instead<br  />
+May 31 14:06:43 CGW3000 snmpManager.cgi<sup><a id="fnr.6.100" name="fnr.6.100" class="footref" href="#fn.6">6</a></sup>: [CGI][DEBUG][home_page_html_replace]&lt;sup&gt;&lt;a id="fnr.7.100" name="fnr.7.100" class="footref" href="#fn.7"&gt;7&lt;/a&gt;&lt;/sup&gt; gateway is ppp0#012!<br  />
+May 31 17:51:21 CGW3000 pppd<sup><a id="fnr.3.100" name="fnr.3.100" class="footref" href="#fn.3">3</a></sup>: LCP terminated by peer<br  />
+May 31 17:51:21 CGW3000 pppd<sup><a id="fnr.3.100" name="fnr.3.100" class="footref" href="#fn.3">3</a></sup>: Connect time 2875.0 minutes.<br  />
+May 31 17:51:21 CGW3000 pppd<sup><a id="fnr.3.100" name="fnr.3.100" class="footref" href="#fn.3">3</a></sup>: Sent 4144020071 bytes, received 3166895554 bytes.<br  />
+May 31 17:51:24 CGW3000 pppd<sup><a id="fnr.3.100" name="fnr.3.100" class="footref" href="#fn.3">3</a></sup>: Connection terminated.<br  />
+May 31 17:51:24 CGW3000 pppd<sup><a id="fnr.3.100" name="fnr.3.100" class="footref" href="#fn.3">3</a></sup>: Modem hangup<br  />
+May 31 17:51:24 CGW3000 pppd<sup><a id="fnr.3.100" name="fnr.3.100" class="footref" href="#fn.3">3</a></sup>: Exit.<br  />
+May 31 17:51:24 CGW3000 pppoe-connect: PPPoE connection lost; attempting re-connection.<br  />
+May 31 17:51:29 CGW3000 pppd<sup><a id="fnr.8" name="fnr.8" class="footref" href="#fn.8">8</a></sup>: Plugin /appfs/etc/ppp/plugins/rp-pppoe.so loaded.<br  />
+May 31 17:51:29 CGW3000 pppd<sup><a id="fnr.8.100" name="fnr.8.100" class="footref" href="#fn.8">8</a></sup>: RP-PPPoE plugin version 3.8p compiled against pppd 2.4.5<br  />
+May 31 17:51:29 CGW3000 pppd<sup><a id="fnr.8.100" name="fnr.8.100" class="footref" href="#fn.8">8</a></sup>: pppd 2.4.5 started by root, uid 0<br  />
+May 31 17:51:29 CGW3000 pppd<sup><a id="fnr.8.100" name="fnr.8.100" class="footref" href="#fn.8">8</a></sup>: PPP session is 20155<br  />
+May 31 17:51:29 CGW3000 pppd<sup><a id="fnr.8.100" name="fnr.8.100" class="footref" href="#fn.8">8</a></sup>: Connected to 76:91:2b:9b:00:17 via interface eth0<br  />
+May 31 17:51:29 CGW3000 pppd<sup><a id="fnr.8.100" name="fnr.8.100" class="footref" href="#fn.8">8</a></sup>: Using interface ppp0<br  />
+May 31 17:51:29 CGW3000 pppd<sup><a id="fnr.8.100" name="fnr.8.100" class="footref" href="#fn.8">8</a></sup>: Connect: ppp0 &lt;&#x2013;&gt; eth0<br  />
+May 31 17:51:32 CGW3000 pppd<sup><a id="fnr.8.100" name="fnr.8.100" class="footref" href="#fn.8">8</a></sup>: Remote message: Authentication success,Welcome!<br  />
+May 31 17:51:32 CGW3000 pppd<sup><a id="fnr.8.100" name="fnr.8.100" class="footref" href="#fn.8">8</a></sup>: PAP authentication succeeded<br  />
+May 31 17:51:32 CGW3000 pppd<sup><a id="fnr.8.100" name="fnr.8.100" class="footref" href="#fn.8">8</a></sup>: peer from calling number 76:91:2B:9B:00:17 authorized<br  />
+May 31 17:51:32 CGW3000 pppd<sup><a id="fnr.8.100" name="fnr.8.100" class="footref" href="#fn.8">8</a></sup>: local  IP address 113.99.69.160<br  />
+May 31 17:51:32 CGW3000 pppd<sup><a id="fnr.8.100" name="fnr.8.100" class="footref" href="#fn.8">8</a></sup>: remote IP address 113.99.68.1<br  />
+May 31 17:51:32 CGW3000 pppd<sup><a id="fnr.8.100" name="fnr.8.100" class="footref" href="#fn.8">8</a></sup>: primary   DNS address 202.96.134.133<br  />
+May 31 17:51:32 CGW3000 pppd<sup><a id="fnr.8.100" name="fnr.8.100" class="footref" href="#fn.8">8</a></sup>: secondary DNS address 202.96.128.166<br  />
+[root@CGW3000 log]#<br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-15" class="outline-2">
+<h2 id="sec-15"><span class="section-number-2">15</span> 2017.01.06</h2>
+<div class="outline-text-2" id="text-15">
+</div><div id="outline-container-sec-15-1" class="outline-3">
+<h3 id="sec-15-1"><span class="section-number-3">15.1</span> 部门活动</h3>
+<div class="outline-text-3" id="text-15-1">
+<p>
+13:30~14:00：  从公司出发。<br  />
+14:30~15:30：  打保龄球和台球.<br  />
+               保龄球  ：开两个球道，每个6局，共计300块。<br  />
+               台球    ：开两个台，每个台一个小时共计80块。<br  />
+15:30~16:00：  走到饭店。<br  />
+16:00~17:00：  在饭店包房玩杀人游戏（扑克牌我带）。<br  />
+17:00~19:00：  吃晚饭，地点也在金桥国际广场，具体饭店大家推荐一下，西贝莜面村、古丽仙西域情餐厅<br  />
+19:00~21:00：  上海歌城唱歌，中包两个小时共计280，酒水零食120，共计400块。<br  />
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p>DEFINITION NOT FOUND.</p></div>
+
+<div class="footdef"><sup><a id="fn.2" name="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p>DEFINITION NOT FOUND.</p></div>
+
+<div class="footdef"><sup><a id="fn.3" name="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p>DEFINITION NOT FOUND.</p></div>
+
+<div class="footdef"><sup><a id="fn.4" name="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p>DEFINITION NOT FOUND.</p></div>
+
+<div class="footdef"><sup><a id="fn.5" name="fn.5" class="footnum" href="#fnr.5">5</a></sup> <p>DEFINITION NOT FOUND.</p></div>
+
+<div class="footdef"><sup><a id="fn.6" name="fn.6" class="footnum" href="#fnr.6">6</a></sup> <p>DEFINITION NOT FOUND.</p></div>
+
+<div class="footdef"><sup><a id="fn.7" name="fn.7" class="footnum" href="#fnr.7">7</a></sup> <p>DEFINITION NOT FOUND.</p></div>
+
+<div class="footdef"><sup><a id="fn.8" name="fn.8" class="footnum" href="#fnr.8">8</a></sup> <p>DEFINITION NOT FOUND.</p></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="date">Created: 2017-02-04 Sat 19:49</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

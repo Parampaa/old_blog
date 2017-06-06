@@ -1,0 +1,6 @@
+= vimrc配置
+fabius8
+:icons: font
+
+* link:centos_vimrc.html[Centos下vim配置]
+* link:mac_vimrc.html[Mac OS下vim配置]

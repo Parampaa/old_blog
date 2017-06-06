@@ -1,0 +1,18 @@
+#+TITLE:linux kernel README
+
+* 什么是 linux
+* linux 在那些硬件上运行
+* 文档
+1. LDP(Linux Documentation Project)
+2. Documentation/子目录
+3. Documentation/Docbook/ 子目录包含指南，使用『make』 产生文档
+* 安装内核源码
+1. 解压
+2. 利用补丁升级。确保没有错误的 paches
+3. 版本之间的升级注意回退才能成功，具体看 Documentation/applying-patches.txt
+4. 确保没有旧的 .o 文件和依赖。
+#+BEGIN_SRC bash
+cd linux
+make mrproper
+#+END_SRC
+* 软件要求

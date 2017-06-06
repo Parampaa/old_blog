@@ -1,0 +1,383 @@
+= 日记
+BELIEVING IS EVERYTHING!
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+:hardbreaks:
+
+== 2015
+* 05.12
+link:Sanya_travel.html[三亚旅行计划]
+* 12.07
+haha, 睡觉😪
+
+== 2016
+
+* 01.08
+link:Thailand_travel.html[泰国旅游计划]
+
+* 01.27
+我有数行泪，不落十余年，今日为君尽，并洒秋风前。
+读书万余卷，一事不知，以为深耻。
+
+* 02.02
+Customizing Emacs is an everlasting game.
+
+* 02.03
+It can show you how you can teach yourself to go further.
+
+* 02.06-02.14(春节)
+给夫亲买冬天保暖背心，大小 165
+给丫头卖了newblance鞋子38码大了1个手指(newblance)，换37码，还大，再换36.5
+
+* 02.19
+道在险夷随地乐，心意鱼鸟自流形。
+
+* 02.20
+给父亲买手帕，2件夏天背心，大小为165
+
+* 02.23
+学习吹箫
+至於初学 务求平正 既能平正 务求险绝
+既能险绝 复归平正 融会之际 人书俱老
+逸远　清幽　奇峰　跌宕
+澹泊　涵虚　聚气　凝神
+
+* 02.26
+邓孝可在《蜀报》上发表《卖国邮传部！卖国奴盛宣怀！》的檄文：
+既夺我路，又夺我款，又不为我造路。天乎！此而欲川人忍受，
+除吾川一万万人死尽，妇孺尽绝，鸡犬无存或可耳！否则胡能忍者！
+[blue]*有生物以来无此情，有世界以为无此理，
+有日月以来无此黑暗，有人类以来无此野蛮*，
+而今乃有盛宣怀如此横蛮以迫压我四川之人。
+
+* 03.13
+今日第四局李世石胜ALPHAGO。
+
+* 03.16
+花一年时间学习LINUX内核，并于阶段性发布学习进度
+[quote,Foreword,《linux kernel development》]
+The learning curve for the kernel is getting longer and steeper.
+The system is becoming increasingly complex, and it is very large.
+And as the years pass, the current members of the kernel development team
+gain deeper and broader knowledge of the kernel’s internals,
+which widens the gap between them and newcomers.
+
+* 03.17
+[quote,Foreword,《linux kernel development》]
+The best way to understand a part of the kernel is to make changes to it.
+Making a change forces the developer to a level of understanding
+which merely reading the code does not provide.
+
+* 04.02
+kernel differences from user-space:
+. The kernel has access to neither the C library nor the standard C headers
+. The kernel is coded in GNU C
+. The kernel lacks the memory protection afforded to user-space
+. The kernel cannot easily execute floating-point operations
+. The kernel has a small per-process fixed-size stack
+. Because the kernel has asynchronous interrupts, is preemptive, and supports SMP,
+synchronization and concurrency are major concerns within the kernel.
+. Portability is important
+
+* 04.04
+凡人有求我，必悉心为之。
+
+* 05.18
+早盘股市大跌，人民币汇率是否会暴跌？
+
+* 05.19
+学习到的东西如果用不上，那便是无用。
+
+* 06.01
+以下书籍推荐：
+《管理学》，(美)斯蒂芬·罗宾斯
+《组织行为学》 ，(美)斯蒂芬·罗宾斯
+《营销管理》，(美)菲利普·科特勒
+《人力资源管理》，(美)加里·德斯勒
+
+* 06.05
+21:00 ~ 22:00 阅读《桌有成效的管理者》
+
+* 06.15
+今天很失落，hacker程序全部不通过！
+对自己能力表示怀疑。
+
+* 06.17
+每一次的感悟，都让我记忆犹新，每一次总以为是最后一次，必是最根本。总随着时间发现其"不靠谱"。
+曾经对道的追求，说不清也道不明。对于文王的“向道未见”，庄子的“道在屎溺”，六祖的“明心见性”，有所感而不能发，
+只能像颜渊仰望孔夫子一样唏嘘“虽欲从之，莫由也已”。
+回望当初，所读之书俱是所谓“经典”，似《周易》、《尚书》诘曲聱牙，吮读如“甘霖”，便觉世间之书再高不过此等。
+《论语》、《春秋》如千仞高山屹立于我心中，心中唯叹“天不生仲尼，万古长入夜”。心甘情愿被“约之以礼”。
+我仰慕孔夫子，以其寸言为圭臬，以窥视其“室之美”为人生大本。然而今天，我终于要放空这块心内“宝地”。
+即便如王阳明所言“道在险夷随地乐，心忘鱼鸟自流形”，以忘道见道的方式也已经仅在于刹那间的“心通”。
+读王阳明的书，最可怕的是在“问心之路”上而变得无知，生怕自己落入“程朱理学”。
+但是...但是...我现在回过头沉心思考，文以载道！文以载道！什么是“道”？
+我自此明白，人生于世，不应以学习别人为榜样，而因以看见自身错误，因地制宜，从内部将其瓦解，“破心中之贼”才是大事。
+所以不知自身短处，读书便不可得，所以“尽信书，则不如无书”。豪掷光阴，书海遨游，我不再愿意做这样事情。
+所谓的好书，必是我欠缺的东西，或者能力。
++
+** 看了AP组的代码，发现风格差距很大。别人做的很好，下一步需要学习《代码整洁之道》
+
+* 07.08
+超过预产期3天了。
+
+* 07.16
+人应该有感情,任何无视感情的人最终必然自食恶果.
+
+* 07.19
+为什么是三年,又或者五年一个计划?因为需要强迫自己做一些事情,强迫是否比兴趣重要?
+要学习的东西太多了。如何才能达到『精通』？
+
+** 目前已经听到有两种方法达到目标：
+. 不设定好目标不去做，不明确最后结果，不迈出第一步（洛克菲勒）
+. 不去想最后的结果，因为你很难看到最后，看清前七步即可（Andyhunt）
+
+究竟什么才是适合自己的?
+
+* 07.24
+小小丫头肚脐出血，好担心啊!
+
+* 07.28
+
+* 07.30
+** 今天办完居住证，总结下流程：
+. 申请租赁备案，在社区事务受理中心
+.. 房东持有「房产证」「身份证」
+.. 你持有「身份证」「租赁合同」
+.. 领取「租赁备案申请表」，填写提交
+. 申请居住证凭证，在居委会办理，需要一天入库
+.. 你需要「租赁备案复印件」「身份证」，最好持有房东身份证复印件，需要登记身份证号
+. 申请居住证
+.. 办理长期居住证，你需要「劳动合同」「社保证明」(有社保机器可以打印)「身份证」「租赁备案复印件」
+
+** 其实不在于你的目标究竟是远大还是眼前，而在于你的目标是否明确。
++
+[quote, 《爱丽丝梦游仙境》]
+爱丽丝走到了一个通往各个不同方向的路口，她不知何去何从，于是向小猫邱舍请教。
+"邱舍小猫咪，能否请你告诉我，我应该走哪一条路?"
+"那要看你想到哪儿去。"小猫咪回答。
+"到哪儿去，我并无所谓..."爱丽丝说。
+"那么，你走哪一条路，也就无所谓了。"小猫咪回答。
++
+
+** 今天解决了 ubuntu 上面 apache 的不能执行 cgi 的问题
+. 参照 apache 官网指南，因为 cgi 模块没有 enable 导致
+
+* 08.01
+今天成为 FSF 成员！希望能让自己做出点像样的东西！
+
+* 08.02
+今天修改 dhcp 表，往 powerac 错误的表里面写入表项，导致升级失败。悲剧，花了一个下午时间。
+
+* 08.06
+. 多看看能够利用手头的东西做点什么!当务之急利用自身现有的能力，思考如何出一套产品。
+. 回头看看自己每天做的事情，仍处于学习阶段，是否输出太少，方向太过狭窄？
+
+* 08.08
+. 电脑开不了机，黑屏，修理老师比较负责。跟上次修空调一样，值得尊敬。
+. 贪心是宝，处处学会贪心。从贪心开始才有希望。《洛克菲勒》
+
+* 08.10
+. Linux 学习之路坎坷，但是一旦精通，可以独步江湖。现在可以专精一门可以做兼职的开发。
+. 念头是需要自制的。
+. 今天忍无可忍，在http://12345.wenzhou.gov.cn/上举报投诉家里的派出所。小孩户口竟然上不了，天大的笑话！
++
+TIP: 查询编号 1470820671688
+查询密码 994882
+
+尊敬的市长先生：
+您好！
+我的女儿于2016年7月12日出生，8月初去『海城派出所』办理小孩户口，随父亲，但是『海城派出所』以各种理由不予办理：
+理由1：女方户口本是2016年1月份，而派出所要求必须要在1个月内。
+理由2：女方地址因国家政策划区板浦镇从『灌云县』划『到海州区』.
+导致身份证地址与户口本地址不符，而派出所要我们出示『政策改区文件』。
+于是女方家属去当地请求办理，但是当地派出所表示从未开过这样的证明，拒绝办理！
+所列理由我在政策中并没有看见，闻所未闻！希望市长能给我们一个回复，让小孩顺利上户口！谢谢！
+
+浙江政务服务网
+感谢您的来信，请记住您的信件编号和查询码，通过信件编号和查询码您可以在本网站首页“我要查”栏目的 “信件答复”中，
+查询该信件的办件状态，也可以使用政务服务网手机APP扫描二维码进行查询。
+
+TIP:  信件编号:zwfw1093297
+查 询 码:o52kjl0h
+
+* 08.11
+https://github.com/hwdsl2/setup-ipsec-vpn
++
+* 08.12
+. 网关的代码写得太烂，已经看了2天代码了，『东边日出西边雨』。
+
+TIP: 精力容易分散。若想做成一件事，[red]*需要迫切希望看到最终实现成果*。
+
+* 08.16
+牛人blog：
+http://jtleek.com/book/
+
+* 08.17
+一个公司，不能仅仅看一个人能不能完成任务，还要看他的做事风格能
+不能可持续发展。仅仅为了一次的成功，不能算是成功，成功是持续发生的。
+
+* 08.18
+[quote, 洛克菲勒]
+I was early taught to work as well as play,
+My life has been one long, happy holiday;
+Full of work and full of play,
+I dropped the worry on the way,
+And God was good to me everyday.
+
++
+[red]*不要等到『最好的时间』，恢复『最好的精力』的时候再去做，抓紧时间立刻就去实现。*
+
+* 08.19
+MINIX 操作系统，有一本描述其原理的书发行，极其详细有条理。Linus 收益于此。
+POSIX: Portable Operating System Interface for Computing Systems
+中国计算机水平比不上国外的可能有的原因：输入法！中国需要切换，外国人不需要！
+:-)
+
+* 08.20
+宝珠玉者，殃必及身。这句话值得思量，究竟有无依据？
+[quote, 方政]
+我所见之社会，人无不以贪心而能成事。
+不贪心者比贪心过度之人更为可怕，应视贪心为宝。
+
+* 08.23
+[red]*想做的是事情赶紧做，不要等到想做的时候时间不允许了。*
+
+* 08.26
+市场好的时候，好像永远都不会跌。市场不好的时候，好像永远也不会涨。
+
+* 08.29
+[quote, 方政]
+每一日
+都不是机械地重复
+而是一种累加
+当你在坚持的时候
+不要说
+没有用
+
++
+凌晨1点，又读到爱丽丝梦游仙境小猫那段，我哭了。将来在哪里？
+
+* 08.30
+「[red]*创造力*」是衡量一个人的能力的重要标准！创造力不是闲言碎语，胡思乱想，
+而是突破自身思维局限，发现新鲜而富有美感的事物！
+
+* 09.01
+一个优秀的产品可能被抄袭，但一个优秀的商业模式，却无法被复制。
+
+* 09.03
+我们讲话，不一定非要组织语言到完美无缺才可以说。而是抛砖引玉，或是引领他人。
+
+* 09.06
+如果要创业需要团队，这个团队一定是因为这个事情可以开始了，而需要更多人参与进来。
+不能因为我需要召集人，来做这件事。
+也就是说当出现我一个人无力完成时，事情已经在进行之中。
+
+* 09.09
+如果说话对公司有益，那与其他人对话来引导你说出来。
+如果无益，见解不深，纵使如坐针毡，很想表达，也无济于事。
+人的习惯在不自觉中养成，意志的强大与否决定习惯的好坏。
+对于『塞翁失马，焉知非福』这样的论点，敬而远之。
+这与『上帝对你关上一扇门的同时，会打开一扇门』的观点是不一样。
+前者是无视实体的损失，自我麻痹，后者是能力的缺失的补充，一种激励。
+
+* 09.10
+谋事在人， [red]*成事在人* ！赐不受命，而货殖焉。
+
+* 09.11
+基于研发对市场的缺乏了解，以至于缺失对自己工作结果的实际反馈。
+是否可以通过邮件订阅一些财务信息，我相信对公司越了解，就越促进
+，这样可以督促大家同一个目标而工作。
++
+[quote, 佚名]
+与其生活在既不胜利也不失败的黯淡阴郁的心情里，
+成为既不知欢乐也不知悲伤的懦夫的同类，
+倒不如不惜失败，
+大胆地向目的挑战。
++
+给自己空余时间规划。
+
+TIP: 但是有些时间什么也不想干，如何克制这种心理？
+
+* 09.18
+中午没拿车卡，结果与门卫争执，最后签字走人。晚上心情比较糟糕。
+[blue]*吵架的结果* 是即使赢了也不会感觉太好。
+
+* 09.19
+如何进入快速进入状态
+
+* 09.20
+今天卖水果的妇女40来岁，昨天20来岁。年长的卖东西更让人安心。WHY?
+
+如果工具可以做「时间输出统计」这个事情，会非常好。
+但时间管理最大的问题是，如何在人不知不觉中进行「开始」统计？
+
+* 09.28
+学习的另一个目的应该让生活更加 [red]*美妙* 、 [red]*精致* 、[red]*方便*
+
+* 09.30
+The boss can not force you to become a good programmer,
+a lot of time he can not judge whether you qualified.
+If you want to be successful,
+you can only rely on yourself,
+which relates to your personal character.
+Once you are determined to become a good programmer,
+your development potential is great.
+
+* 10.01
+One of my Jilin University alumni, working in the real estate industry,
+is now every succesful.
+
+* 10.08
+I did not think about the next step of the plan to start typing, resulting in
+I always need to press the delete key.
+So, think about it before you start doing things, and I need to refrain from
+impulsive action.
+
+* 10.09
+. The first point of programming is program maintainability.
+. Lack of understanding of the whole, resulting in partial design bloated.
+
+* 10.19
+If you make a product for someone else to use, but he has been constantly ask
+you quetions, it must be the product done badly.
+Not only make the product well, but also the guide.
+
+* 10.27
+Learn HTML, keep resist the temptation to use W3Schools, use W3Fools.
+
+ 10.29
+康德三个问题:
+. 我能够知道什么
+. 我应当做什么
+. 我可以希望什么
+
+图式是构建图像的一般程序。
+想象力充当感性和知性的中介，通过图式。
+
+* 10.30
+康德
+永远把把人当目的，而非手段。
+自己给自己立法，以自己为目的。
+
+* 11.03
+我们工作的目的是什么？把不完美的事情变得完美，赋予工作美感以及艺术。
+从事一件心中 `伟大` 的事业固然令人深感愉悦，但是其 `伟大` 也是由不完美而来。
+放弃对工作要求伟大的假象，做好当下不完美的事情。
+打造完美胜过追求完美。
+
+* 11.07
+关于职业规划的问题现在看是困扰我，我不得不去思考这个问题。
+. 选择长远竞争力的行业.
+. 成为核心成员
+. 公司定位，私、国、外、创的优缺点
+. 城市定位，根据自身能力
+
+* 2016.01.06
+. 买车应该先去申请车贷，再去4s店，提出全款买车，可以省手续费。
+. 一定要买裸车
+

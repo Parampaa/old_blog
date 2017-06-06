@@ -1,0 +1,29 @@
+= DHCP
+TEST
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+:hardbreaks:
+
+== DHCP
+[plantuml, DHCP_RANDOM_GATEWAY, png]
+....
+终端 -> 网关: 无线接入
+note right
+给所有的网关分配序号
+每台网关各自对应一个数字
+end note
+终端 ->  网关: DHCP DISCOVERY
+网关 -> 网关: 取模运算 MAC%(网关数目)，其结果对应网关序号\n 如结果为5，对应第5台网关
+网关 --> 终端: DHCP OFFER, (携带 option routers 网关IP地址)
+终端 -> 网关: DHCP REQUEST
+网关 --> 终端: DHCP ACK
+....
+
+[plantuml, DHCP_RANDOM_GATEWAY_2, png]
+....
+
+....

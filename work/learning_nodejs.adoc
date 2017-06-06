@@ -1,0 +1,14 @@
+= Nodejs
+Hello
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+:hardbreaks:
+
+== Thinking
+
+* module.exports vs exports in Node.js
+http://stackoverflow.com/questions/7137397/module-exports-vs-exports-in-node-js

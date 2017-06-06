@@ -1,0 +1,28 @@
+#+TITLE: http重定向之302报文修改为js方法的方案
+#+Author: fangzheng
+
+* 文档说明
+** 修改记录 
+| 文档版本 | 修订时间 | 修订人 | 修订内容 |
+|----------+------------+--------+----------|
+|      1.0 | 2015-08-26 | 方政 |        |
+** 编写目的
+1. 了解修改原因及背景
+
+* 需求分析
+** 业务需求
+原因：外场摇滚河马页面流失率高，http的302重定向会导致sta访问服务器过于频繁，所以采用javascript方法，由终端浏览器作拦截
+* 实现方法
+报文原始格式如下：
+#+BEGIN_SRC http
+HTTP/1.1 200 OK\r\n
+Content-Type: text/html; charset=UTF-8\r\n
+Cache-Control: no-cache\r\n
+\r\n
+<!DOCTYPE html>
+<HTML><HEAD><meta http-equiv=\"content-type\" content=\"text/html;charset=gb2312\">\n
+<script type=\"text/javascript\">\n
+function gotourl(){window.top.location.href ='http://10.50.123.52:90?wlanuserip=172.168.1.101&wlanacname=11/11:ee.11.12&wlanacip=10.50.123.52&ssid=fang_haha&nasid=0000000000000460&usermac=34363b7fb17c&wlanapmac=0034cb00b1a7';} gotourl();\n
+</script>\n
+</HEAD><BODY>ok</BODY></HTML>\r\n
+#+END_SRC

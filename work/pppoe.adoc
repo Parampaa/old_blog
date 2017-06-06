@@ -1,0 +1,59 @@
+= PPPOE
+pppoe
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+
+== 介绍
+* 1998年，有个鸡和蛋的问题。因铺设设备需要，使用pppoe的人越多，成本越低。反之，费用昂贵。
+* pppoe大多用pcap，很少用chap
+* pppoe能够广泛使用需要的是时间: +
+A problem with creating a completely new protocol to fill these needs was time.
+
+== pppoe阶段
+有两个明显的阶段：
+
+=== pppoe发现(discovery)
+* 双方互相知道对方，可在控制报文中加密
+* 创建回话(session ID)，供以后交换报文使用
+
+==== step1: Client to server: Initiation (PADI)
+为何要有step1: +
+* 在以太网上通信，必须知道对方MAC，对方不知道DSL-AC(DSL接入中心)
+* 若想知道MAC，必须广播发出报文
+
+NOTE: The PADI packet can be received by more than one DSL-AC. Only DSL-AC equipment that can serve the "Service-Name" tag should reply.
+
+==== step2: Server to client: Offer (PADO)
+* 提供接入中心MAC
+* 提供接入中心名字
+
+==== step3: Client to server: request (PADR)
+虽然字面上没有请求session id，但是隐含着这个意思
+
+==== step4: Server to client: session-confirmation (PADS)
+提供session id，此时连接已经完全建立
+
+==== step5: Either end to other end: termination (PADT)
+终止连接
+
+=== ppp回话(session)
+* 一旦双方知道对方MAC，并且session建立。这个session阶段开始了...
+
+== pppoe配置
+* 查看ifconfig eth0，不要配IP，不要配置eth0
+* (可选，我们不使用这个方式)pppoe-setup配置(对话方式配置)
+* 配置pap-secrets +
+需要输入用户id和密码，放到/etc/ppp/pap-secrets
+* 配置/etc/ppp/pppoe.conf +
+** Change ETH=eth1 to the correct Ethernet device for your modem.
+** Change USER=bxxxnxnx@sympatico.ca to your proper DSL user-ID.
+** 其他配置根据情况配置，理论上不再需要配置
+* 配置dns
+* 启动 pppoe-start
+* 配置mtu
+** ifconfig eth0 mtu 1452
+** pppoe参数增加 -m 1412

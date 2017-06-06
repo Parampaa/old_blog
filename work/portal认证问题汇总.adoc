@@ -1,0 +1,18 @@
+= portal认证问题汇总
+可供外场出现问题参考
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+
+== 用户无法推出 portal 页面
+=== 只能推送至 br0 
+=== 
+== 认证不通过
+== 认证通过仍无法上网
+=== 
+== 修改 portal URL 各属性字段方法
+=== 『AP』『STA』携带 MAC 格式
+=== 访问 URL 的属性字段

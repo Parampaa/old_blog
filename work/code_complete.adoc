@@ -1,0 +1,42 @@
+= Code Complete 2
+It is a greate job!
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+:hardbreaks:
+
+== Personal Character
+It\'s difficult to focus on working 8 hours.
+You took three hours to write a program, but spent a whole week to modify.
+
+=== Isn\'t Personal Character Off the Topic
+
+=== Interlligence and Humility
+There is no direct relationship between high intelligence and good programming.
+Focus is more important.
+
+* How to reduce the mental burden?
+. Decomposition system, easy to understand
+. Review
+. Decrease the program
+. Based on the problem to programming, without involving the underlying implementation details.
+. Specification
+
+=== Curiosity
+* How to Train Curiosity
+
+=== Intellectual Honesty
+* If you are not a master, do not pretend that you are a master
+* Willing to admit mistakes
+* Attempt to understand compilers warnings
+* A thorough understanding of your own precedures, not just to see wether it can run.
+* Provide the actual status report
+* To provide a progress program, and insist
+
+=== Experience
+In other industries, today\'s exprience will contribute to tomorrow\'s work.
+However in the software industry, if you do not get rid of the previous use of the programming language of thinking,
+experience is a burden.
